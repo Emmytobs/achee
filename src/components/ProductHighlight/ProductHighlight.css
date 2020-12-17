@@ -1,0 +1,121 @@
+
+/* 
+    STYLING FOR THE product-highlight-1-container SECTION
+*/
+
+.product-highlight-1-container {
+    padding: 100px 0;
+}
+
+.product-highlight-1-container > * {
+    opacity: .8;
+}
+
+.product-highlight-1-container > h1 {
+    text-transform: capitalize;
+    font-size: 3.5rem;
+    width: 900px;
+    line-height: 80px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.product-highlight-1-container > p {
+    font-size: 1.4rem;
+    width: 500px;
+    margin: 15px auto;
+    text-align: center;
+}
+
+/* Also a flex container */
+.product-highlight-1 {
+    margin-top: 150px;
+    padding: 0 100px;
+}
+
+.product-highlights {
+    flex: 0 0 40%;
+}
+
+.product-highlights > p {
+    margin: 8px 0;
+    font-size: 1.4rem;
+    color: #000;
+    line-height: 40px;
+}
+
+.product-highlight-1 .image-placeholder {
+    background: var(--main-background-color);
+    width: 200px;
+    height: 300px;
+    flex: 1;
+    margin-left: 100px;
+}
+
+.product-highlight-1 img {
+    opacity: 1;
+    margin-top: -100px;
+    flex: 1;
+    margin-left: 100px;
+}
+
+.card-container {
+    position: relative;   
+    margin-top: 100px;
+}
+
+.background-underlay {
+    width: 75%;
+    height: 500px;
+    /* padding: 200px 0; */
+    background: #EEEAFA;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-left: auto;
+}
+
+/* Also a flex container */
+.card-container .cards {
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 100px;
+    overflow-y: auto;
+    position: absolute;
+    top: 12%;
+}
+
+.cards .card {
+    width: 33.3%;
+    /* height: 300px; */
+    height: 400px;
+    padding: 0 20px;
+    margin: 0 10px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.cards .card > p {
+    line-height: 25px;
+}
+
+.image-container {
+    width: 80px;
+    height: 80px;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 50px 0 70px;
+}
+
+.image-container.performance {
+    background: rgb(244, 103, 169, 0.1);
+}
+.image-container.route-2 {
+    background: rgb(128, 92, 245, 0.1);
+}
+.image-container.profits {
+    background: rgb(136, 190, 245, 0.1);
+}
+
+/* 
+    END OF STYLING FOR THE product-highlight-1-container SECTION
+*/
