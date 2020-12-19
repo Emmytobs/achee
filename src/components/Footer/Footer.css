@@ -1,0 +1,20 @@
+/* Alsoe a flex container */
+footer {
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 80px auto 0;
+    padding: 40px 0 70px;
+    border-top: 1px dashed rgba(0,0,0,0.3);
+}
+
+.copyright {
+    flex: 1;
+    color: rgba(0,0,0,0.8);
+}
+
+.social-links {
+    flex: 0 0 100px;
+    color: rgba(0,0,0,0.8);
+    cursor: pointer;
+}

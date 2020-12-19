@@ -8,7 +8,7 @@ header {
     padding: 0;
     margin: 0;
     background: var(--main-background-color);
-    position: relative;
+    /* setting "position: relative" affects the Icon component in the js file */
 }
 
 
@@ -19,12 +19,6 @@ header nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
-
-header svg {
-    display: block;
-    position: absolute;
-    bottom: 0
 }
 
 nav .logo {
@@ -41,7 +35,7 @@ nav .logo {
     font-size: 3.5rem;
     width: 600px;
     font-weight: 700;
-    color: var(--main-frontground-color);
+    color: var(--main-foreground-color);
     margin: 0 auto;
     text-align: center;
 }
@@ -49,7 +43,7 @@ nav .logo {
 .landing-page > p {
     font-size: 1.7rem;
     font-weight: 300;
-    color: var(--main-frontground-color);
+    color: var(--main-foreground-color);
     width: 900px;
     margin: 40px auto;
     line-height: 40px;
@@ -76,7 +70,7 @@ nav .logo {
 }
 
 .landing-page form > input:focus {
-    border: 5px solid #9C7DFF;
+    border: 5px solid var(--secondary-background-color);
     outline: none;
 }
 

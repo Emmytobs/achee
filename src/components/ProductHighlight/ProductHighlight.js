@@ -1,12 +1,20 @@
 import React from 'react';
+import Footer from "../Footer/Footer.js"
+
 import './ProductHighlight.css';
-import analysisIcon from './Analysis-cuate 1.png';
-import performance from './performance.png';
-import route2 from './route 2.png';
-import profits from './profits.png';
+
+import analysisIcon from './images/Analysis-cuate 1.png';
+import performance from './images/performance.png';
+import route2 from './images/route 2.png';
+import profits from './images/profits.png';
+import fistpump from './images/17 5.png';
+import security from './images/Security-cuate 1.png';
+
+import Icon from "../Icon.js";
 
 function ProductHighlight() {
     return (
+        <>
         <section id="product-highlight-1-container" class="product-highlight-1-container">
             <h1>see your <span class="text-highlight">gains/losses on all your investments</span> at a glance</h1>
             <p>Achee does the work for you.</p>
@@ -17,7 +25,7 @@ function ProductHighlight() {
                     <p>With Achee, a lot of stuff is already taken care of for you, automatically - adding dividends, stock splits, and dividend reinvestment plan calculations.</p>
                     <p>It's time to Ditch Your Spreadsheet.</p>
                 </div>
-                <img alt="" src={analysisIcon} width="200px" height="550px" />
+                <img class="analytics-img" alt="" src={analysisIcon} width="200px" height="550px" />
             </div>
             <div class="card-container">
                 <div class="background-underlay"></div>
@@ -45,18 +53,52 @@ function ProductHighlight() {
                     </div>
                 </div>
             </div>
-            <div class="get-notified">
-                <img src="" alt="" />
-                <div>
-                    <p>Be the first to get notified when we launch.</p>
+            <div class="flex-container get-notified">
+                <div class="image-container">
+                    <img src={fistpump} alt="Fist pump" />
+                </div>
+                <div class="join">
+                    <h2>Be the first to get notified when we launch.</h2>
                     <form>
-                        <input type="text" name="" id="" />
-                        <button>Join the waitlist `-&gt;`</button>
+                        <input placeholder="Enter your email address" type="text" name="" id="" />
+                        <button class="join-waitlist-btn">Join the waitlist <Icon icon="arrow-right" color="#fff" addMargin="0 0 0 5px" /> </button>
                     </form>
                 </div>
             </div>
         </section>
+        <section id="product-highlight-2-container" class="product-highlight-2-container">
+            <div class="highlight">
+                <h3>Powerful <span class="text-highlight">Protection</span> </h3>
+                <p>
+                Achee uses the latest encryption technology standards to protect your sensitive personal information. We never share your information with any company.
+                </p>
+                <img alt="" src={security} width="600px" height="400px" />
+            </div>
+            <div class="highlight">
+                <h3><span class="text-highlight">learn and grow</span> with Achee </h3>
+                <p>
+                We provide personal finance resources to help you save, budget and invest the right way.
+                </p>
+            </div>
+            <div className="tip-outer-container">
+                <div className="flex-container tip-inner-container">
+                    <div className="tip-number">
+                        {/* 01 */}
+                        <h1>01</h1>
+                    </div>
+                    <div class="tip">
+                        <p className="name">Achee Alpha Tip 1</p>
+                        <h4 className="title">start early and invest regularly</h4>
+                        <p className="details">Starting to save at the age of 15 and investing $500 per year in an investment that grows at 5% a year would leave you with nearly $30,000 more by the age of 65 than if you started at 25, even though overall you would only have invested an extra $5000.</p>
+                    </div>
+                </div>
+            </div>
+
+        <button class="btn-primary weekly-tips-btn">Recieve more weekly tips <Icon color="#fff" icon="arrow-right" addMargin /></button>
+        </section>
+        <Footer />
+        </>
     )
 }
 
-export default ProductHighlight
+export default ProductHighlight;

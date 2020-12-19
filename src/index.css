@@ -1,6 +1,7 @@
 :root {
   --main-background-color: #805CF5;
-  --main-frontground-color: #FAFAFA;
+  --secondary-background-color: #9C7DFF;
+  --main-foreground-color: #FAFAFA;
 }
 
 * {
@@ -12,7 +13,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background: var(--main-frontground-color);
+  background: var(--main-foreground-color);
 }
 
 
@@ -32,10 +33,21 @@ main {
 }
 
 /* Utility button class */
-.join-waitlist {
+.btn-primary {
   padding: 15px 25px;
   background: #9C7DFF;
-  color: var(--main-frontground-color);
+  color: var(--main-foreground-color);
+  font-size: 1rem;
+  font-weight: bolder;
+  border: none;
+  border-radius: 10px;
+  display: block;
+}
+
+.join-waitlist-btn {
+  padding: 15px 25px;
+  background: #9C7DFF;
+  color: var(--main-foreground-color);
   font-size: 1rem;
   font-weight: bolder;
   border: none;
@@ -53,4 +65,7 @@ main {
   display: flex;
 }
 
+.font-awesome-icon {
+  height: 20px;
+}
 /* End of Utility Styling */
