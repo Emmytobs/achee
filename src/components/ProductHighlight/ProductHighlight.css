@@ -115,6 +115,7 @@
     padding: 20px 60px;
     align-items: center;
     justify-content: space-between;
+    margin-top: 150px;
 }
 .get-notified .image-container {
     background: var(--secondary-background-color);
