@@ -46,10 +46,10 @@
 }
 
 .product-highlight-1 img.analytics-img {
-    position: relative;
-    /* opacity: 1; */
-    margin-top: -100px;
+    display: block;
     flex: 1;
+    margin-top: -100px;
+    width: 50%;
     height: auto;
     margin-left: 100px;
 }
@@ -87,8 +87,8 @@
         line-height: 30px;
     }
     .product-highlight-1 img.analytics-img {
-        order: 1;
         flex: 1;
+        order: 1;
         width: 100%;
         height: auto;
         margin: 0;
