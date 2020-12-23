@@ -25,9 +25,11 @@ header nav {
 nav .logo {
     color: #fff;
     font-size: 2rem;
-    background: var(--main-background-color);
+    cursor: pointer;
 }
-
+nav .logo > * {
+    margin-right: 5px;
+}
 nav .logo img {
     object-position: center;
     object-fit: cover;
@@ -166,11 +168,6 @@ nav .logo img {
 }
 /* For short screens */
 @media screen and (max-height: 650px) and (max-width: 400px) {
-    nav .logo img {
-        width: 100px;
-        height: auto;
-        margin-left: -30px;
-    }
     .landing-page  {
         margin-top: 80px;
     }
