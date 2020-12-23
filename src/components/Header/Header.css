@@ -124,8 +124,11 @@ nav .logo img {
 
 
 @media screen and (max-width: 1000px) {
+    .landing-page  {
+        margin-top: 100px;
+    }
     .landing-page > img.img-overlay {
-        top: -20%;
+        top: 0%;
     }
     .landing-page > h1 {
         font-size: 2.0rem;
@@ -138,26 +141,62 @@ nav .logo img {
         line-height: 30px;
     }
     .landing-page form {
-        width: 80%;
+        width: 100%;
         display: block;
         margin: 0 auto;
     }
 
     
     .landing-page form > input {
-        width: 95%;
+        width: 90%;
         margin: 20px auto;
+        height: 45px;
         /* padding: 15px 0; */
     }
     .landing-page form > button {
-        width: 60%;
+        width: 70%;
         margin: 0 auto;
-        padding: 30px 0;      
+        padding: 10px 0;      
     }
     
     .landing-page > * {
         display: block;
         margin-top: -70px;
+    }
+}
+/* For short screens */
+@media screen and (max-height: 650px) and (max-width: 400px) {
+    nav .logo img {
+        width: 100px;
+        height: auto;
+        margin-left: -30px;
+    }
+    .landing-page  {
+        margin-top: 80px;
+    }
+    .landing-page > h1 {
+        font-size: 2rem;
+        width: 90%;
+    }
+    .landing-page > p {
+        font-size: 1.0rem;
+        width: 90%;
+        margin: 20px auto;
+        line-height: 25px;
+    }
+    .landing-page form {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+    .landing-page form > input {
+        width: 90%;
+        margin: 20px auto;
+    }
+    .landing-page form > button {
+        width: 70%;
+        margin: 0 auto;
+        padding: 15px 0;      
     }
 }
 
