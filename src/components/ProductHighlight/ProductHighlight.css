@@ -35,6 +35,7 @@
 .product-highlights {
     flex: 0 0 40%;
     opacity: .85;
+    padding: 0 20px;
 }
 
 .product-highlights > p {
@@ -50,6 +51,47 @@
     margin-top: -100px;
     flex: 1;
     margin-left: 100px;
+}
+
+@media screen and (max-width: 1000px) {
+    .product-highlight-1-container {
+        padding: 20px 0;
+    }
+    .product-highlight-1-container > h1 {
+        text-transform: capitalize;
+        font-size: 2rem;
+        width: 90%;
+        line-height: 45px;
+        opacity: .85;
+    }
+    .product-highlight-1-container > p {
+        font-size: 1rem;
+        width: 70%;
+        margin: 15px auto;
+        opacity: .85;
+        line-height: 30px;
+    }
+    /* Also a flex container */
+    .product-highlight-1 {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+        width: 100%;
+    }
+    .product-highlights {
+        order: 2;
+        flex: 1;
+        font-size: 1rem;
+        line-height: 30px;
+    }
+    .product-highlight-1 img.analytics-img {
+        order: 1;
+        flex: 1;
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
 }
 
 .card-container {
@@ -89,6 +131,35 @@
 
 .cards .card > p {
     line-height: 25px;
+}
+
+@media screen and (max-width: 1000px) {
+    .background-underlay {
+        display: none;
+    }
+    /* Also a flex container */
+    .card-container .cards {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 25px 25px;
+        margin: 0;
+        position: static;
+        background: #EEEAFA;
+        overflow: hidden;
+    }
+    .cards .card {
+        width: 100%;
+        padding: 0 20px;
+        margin: 25px 0;
+        background: #fff;
+        border-radius: 8px;
+    }
+    
+    .cards .card > p {
+        line-height: 25px;
+    }
 }
 
 .image-container {
@@ -155,6 +226,7 @@
     color: #c2b5b5;
     height: 58px;
     padding-left: 25px;
+    color: #706c6c;
 }
 .join form > input:focus {
     border: 5px solid var(--secondary-background-color);
@@ -175,6 +247,59 @@
     height: 20px;
     display: inline;
     color: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+    .get-notified {
+        padding: 40px 15px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+    }
+    .get-notified .image-container {
+        width: 200px;
+        border-radius: 50%;
+        height: 200px;
+    
+    }
+    .get-notified img {
+        width: 100%;
+        height: 100%
+    }
+    .get-notified .join {
+        flex: 1;
+        text-align: center;
+    }
+    .join h2 {
+        font-size: 2rem;
+        line-height: 40px;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .join form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .join form > input {
+        width: 100%;
+        display: block;
+        border-radius: 10px;
+        border: none;
+        color: #c2b5b5;
+        height: 58px;
+        padding: 25px 20px;
+        color: #706c6c;
+    }
+    .join form > button {
+        flex: 0 0 70%;
+        margin-top: 20px;  
+        padding: 20px 15px;    
+    }
 }
 /* 
     END OF STYLING FOR THE product-highlight-1-container SECTION
@@ -258,6 +383,48 @@
 .weekly-tips-btn {
     margin: 50px auto 0;
     color: var(--main-foreground-color);
+}
+@media screen and (max-width: 1000px) {
+    .product-highlight-2-container .highlight h3 {
+        width: 100%;
+        font-size: 2rem;
+        margin: 30px auto;
+    }
+    .product-highlight-2-container .highlight p {
+        width: 90%;
+        font-size: 1rem;    
+        line-height: 30px;
+    }
+    .product-highlight-2-container .highlight img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .tip-outer-container {
+        width: 90%;
+        background: var(--main-background-color);
+        padding: 30px 18px;
+    }
+
+    /* Also a flex container, (check the associated element) */
+    .tip-inner-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 10px;
+        border-radius: 10px;
+    }
+    .tip-number {
+        width: 120px;
+        text-align: center;
+        align-self: flex-start;
+        padding: 30px 10px;
+        font-size: 2rem;
+        font-weight: 900;
+    }
+    .tip {
+        margin: 30px 0 0 0;
+    }
 }
 /* 
   END OF STYLING FOR THE PRODUCT BENEFITS SECTION
