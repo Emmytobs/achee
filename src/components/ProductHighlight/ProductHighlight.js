@@ -23,11 +23,11 @@ function ProductHighlight() {
                     <p>Keeping track of your investments should be simple.</p>
                     <p>Achee helps investors to manage their portfolios effortlessly and allows them to see how they are performing periodically.</p>
                     <p>With Achee, a lot of stuff is already taken care of for you, automatically - adding dividends, stock splits, and dividend reinvestment plan calculations.</p>
-                    <p>It's time to Ditch Your Spreadsheet.</p>
+                    <p class="bold-text">It's time to Ditch Your Spreadsheet.</p>
                 </div>
                 {/* <div class="image-container">
                 </div> */}
-                    <img class="analytics-img" alt="" src={analysisIcon}  />
+                <img class="analytics-img" alt="Analytics" src={analysisIcon}  />
             </div>
             <div class="card-container">
                 <div class="background-underlay"></div>
@@ -92,6 +92,26 @@ function ProductHighlight() {
                         <p className="name">Achee Alpha Tip 1</p>
                         <h4 className="title">start early and invest regularly</h4>
                         <p className="details">Starting to save at the age of 15 and investing $500 per year in an investment that grows at 5% a year would leave you with nearly $30,000 more by the age of 65 than if you started at 25, even though overall you would only have invested an extra $5000.</p>
+                    </div>
+                </div>
+                <div className="flex-container tip-inner-container">
+                    <div className="tip-number">
+                        <h1>02</h1>
+                    </div>
+                    <div class="tip">
+                        <p className="name">Achee Alpha Tip 2</p>
+                        <h4 className="title">The higher the return the greater the risk</h4>
+                        <p className="details">If you want to target a higher level of return, you have to be willing, and able, to tolerate the fact that you could lose your invested capital.</p>
+                    </div>
+                </div>
+                <div className="flex-container tip-inner-container">
+                    <div className="tip-number">
+                        <h1>03</h1>
+                    </div>
+                    <div class="tip">
+                        <p className="name">Achee Alpha Tip 3</p>
+                        <h4 className="title">Cash is rarely king</h4>
+                        <p className="details">If cash is not invested, the amount of goods that money can buy will decrease every year.</p>
                     </div>
                 </div>
             </div>

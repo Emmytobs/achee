@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 :root {
   --main-background-color: #805CF5;
   --secondary-background-color: #9C7DFF;
@@ -6,7 +8,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -67,5 +69,9 @@ main {
 
 .font-awesome-icon {
   height: 20px;
+}
+
+p.bold-text {
+  font-weight: 700;
 }
 /* End of Utility Styling */

@@ -68,10 +68,19 @@ nav .logo img {
     top: -40%;
 }
 
+.landing-page > .small-overlay {
+    display: none;
+}
+
+.headline-container {
+    width: 900px;
+    margin: 0 auto;
+}
 
 .landing-page > h1 {
     font-size: 3.5rem;
     width: 600px;
+    /* width: 70%; */
     font-weight: 700;
     color: var(--main-foreground-color);
     margin: 0 auto;
@@ -82,14 +91,16 @@ nav .logo img {
     font-size: 1.7rem;
     font-weight: 300;
     color: var(--main-foreground-color);
-    width: 900px;
+    width: 810px;
+    /* width: 90%; */
     margin: 40px auto;
     line-height: 40px;
     text-align: center;
 }
 
 .landing-page form {
-    width: 870px;
+    width: 810px;
+    /* width: 90%; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -98,8 +109,9 @@ nav .logo img {
 
 .landing-page form > input {
     flex: 3;
+    justify-self: flex-start;
     display: block;
-    margin: 0 20px;
+    margin-right: 20px;
     border-radius: 10px;
     border: none;
     padding-left: 25px;
@@ -126,7 +138,14 @@ nav .logo img {
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
+    .landing-page > .small-overlay {
+        display: block;
+    }
+    .landing-page > .big-overlay {
+        display: none;
+    }
+
     .landing-page  {
         margin-top: 100px;
     }
@@ -169,6 +188,13 @@ nav .logo img {
 }
 /* For short screens */
 @media screen and (max-height: 650px) and (max-width: 400px) {
+    nav .logo > img {
+        width: 15px;
+    }
+    nav .logo {
+        margin-left: -20px;
+        font-size: 1.3rem; 
+    }
     .landing-page  {
         margin-top: 80px;
     }

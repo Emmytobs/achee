@@ -89,9 +89,10 @@
     .product-highlight-1 img.analytics-img {
         flex: 1;
         order: 1;
+        padding: 0;
         width: 100%;
         height: auto;
-        margin: 0;
+        margin: -120px auto 30px;
     }
 }
 
@@ -337,6 +338,8 @@
     width: 80%;
     background: var(--main-background-color);
     padding: 30px;
+    max-height: 590px;
+    overflow-y: auto;
     margin: 70px auto 0;
     border-radius: 10px;
 }
@@ -346,6 +349,7 @@
     background: var(--secondary-background-color);
     justify-content: space-between;
     padding: 25px 20px;
+    margin: 25px 0;
     border-radius: 10px;
 }
 
