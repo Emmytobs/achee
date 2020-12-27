@@ -1,0 +1,8 @@
+
+.tip-outer-container {
+    width: 80%;
+    background: var(--main-background-color);
+    padding: 30px;
+    margin: 70px auto 0;
+    border-radius: 10px;
+}

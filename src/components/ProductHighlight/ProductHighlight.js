@@ -104,7 +104,7 @@ function ProductHighlight() {
                         <p className="details">If you want to target a higher level of return, you have to be willing, and able, to tolerate the fact that you could lose your invested capital.</p>
                     </div>
                 </div>
-                <div className="flex-container tip-inner-container">
+                <div className="flex-container tip-inner-container last-child">
                     <div className="tip-number">
                         <h1>03</h1>
                     </div>

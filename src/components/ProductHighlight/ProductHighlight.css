@@ -91,7 +91,7 @@
         order: 1;
         padding: 0;
         width: 100%;
-        height: auto;
+        height: 150px;
         margin: -120px auto 30px;
     }
 }
@@ -349,8 +349,14 @@
     background: var(--secondary-background-color);
     justify-content: space-between;
     padding: 25px 20px;
-    margin: 25px 0;
     border-radius: 10px;
+}
+.tip-inner-container {
+    margin-bottom: 25px;
+}
+
+.tip-inner-container.last-child {
+    margin: 0;
 }
 
 .tip-number {
