@@ -13,8 +13,8 @@ footer {
     color: rgba(0,0,0,0.8);
 }
 
-.social-links {
-    flex: 0 0 100px;
+.contact {
+    flex: 0 0 200px;
     color: rgba(0,0,0,0.8);
     cursor: pointer;
 }
@@ -30,11 +30,8 @@ footer {
         width: 200px;
         text-align: center
     }
-    .social-links {
+    .contact {
         flex: 1;
         margin-top: 40px;
-    }
-    .social-links > * {
-        width: 140px;
     }
 }
