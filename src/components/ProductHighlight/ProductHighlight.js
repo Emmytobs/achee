@@ -25,9 +25,9 @@ function ProductHighlight() {
                     <p>With Achee, a lot of stuff is already taken care of for you, automatically - adding dividends, stock splits, and dividend reinvestment plan calculations.</p>
                     <p class="bold-text">It's time to Ditch Your Spreadsheet.</p>
                 </div>
-                {/* <div class="image-container">
-                </div> */}
-                <img class="analytics-img" alt="Analytics" src={analysisIcon}  />
+                <div class="image-container">
+                    <img class="analytics-img" alt="Analytics" src={analysisIcon} />
+                </div>
             </div>
             <div class="card-container">
                 <div class="background-underlay"></div>
@@ -85,7 +85,6 @@ function ProductHighlight() {
             <div className="tip-outer-container">
                 <div className="flex-container tip-inner-container">
                     <div className="tip-number">
-                        {/* 01 */}
                         <h1>01</h1>
                     </div>
                     <div class="tip">
