@@ -17,10 +17,14 @@ function Header() {
                 <img src={overlay_small} class="img-overlay small-overlay" alt="Overlay" />
                 <h1 className="headline">All Your Investments In One Place</h1>
                 <p className="">Monitor stocks, dividends, cryptocurrencies and other fixed income investments. With Achee, you stay on top of your money.</p>
-                <form>
-                    <input type="email"  placeholder="Enter your email address" />
+                <form action="https://achee.us19.list-manage.com/subscribe/post" method="POST">
+                    <input type="hidden" name="u" value="916d8b504c5b2dc45080bd0af" />
+                    <input type="hidden" name="id" value="7b71ed0b50" />
+                    <input type="email" name="MERGE0"  placeholder="Enter your email address" />
                     <button class="join-waitlist-btn">Join the waitlist <Icon color="#fff" icon="arrow-right" addMargin/></button>
                 </form>
+                {/* <form>
+                </form> */}
             </section>
             {/* <div class="logo-container left-logo-1">
                 <img src="./logo/btc.png" width="100px" height="100px" alt="" />
