@@ -1,0 +1,7 @@
+@media screen and (max-width: 1000px) {
+    .modal-overlay > * {
+        width: 80%;
+        height: 505px;
+    }
+
+}
