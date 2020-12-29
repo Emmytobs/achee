@@ -356,7 +356,6 @@
     background: var(--main-background-color);
     padding: 30px;
     min-height: 400px;
-    border-radius: 10px;
 }
 
 /* Also a flex container, (check the associated element) */
