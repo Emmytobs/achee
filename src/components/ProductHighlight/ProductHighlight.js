@@ -88,7 +88,7 @@ function ProductHighlight(props) {
                 </p>
             </div>
             <div className="carousel-container">
-                <Carousel showThumbs={false}>
+                <Carousel showThumbs={false} showStatus={false}>
                     <div className="tip-outer-container">
                         <div className="flex-container tip-inner-container">
                             <div className="tip-number">
