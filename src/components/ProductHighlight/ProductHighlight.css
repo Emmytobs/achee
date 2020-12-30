@@ -91,6 +91,9 @@
         font-size: 1rem;
         line-height: 30px;
     }
+    .product-highlights > p {
+        font-size: 1.15rem;
+    }
     .product-highlight-1 > .image-container {
         flex: 1;
         order: 1;
@@ -100,8 +103,8 @@
         margin: -80px auto 30px;
     }
     .product-highlight-1 img.analytics-img {
-       width: 100%;
-       height: 100%;
+       width: 70%;
+       height: auto;
        display: block;
        margin: 0 auto;
     }
@@ -116,7 +119,7 @@
     width: 80%;
     height: 500px;
     /* padding: 200px 0; */
-    background: #EEEAFA;
+    background: #F2EFFE;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     margin-left: auto;
@@ -159,7 +162,7 @@
         padding: 25px 25px;
         margin: 0;
         position: static;
-        background: #EEEAFA;
+        background: #F2EFFE;
         overflow: hidden;
     }
     .cards .card {
@@ -202,10 +205,11 @@
     margin-top: 150px
 }
 .get-notified .image-container {
-    background: var(--secondary-background-color);
-    width: 250px;
+    background: #A68DF8;
+    width: 300px;
     border-radius: 50%;
-    height: 250px;
+    margin-left: 40px;
+    height: 300px;
 
 }
 .get-notified img {
@@ -215,21 +219,19 @@
 .get-notified .join {
     flex: 0 0 600px;
 }
-
-
 .join h2 {
     color: var(--main-foreground-color);
     font-size: 2.5rem;
     text-transform: capitalize;
     line-height: 60px;
-    width: 530px;
+    width: 490px;
 }
 .join form {
-    width: 530px;
+    width: 490px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 .join form > input {
     flex: 2;
@@ -273,6 +275,7 @@
     .get-notified .image-container {
         width: 200px;
         border-radius: 50%;
+        margin-left: 0; /* Gave the one in big screens a left margin */
         height: 200px;
     
     }
@@ -322,6 +325,9 @@
 /* 
     STYLING FOR THE PRODUCT BENEFITS SECTION
 */
+.product-highlight-2-container .highlight.second > img {
+    margin: 30px auto 70px;
+}
 .product-highlight-2-container .highlight h3 {
     width: 700px;
     margin: 0 auto;

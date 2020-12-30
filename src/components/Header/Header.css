@@ -57,7 +57,9 @@ nav .logo img {
     /* overflow-y: auto; */
 }
 /* Image overlay affects the text */
-.landing-page > *:not(.img-overlay) {
+.landing-page > h1,
+.landing-page > p,
+.landing-page > form {
     position: relative;
     z-index: 20;
 }
@@ -68,8 +70,22 @@ nav .logo img {
     position: absolute;
     top: 15%;
 }
-.landing-page > .small-overlay {
+.landing-page > .small-overlay,
+.landing-page > .mobile-view {
     display: none;
+}
+.landing-page .mobile-view,
+.landing-page .desktop-view {
+    width: 100%;
+    position: absolute;
+    top: 20%;
+}
+.landing-page .desktop-view {
+    top: 18%;
+}
+.landing-page .assets-img {
+    display: block;
+    width: 100%;
 }
 
 .headline-container {
@@ -115,7 +131,8 @@ nav .logo img {
     border-radius: 10px;
     border: none;
     padding-left: 25px;
-    color: #c2b5b5;
+    color: #706c6c;
+    font-size: 1.15rem;
     height: 58px;
 }
 
@@ -137,20 +154,16 @@ nav .logo img {
     padding: 20px 0;      
 }
 
-@media screen and (min-width: 900px) {
-    .landing-page > .assets {
-        /* display: none; */
-    }
-}
-
 @media screen and (max-width: 900px) {
     header {
         padding-bottom: 60px;
     }
-    .landing-page > .small-overlay {
+    .landing-page > img.small-overlay,
+    .landing-page > .mobile-view {
         display: block;
     }
-    .landing-page > .big-overlay {
+    .landing-page > img.big-overlay,
+    .landing-page > .desktop-view {
         display: none;
     }
     .landing-page  {
@@ -158,9 +171,6 @@ nav .logo img {
     }
     .landing-page > img.img-overlay {
         top: 25%;
-    }
-    .landing-page > img.assets {
-        top: 20%;
     }
     .landing-page > h1 {
         font-size: 2.0rem;

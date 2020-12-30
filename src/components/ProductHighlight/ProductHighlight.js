@@ -67,7 +67,7 @@ function ProductHighlight(props) {
                     <form action="https://achee.us19.list-manage.com/subscribe/post" method="POST">
                         <input type="hidden" name="u" value="916d8b504c5b2dc45080bd0af" />
                         <input type="hidden" name="id" value="7b71ed0b50" />
-                        <input placeholder="Enter your email address" type="email" name="MERGE0" id="" />
+                        <input placeholder="Enter your email address" type="email" name="MERGE0" required />
                         <button className="join-waitlist-btn">Join the waitlist <Icon icon="arrow-right" color="#fff" addMargin="0 0 0 5px" /> </button>
                     </form>
                 </div>
@@ -79,9 +79,9 @@ function ProductHighlight(props) {
                 <p>
                 Achee uses the latest encryption technology standards to protect your sensitive personal information. We never share your information with any company.
                 </p>
-                <img alt="" src={security} width="600px" height="400px" />
             </div>
-            <div className="highlight">
+            <div className="highlight second">
+                <img alt="" src={security} className="security-illustration" width="600px" height="400px" />
                 <h3><span className="text-highlight">learn and grow</span> with Achee </h3>
                 <p>
                 We provide personal finance resources to help you save, budget and invest the right way.
