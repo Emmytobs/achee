@@ -1,9 +1,11 @@
 import React from 'react'
 import "./Header.css"
 import Icon from "../Icon.js";
+
 import acheeLogo from "./acheeLogo.png";
 import overlay_big from "./Ellipse_big.svg";
 import overlay_small from "./Ellipse_small.svg";
+import assetIcons from "./asset_icons_small.png";
 
 function Header() {
     const handleClick = (e) => {
@@ -24,8 +26,9 @@ function Header() {
                     <input type="email" name="MERGE0"  placeholder="Enter your email address" />
                     <button class="join-waitlist-btn">Join the waitlist <Icon color="#fff" icon="arrow-right" addMargin/></button>
                 </form>
-                <img src={overlay_big} class="img-overlay big-overlay" alt="Overlay" />
+                <img src={overlay_big} class="img-overlay big-overlay" alt="Overlay" /> 
                 <img src={overlay_small} class="img-overlay small-overlay" alt="Overlay" />
+                <img src={assetIcons} class="img-overlay assets" alt="assets" />
             </section>
             {/* <div class="logo-container left-logo-1">
                 <img src="./logo/btc.png" width="100px" height="100px" alt="" />

@@ -137,6 +137,11 @@ nav .logo img {
     padding: 20px 0;      
 }
 
+@media screen and (min-width: 900px) {
+    .landing-page > .assets {
+        /* display: none; */
+    }
+}
 
 @media screen and (max-width: 900px) {
     header {
@@ -153,6 +158,9 @@ nav .logo img {
     }
     .landing-page > img.img-overlay {
         top: 25%;
+    }
+    .landing-page > img.assets {
+        top: 20%;
     }
     .landing-page > h1 {
         font-size: 2.0rem;
