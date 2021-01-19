@@ -67,6 +67,13 @@ main {
   display: flex;
 }
 
+.display-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .font-awesome-icon {
   height: 20px;
 }

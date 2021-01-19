@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Header.css"
-import Icon from "../Icon.js";
+import Icon from "../../Shared/Icon.js";
 
 import acheeLogo from "./acheeLogo.png";
 import overlay_big from "./Ellipse_big.svg";
@@ -9,17 +9,6 @@ import assetIconsMobile from "./asset_icons_small.png";
 import assetIconsDesktop from './Group 1500.png';
 
 function Header() {
-    const [email, setEmail] = React.useState('')
-    const handleClick = (e) => {
-        console.log(e.target)
-    }
-    const handleSubmit = (e) => {
-        // e.preventDefault()
-        // const emailEl = e.target.children[2];
-        // if(emailEl.value.length) {
-        //     window.location = 'https://achee.us19.list-manage.com/subscribe/post';
-        // }
-    }
     return (
         <header>
             <nav>
@@ -44,25 +33,6 @@ function Header() {
                     <img src={assetIconsMobile} className="assets-img" alt="assets" />
                 </div>
             </section>
-            {/* <div class="logo-container left-logo-1">
-                <img src="./logo/btc.png" width="100px" height="100px" alt="" />
-            </div>
-            <div class="logo-container left-logo-2">
-                <img src="./logo/btc.png" width="100px" height="100px" alt="" />
-            </div>
-            <div class="logo-container left-logo-3">
-                <img src="./logo/btc.png" width="100px" height="100px" alt="" />
-            </div>
-
-            <div class="logo-container right-logo-1">
-                <img src="./logo/btc.png" width="100px" height="100px" alt="" />
-            </div>
-            <div class="logo-container right-logo-2">
-                <img src="./logo/btc.png" width="100px" height="100px" alt="" />
-            </div>
-            <div class="logo-container right-logo-3">
-                <img src="./logo/btc.png" width="100px" height="100px" alt="" />
-            </div> */}
         </header>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import './ProductHighlight.css';
@@ -12,7 +12,7 @@ import security from './images/Security-cuate 1.png';
 
 import { Carousel } from 'react-responsive-carousel';
 
-import Icon from "../Icon.js";
+import Icon from "../../Shared/Icon.js";
 
 function ProductHighlight(props) {
     

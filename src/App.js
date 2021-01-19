@@ -1,30 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Route } from 'react-router-dom'
+
+import HomePage from './components/HomePage/HomePage.js';
+import Account from './components/Account/Account.js';
 import './App.css';
-import Header from './components/Header/Header.js';
-import ProductHighlight from './components/ProductHighlight/ProductHighlight.js';
-import Footer from './components/Footer/Footer';
-import EmailModal from './components/EmailModal.js';
 
 function App() {
-  const [emailModal, setEmailModal] = useState(false);
-  const showEmailModal = (e) => {
-    setEmailModal(true)
-  }
-
-  const hideEmailModal = (e) => {
-    if(e.target.className.includes('modal-overlay')){
-      setEmailModal(false)
-    }
-  }
+  
   return (
     <>
-      <Header />
-      <main>
-        <ProductHighlight showEmailModal={showEmailModal} />
-      </main>
-      <Footer />
-    
-      {emailModal && <EmailModal hideEmailModal={hideEmailModal} /> }
+    <Route path="/" exact component={HomePage} />
+    <Route path='/account' exact component={Account} />
     </>
   );
 }
