@@ -1,5 +1,5 @@
 import React from 'react'
-import './SignUp.css';
+// import './SignUp.css';
 
 import acheeLogo from '../images/acheeLogo.png';
 import google from '../images/google.png';
