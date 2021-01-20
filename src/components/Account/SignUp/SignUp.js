@@ -28,11 +28,19 @@ function SignUp(props) {
                     </h2>
                     
                     <div className={`display-flex ${styles.oauthButtonsContainer}`}>
+<<<<<<< HEAD
                         <button className={`display-flex ${styles.oauthButton} ${styles.googleBtn}`}>
                             <img src={google} alt="Google" width="20px" height="20px" />
                             <span>Signup with Google</span>
                         </button>
                         <button className={`display-flex ${styles.oauthButton} ${styles.facebookBtn}`}>
+=======
+                        <button class={`display-flex ${styles.oauthButton} ${styles.googleBtn}`}>
+                            <img src={google} alt="Google" width="20px" height="20px" />
+                            <span>Signup with Google</span>
+                        </button>
+                        <button class={`display-flex ${styles.oauthButton} ${styles.facebookBtn}`}>
+>>>>>>> develop
                             <img src={facebook} alt="Facebook" width="10px" height="20px"/>
                             <span>Signup with Facebook</span>
                         </button>
