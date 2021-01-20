@@ -1,3 +1,177 @@
 .signinWrapper {
     background: var(--main-background-color);
+    min-height: 100vh;
+}
+
+.signinFormContainer {
+    height: 90vh;
+    flex: 0 0 60%;
+    padding: 10px;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.logo {
+    margin: 0 auto;
+    width: 65px;
+    justify-content: space-between;
+}
+
+.logo > p {
+    color: #4E4F51;
+    font-weight: 700;
+}
+
+.greeting {
+    color: #4E4F51;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 40px;
+}
+
+
+/* Flex container */
+.oauthButtonsContainer {
+    margin: 20px auto 0;
+    width: 385px;
+    justify-content: space-between;
+}
+
+/* Flex container */
+.oauthButton {
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 700;
+}
+
+.oauthButton > img {
+    display: block;
+}
+
+.oauthButton > span {
+    margin-left: 12px;
+    font-size: 1em;
+    width: 100%;
+}
+
+.googleBtn {
+    background: #FFF2F2;
+    color: #E53935;
+}
+
+.facebookBtn {
+    background: #F2F5FF;
+    color: #0030CB;
+}
+
+/* A flex container */
+.orContainer {
+    width: 385px;
+    margin: 25px auto 0;
+    justify-content: space-between;
+
+}
+
+.orContainer > .line {
+    display: block;
+    height: 1px;
+    background: #D8D8D8;
+    width: 40%;
+}
+
+.orContainer > .orText {
+    color: #909090;
+}
+
+.signinFormContainer form {
+    width: 385px;
+    margin: 0 auto;
+}
+
+.signinFormContainer form > * {
+    width: 100%;
+}
+
+.signinFormContainer form label {
+    color: #4E4F51;
+    line-height: 25px;
+    font-weight: 500;
+}
+
+.signinFormContainer form .inputContainer {
+    margin: 15px 0;
+}
+
+.signinFormContainer form .inputGroup {
+    padding: 7px;
+    border-radius: 7px;
+    border: 1px solid #D8D8D8;
+}
+
+.signinFormContainer form input {
+    background: transparent;
+    padding: 7px;
+    border: 0;
+    flex: 1;
+    outline: none;
+}
+
+/* A flex container */
+.signinFormContainer form > button.submitBtn {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.signinFormContainer form .submitBtn {
+    background: var(--main-background-color);
+    color: #fff;
+    border: 0;
+    padding: 12px 10px;
+    border-radius: 7px;
+}
+
+.signinFormContainer form .submitBtn > span {
+    font-size: 1rem;
+}
+
+.signinFormContainer form .submitBtn > img {
+    position: relative;
+    left: 30%;
+    display: inline-block;
+}
+
+.signinFormContainer .forgotPasswordContainer {
+    text-align: right;
+}
+
+.signinFormContainer .forgotPassword {
+    background: transparent;
+    color: var(--main-background-color);
+    border: none;
+    margin: 0;
+    font-weight: 700;
+}
+
+.switchToSignupContainer {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.switchToSignupContainer > p {
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    color: #4E4F51;
+}
+
+.switchToSignupBtn {
+    background: transparent;
+    color: var(--main-background-color);
+    border: none;
+    display: block;
+    width: 100px;
+    margin: 5px auto 0;
+    font-weight: 700;
 }

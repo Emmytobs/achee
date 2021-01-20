@@ -38,10 +38,17 @@ function SignUp(props) {
                         </button>
                     </div>
 
+<<<<<<< HEAD
                     <div className={`display-flex ${styles.orContainer}`}>
                         <span className="line"></span>
                         <span className="or-text">OR</span>
                         <span className="line"></span>
+=======
+                    <div class={`display-flex ${styles.orContainer}`}>
+                        <span class={styles.line}></span>
+                        <span class={styles.orText}>OR</span>
+                        <span class={styles.line}></span>
+>>>>>>> develop
                     </div>
 
                     <form>

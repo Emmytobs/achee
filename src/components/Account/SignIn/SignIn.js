@@ -14,7 +14,7 @@ function SignIn(props) {
         props.history.push('/account?page=sign-up')
     }
     return (
-        <div className={`flex-container ${styles.signinWraper}`}>
+        <div className={`display-flex ${styles.signinWrapper}`}>
             <div className={styles.signinFormContainer}>
                 <div className={`display-flex ${styles.logo}`}>
                     <img src={acheeLogo} alt="Achee" width="13px" height="13px" />
@@ -26,20 +26,20 @@ function SignIn(props) {
                 </h2>
 
                 <div className={`display-flex ${styles.oauthButtonsContainer}`}>
-                    <button class={`display-flex ${styles.oauthButton} ${styles.googleBtn}`}>
-                        <img src={google} alt="Google" width="15px" height="14px" />
+                    <button className={`display-flex ${styles.oauthButton} ${styles.googleBtn}`}>
+                        <img src={google} alt="Google" width="20px" height="20px" />
                         <span>Signup with Google</span>
                     </button>
-                    <button class={`display-flex ${styles.oauthButton} ${styles.facebookBtn}`}>
-                        <img src={facebook} alt="Facebook" width="10px" height="16px"/>
+                    <button className={`display-flex ${styles.oauthButton} ${styles.facebookBtn}`}>
+                        <img src={facebook} alt="Facebook" width="10px" height="20px"/>
                         <span>Signup with Facebook</span>
                     </button>
                 </div>
 
-                <div class={`display-flex ${styles.orContainer}`}>
-                    <span class="line"></span>
-                    <span class="or-text">OR</span>
-                    <span class="line"></span>
+                <div className={`display-flex ${styles.orContainer}`}>
+                    <span className={styles.line}></span>
+                    <span className={styles.orText}>OR</span>
+                    <span className={styles.line}></span>
                 </div>
 
                 <form>
@@ -57,7 +57,9 @@ function SignIn(props) {
                             <input type="password" name="password" id="password" placeholder="Enter your password"/>
                         </div>
                     </div>
-                    <button className={styles.forgotPassword}>Forgot Password?</button>
+                    <div className={styles.forgotPasswordContainer}>
+                        <button className={styles.forgotPassword}>Forgot Password?</button>
+                    </div>
 
                     <button className={`display-flex ${styles.submitBtn}`}>
                         <span>Signin account</span>

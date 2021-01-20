@@ -150,10 +150,9 @@
 }
 
 .switchToSigninContainer {
-    width: 340px;
+    width: 385px;
     margin-top: 20px;
     text-align: center;
-    font-size: .8em;
 }
 
 .switchToSigninContainer > p {
