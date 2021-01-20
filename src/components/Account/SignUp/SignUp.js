@@ -28,20 +28,20 @@ function SignUp(props) {
                     </h2>
                     
                     <div className={`display-flex ${styles.oauthButtonsContainer}`}>
-                        <button class={`display-flex ${styles.oauthButton} ${styles.googleBtn}`}>
-                            <img src={google} alt="Google" width="15px" height="14px" />
+                        <button className={`display-flex ${styles.oauthButton} ${styles.googleBtn}`}>
+                            <img src={google} alt="Google" width="20px" height="20px" />
                             <span>Signup with Google</span>
                         </button>
-                        <button class={`display-flex ${styles.oauthButton} ${styles.facebookBtn}`}>
-                            <img src={facebook} alt="Facebook" width="10px" height="16px"/>
+                        <button className={`display-flex ${styles.oauthButton} ${styles.facebookBtn}`}>
+                            <img src={facebook} alt="Facebook" width="10px" height="20px"/>
                             <span>Signup with Facebook</span>
                         </button>
                     </div>
 
-                    <div class={`display-flex ${styles.orContainer}`}>
-                        <span class="line"></span>
-                        <span class="or-text">OR</span>
-                        <span class="line"></span>
+                    <div className={`display-flex ${styles.orContainer}`}>
+                        <span className="line"></span>
+                        <span className="or-text">OR</span>
+                        <span className="line"></span>
                     </div>
 
                     <form>

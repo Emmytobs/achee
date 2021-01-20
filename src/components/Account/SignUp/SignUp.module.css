@@ -59,7 +59,7 @@
 
 .oauthButton > span {
     margin-left: 7px;
-    font-size: .8em;
+    font-size: 1em;
     width: 100%;
 }
 
@@ -84,7 +84,8 @@
 .orContainer > .line {
     display: inline-block;
     height: 1px;
-    background: #D8D8D8;
+    /* background: #D8D8D8; */
+    background: #000;
     width: 40%
 }
 
@@ -102,7 +103,7 @@
 
 .formContainer form label {
     color: #4E4F51;
-    line-height: 25px;
+    line-height: 30px;
     font-weight: 500;
 }
 
