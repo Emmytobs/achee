@@ -4,10 +4,9 @@ import styles from './SignUp.module.css';
 import acheeLogo from '../images/acheeLogo.png';
 import google from '../images/google.png';
 import facebook from '../images/facebook.png';
-import arrowRight from '../images/arrow-right.png';
-import lock from '../images/lock.png';
-import message from '../images/message.png';
-import signupImage from '../images/signup-image.png';
+
+import { Form, Input, Button } from '../Form/Form';
+import AsideContainer from '../AsideContainer/AsideContainer';
 
 function SignUp(props) {
     const changeToSignIn = (e) => {
@@ -44,7 +43,24 @@ function SignUp(props) {
                         <span class={styles.line}></span>
                     </div>
 
-                    <form>
+                    <Form width="385px">
+                        <Input 
+                            name="email"
+                            type="text"
+                            placeholder="Enter your email"
+                            id="email"
+                            labelText="Email"
+                        />
+                        <Input 
+                            name="password"
+                            type="password"
+                            placeholder="Enter your password"
+                            id="password"
+                            labelText="Create password"
+                        />
+                        <Button buttonText="Signup for free" />
+                    </Form>
+                    {/* <form>
                         <div className={styles.inputContainer}>
                             <label htmlFor="email">Email</label>
                             <div className={`display-flex ${styles.inputGroup}`}>
@@ -63,20 +79,14 @@ function SignUp(props) {
                             <span>Signup for free</span>
                             <img src={arrowRight} alt="arrow-right" width="18px" height="18px" />
                         </button>
-                    </form>
+                    </form> */}
                     <div className={styles.switchToSigninContainer}>
                         <p>Already have an account?</p>
                         <button onClick={changeToSignIn} className={styles.switchToSigninBtn}>Sign in</button>
                     </div>
                 </div>
             </div>
-            <div className={styles.asideContainer}>
-                <img src={signupImage} alt="Achee signup img"/>
-                <h2>
-                    Achee is the favorite investing <br />
-                    tool of many investors.
-                </h2>
-            </div>
+            <AsideContainer />
         </div>
     )
 }

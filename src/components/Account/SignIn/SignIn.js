@@ -13,6 +13,11 @@ function SignIn(props) {
     const changeToSignUpView = (e) => {
         props.history.push('/account?page=sign-up')
     }
+
+    const changeToForgotPasswordView = (e) => {
+        props.history.push('/account?page=forgot-password');
+    }
+
     return (
         <div className={`display-flex ${styles.signinWrapper}`}>
             <div className={styles.signinFormContainer}>
@@ -58,7 +63,7 @@ function SignIn(props) {
                         </div>
                     </div>
                     <div className={styles.forgotPasswordContainer}>
-                        <button className={styles.forgotPassword}>Forgot Password?</button>
+                        <button className={styles.forgotPassword} onClick={changeToForgotPasswordView}>Forgot Password?</button>
                     </div>
 
                     <button className={`display-flex ${styles.submitBtn}`}>
