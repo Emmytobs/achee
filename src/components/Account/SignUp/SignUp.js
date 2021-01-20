@@ -39,9 +39,9 @@ function SignUp(props) {
                     </div>
 
                     <div class={`display-flex ${styles.orContainer}`}>
-                        <span class="line"></span>
-                        <span class="or-text">OR</span>
-                        <span class="line"></span>
+                        <span class={styles.line}></span>
+                        <span class={styles.orText}>OR</span>
+                        <span class={styles.line}></span>
                     </div>
 
                     <form>
