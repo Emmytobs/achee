@@ -18,7 +18,7 @@ function HomePage() {
   }
   return (
     <>
-      <Header />
+      <Header showEmailModal={showEmailModal} />
       <main>
         <ProductHighlight showEmailModal={showEmailModal} />
       </main>
