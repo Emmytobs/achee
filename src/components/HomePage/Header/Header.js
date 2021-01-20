@@ -8,12 +8,12 @@ import overlay_small from "./Ellipse_small.svg";
 import assetIconsMobile from "./asset_icons_small.png";
 import assetIconsDesktop from './Group 1500.png';
 
-function Header() {
+function Header(props) {
     return (
         <header>
             <nav>
                 <div class="logo"><img src={acheeLogo} alt="Achee" /> achee</div>
-                <button class="join-waitlist-btn">Join the waitlist <Icon color="#fff" icon="arrow-right" addMargin/></button>
+                <button class="join-waitlist-btn" onClick={props.showEmailModal}>Join the waitlist <Icon color="#fff" icon="arrow-right" addMargin/></button>
             </nav>
             <section id="landing-page" class="landing-page">
                 <h1 className="headline">All Your Investments In One Place</h1>
