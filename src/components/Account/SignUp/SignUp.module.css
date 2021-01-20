@@ -35,7 +35,7 @@
     width: 385px;
     margin: 0 auto;
     color: #4E4F51;
-    font-size: 24px;
+    font-size: 1.45em;
     line-height: 35px;
 }
 
@@ -60,7 +60,7 @@
 
 .oauthButton > span {
     margin-left: 10px;
-    font-size: 13px;
+    font-size: 1em;
     width: 100%;
 }
 
@@ -188,5 +188,5 @@
     top: 70px;
     color: #fff;
     font-weight: 500;
-    font-family: 'Roboto', serif;
+    font-family: 'Zilla Slab', serif;
 }
