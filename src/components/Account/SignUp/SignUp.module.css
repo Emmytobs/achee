@@ -11,11 +11,12 @@
 
 .loginContainer {
     overflow-y: auto;
+    min-height: 100vh;
     background: #fff;
 }
 
 .logo {
-    margin-left: 17%;
+    margin-left: 21%;
     width: 65px;
     justify-content: space-between;
 }
@@ -26,21 +27,21 @@
 }
 
 .formContainer {
-    width: 70%;
-    margin: 20px auto 0;
+    width: 60%;
+    margin: 50px auto 0;
 }
 
 .formContainer > h2 {
-    width: 340px;
+    width: 385px;
     color: #4E4F51;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     line-height: 35px;
 }
 
 /* Flex container */
 .oauthButtonsContainer {
     margin-top: 30px;
-    width: 340px;
+    width: 385px;
     justify-content: space-between;
 }
 
@@ -74,7 +75,7 @@
 
 /* A flex container */
 .orContainer {
-    width: 340px;
+    width: 385px;
     margin-top: 20px;
     justify-content: space-between;
 
@@ -92,7 +93,7 @@
 }
 
 .formContainer form {
-    width: 340px;
+    width: 385px;
 }
 
 .formContainer form > * {
@@ -125,7 +126,7 @@
 
 /* A flex container */
 .formContainer form > button.submitBtn {
-    margin-top: 30px;
+    margin-top: 50px;
     width: 100%;
 }
 
@@ -135,6 +136,10 @@
     border: 0;
     padding: 12px 10px;
     border-radius: 7px;
+}
+
+.formContainer form .submitBtn > span {
+    font-size: 1rem;
 }
 
 .formContainer form .submitBtn > img {
@@ -147,7 +152,7 @@
     width: 340px;
     margin-top: 20px;
     text-align: center;
-    font-size: .7em;
+    font-size: .8em;
 }
 
 .switchToSigninContainer > p {

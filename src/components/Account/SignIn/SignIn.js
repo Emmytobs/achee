@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './SignIn.css';
+import styles from './SignIn.module.css';
 
 import acheeLogo from '../images/acheeLogo.png';
 import google from '../images/google.png';
@@ -14,59 +14,61 @@ function SignIn(props) {
         props.history.push('/account?page=sign-up')
     }
     return (
-        <div className="flex-container signin-wraper">
-            <div className="signin-form-container">
-                <div className="logo">
-                    <img src={acheeLogo} alt="Achee" />
+        <div className={`flex-container ${styles.signinWraper}`}>
+            <div className={styles.signinFormContainer}>
+                <div className={`display-flex ${styles.logo}`}>
+                    <img src={acheeLogo} alt="Achee" width="13px" height="13px" />
                     <p>achee</p>
                 </div>
-                <h2 className="greeting">
+                <h2 className={styles.greeting}>
                     Welcome Back! <br />
                     Sign in here, please?
                 </h2>
 
-                <div className="oauth-buttons-container">
-                    <button class="oauth-button google-btn">
-                        <img src={google} alt="Google"  width="20px" height="20px"/>
-                        Signup with Google
+                <div className={`display-flex ${styles.oauthButtonsContainer}`}>
+                    <button class={`display-flex ${styles.oauthButton} ${styles.googleBtn}`}>
+                        <img src={google} alt="Google" width="15px" height="14px" />
+                        <span>Signup with Google</span>
                     </button>
-                    <button class="oauth-button facebook-btn">
-                        <img src={facebook} alt="Facebook" width="20px" height="10px" />
-                        Signup with Facebook
+                    <button class={`display-flex ${styles.oauthButton} ${styles.facebookBtn}`}>
+                        <img src={facebook} alt="Facebook" width="10px" height="16px"/>
+                        <span>Signup with Facebook</span>
                     </button>
                 </div>
 
-                <div class="or-container">
+                <div class={`display-flex ${styles.orContainer}`}>
                     <span class="line"></span>
                     <span class="or-text">OR</span>
                     <span class="line"></span>
                 </div>
 
                 <form>
-                    <div className="input-container">
+                    <div className={styles.inputContainer}>
                         <label htmlFor="email">Email</label>
-                        <div className="input-group">
+                        <div className={`display-flex ${styles.inputGroup}`}>
                             <img src={message} alt="mailbox" width='16px' height='16px' />
                             <input type="text" name="email" id="email" placeholder="Enter your registered email"/>
                         </div>
                     </div>
-                    <div className="input-container">
-                        <label htmlFor="password">Password</label>
-                        <div className="input-group">
+                    <div className={styles.inputContainer}>
+                        <label htmlFor="password">Create password</label>
+                        <div className={`display-flex ${styles.inputGroup}`}>
                             <img src={lock} alt="padlock" width='16px' height='16px' />
                             <input type="password" name="password" id="password" placeholder="Enter your password"/>
                         </div>
                     </div>
-                    <button className="forgot-password">Forgot Password?</button>
+                    <button className={styles.forgotPassword}>Forgot Password?</button>
 
-                    <button>
+                    <button className={`display-flex ${styles.submitBtn}`}>
                         <span>Signin account</span>
-                        <img src={arrowRight} alt="arrow-right" />
+                        <img src={arrowRight} alt="arrow-right" width="18px" height="18px" />
                     </button>
                 </form>
-                <div className="switch-to-signup-container">
+
+               
+                <div className={styles.switchToSignupContainer}>
                     <p>First time here ?</p>
-                    <button onClick={changeToSignUpView} className="switch-to-signup-btn">Sign up</button>
+                    <button onClick={changeToSignUpView} className={styles.switchToSignupBtn}>Sign up</button>
                 </div>
             </div>
         </div>
