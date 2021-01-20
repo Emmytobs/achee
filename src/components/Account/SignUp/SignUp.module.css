@@ -98,58 +98,6 @@
     margin: 0 auto;
 }
 
-.formContainer form > * {
-    width: 100%;
-}
-
-.formContainer form label {
-    color: #4E4F51;
-    line-height: 30px;
-    font-weight: 500;
-}
-
-.formContainer form .inputContainer {
-    margin: 15px 0;
-}
-
-.formContainer form .inputGroup {
-    padding: 7px;
-    border-radius: 7px;
-    border: 1px solid #D8D8D8;
-}
-
-.formContainer form input {
-    background: transparent;
-    padding: 7px;
-    border: 0;
-    flex: 1;
-    outline: none;
-}
-
-/* A flex container */
-.formContainer form > button.submitBtn {
-    margin-top: 50px;
-    width: 100%;
-}
-
-.formContainer form .submitBtn {
-    background: var(--main-background-color);
-    color: #fff;
-    border: 0;
-    padding: 12px 10px;
-    border-radius: 7px;
-}
-
-.formContainer form .submitBtn > span {
-    font-size: 1rem;
-}
-
-.formContainer form .submitBtn > img {
-    position: relative;
-    left: 30%;
-    display: inline-block;
-}
-
 .switchToSigninContainer {
     width: 385px;
     margin: 20px auto 0;
@@ -168,25 +116,4 @@
     color: var(--main-background-color);
     font-weight: 700;
     border: none;
-}
-
-.asideContainer {
-    min-height: 100vh;
-    background: var(--main-background-color);
-}
-
-.asideContainer > img {
-    display: block;
-    width: 75%;
-    margin: 30px auto 0;
-    height: auto;
-}
-
-.asideContainer > h2 {
-    text-align: center;
-    position: relative;
-    top: 70px;
-    color: #fff;
-    font-weight: 500;
-    font-family: 'Zilla Slab', serif;
 }

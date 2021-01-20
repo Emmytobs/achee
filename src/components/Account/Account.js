@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 
 import SignUp from './SignUp/SignUp'
 import SignIn from './SignIn/SignIn'
+import ForgotPassword from './ForgotPassword/ForgotPassword'
+import ResetPassword from './ResetPassword/ResetPassword'
 
 function Account(props) {
     const searchQuery = useLocation().search
@@ -13,12 +15,13 @@ function Account(props) {
         } 
         else if (
             !searchQuery.includes('sign-in') &&
-            !searchQuery.includes('sign-up')
+            !searchQuery.includes('sign-up') &&
+            !searchQuery.includes('forgot-password') &&
+            !searchQuery.includes('reset-password')
         ) {
             props.history.push('/account?page=sign-in')
         }
     }, []);
-    
 
     if (searchQuery.includes('sign-in')) {
         return (
@@ -30,9 +33,20 @@ function Account(props) {
             <SignUp {...props} />
         )
     }
+    else if (searchQuery.includes('forgot-password')) {
+        return (
+            <ForgotPassword {...props} />
+        )
+    }
+    else if (searchQuery.includes('reset-password')) {
+        return (
+            <ResetPassword {...props} />
+        )
+    }
+
     return (
         <>
-        
+            
         </>
     )
 }

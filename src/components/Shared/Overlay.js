@@ -1,10 +1,15 @@
 import React from 'react'
-import './Overlay.css'
+import styles from './Overlay.module.css'
 
-function Overlay() {
+function Overlay(props) {
+    const closeModal = (e) => {
+        if (e.target.id === 'overlay') {
+            props.closeModalHandler(false);
+        }
+    }
     return (
-        <div class="overlay">
-            
+        <div id="overlay" class={`display-flex ${styles.overlay}`} onClick={closeModal} style={props.style}>
+            {props.children}
         </div>
     )
 }
