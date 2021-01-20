@@ -84,8 +84,7 @@
 .orContainer > .line {
     display: inline-block;
     height: 1px;
-    /* background: #D8D8D8; */
-    background: #000;
+    background: #D8D8D8;
     width: 40%
 }
 
