@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Form.module.css';
 
 import lock from '../images/lock.png';
@@ -19,12 +19,19 @@ export function Form({ children, width, marginAuto }) {
 
 
 export function Input(props) {
+    const [isPasswordShowing, setsPasswordShowing] = useState(false)
+    const toggleShowPasswordText = (e) => {
+        e.preventDefault();
+        setsPasswordShowing(!isPasswordShowing);
+    }
+
     return (
         <div className={styles.inputContainer}>
             <label htmlFor={props.id}>{props.labelText}</label>
             <div className={`display-flex ${styles.inputGroup}`}>
                 <img src={props.type === 'password' ? lock : message} alt={props.type === 'password' ? "lock" : "mailbox"} width='16px' height='16px' />
-                <input type={props.type} name={props.name} id={props.id} placeholder={props.placeholder}/>
+                <input type={isPasswordShowing ? 'text' : props.type} name={props.name} onChange={props.onChange} id={props.id} placeholder={props.placeholder}/>
+                {props.addShowPassword && <button type="button" className={styles.showPasswordBtn} onClick={toggleShowPasswordText}>{isPasswordShowing ? 'Hide' : 'Show'}</button>}
             </div>
         </div>
     )
@@ -32,9 +39,15 @@ export function Input(props) {
 
 export function Button(props) {
     return (
-        <button className={`display-flex ${styles.submitBtn}`}>
+        <button 
+            style={props.style}
+            className={`display-flex ${styles.submitBtn}`} 
+            type={props.type ? props.type : 'submit'}
+            onClick={props.onClick}
+        >
             <span>{props.buttonText}</span>
-            <img src={arrowRight} alt="arrow-right" width="18px" height="18px" />
+            {/* <img src={arrowRight} alt="arrow-right" width="18px" height="18px" /> */}
+            {props.rightIcon && <img src={arrowRight} alt="arrow-right" width="18px" height="18px" />}
         </button>
     )
 }

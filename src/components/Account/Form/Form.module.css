@@ -26,13 +26,20 @@
     outline: none;
 }
 
+.form .showPasswordBtn {
+    background: transparent;
+    color: var(--main-background-color);
+    border: none;
+    font-weight: 700;
+}
+
 /* A flex container */
-.form > button.submitBtn {
+.submitBtn {
     margin-top: 50px;
     width: 100%;
 }
 
-.form .submitBtn {
+.submitBtn {
     background: var(--main-background-color);
     color: #fff;
     border: 0;
@@ -40,11 +47,11 @@
     border-radius: 7px;
 }
 
-.form .submitBtn > span {
+.submitBtn > span {
     font-size: 1rem;
 }
 
-.form .submitBtn > img {
+.submitBtn > img {
     position: relative;
     left: 30%;
     display: inline-block;

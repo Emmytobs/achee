@@ -8,6 +8,8 @@ import facebook from '../images/facebook.png';
 import arrowRight from '../images/arrow-right.png';
 import lock from '../images/lock.png';
 import message from '../images/message.png';
+import leftSignInIcon from '../images/left-sign-in-icon.png';
+import rightSignInIcon from '../images/right-sign-in-icon.png';
 
 function SignIn(props) {
     const changeToSignUpView = (e) => {
@@ -20,6 +22,7 @@ function SignIn(props) {
 
     return (
         <div className={`display-flex ${styles.signinWrapper}`}>
+            <img src={leftSignInIcon} alt="Left Icon" className={styles.signInIcon} />
             <div className={styles.signinFormContainer}>
                 <div className={`display-flex ${styles.logo}`}>
                     <img src={acheeLogo} alt="Achee" width="13px" height="13px" />
@@ -78,6 +81,7 @@ function SignIn(props) {
                     <button onClick={changeToSignUpView} className={styles.switchToSignupBtn}>Sign up</button>
                 </div>
             </div>
+            <img src={rightSignInIcon} alt="Right Icon" className={styles.signInIcon} />
         </div>
     )
 }
