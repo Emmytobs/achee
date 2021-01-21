@@ -25,8 +25,8 @@ function SignIn(props) {
             <img src={leftSignInIcon} alt="Left Icon" className={styles.signInIcon} />
             <div className={styles.signinFormContainer}>
                 <div className={`display-flex ${styles.logo}`}>
-                    <img src={acheeLogo} alt="Achee" width="13px" height="13px" />
-                    <p>achee</p>
+                    <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
+                    <span>achee</span>
                 </div>
                 <h2 className={styles.greeting}>
                     Welcome Back! <br />

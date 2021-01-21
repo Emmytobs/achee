@@ -16,8 +16,8 @@ function SignUp(props) {
         <div className={`flex-container ${styles.loginWrapper}`}>
             <div className={styles.loginContainer}>
                 <div className={`display-flex ${styles.logo}`}>
-                    <img src={acheeLogo} alt="Achee" width="13px" height="13px" />
-                    <p>achee</p>
+                    <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
+                    <span>achee</span>
                 </div>
 
                 <div className={styles.formContainer}>
@@ -43,7 +43,7 @@ function SignUp(props) {
                         <span className={styles.line}></span>
                     </div>
 
-                    <Form width="385px">
+                    <Form>
                         <Input 
                             name="email"
                             type="text"

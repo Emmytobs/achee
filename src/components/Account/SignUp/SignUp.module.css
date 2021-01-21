@@ -17,12 +17,15 @@
 
 .logo {
     margin-left: 21%;
+    margin-top: 30px;
     width: 65px;
     justify-content: space-between;
 }
 
-.logo > p {
+.logo > span {
     color: #4E4F51;
+    margin-left: 7px;
+    font-size: 1.2em;
     font-weight: 700;
 }
 
@@ -33,7 +36,8 @@
 
 .formContainer > h2 {
     width: 385px;
-    font-family: 'Zilla Slab';
+    font-family: 'Bree Serif', serif;
+    font-weight: 300;
     margin: 0 auto;
     color: #4E4F51;
     font-size: 1.45em;
@@ -43,7 +47,7 @@
 /* Flex container */
 .oauthButtonsContainer {
     margin: 30px auto 0;
-    width: 385px;
+    width: 420px;
     justify-content: space-between;
 }
 
@@ -52,7 +56,7 @@
     padding: 12px 20px;
     border-radius: 4px;
     border: none;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .oauthButton > img {
@@ -77,7 +81,7 @@
 
 /* A flex container */
 .orContainer {
-    width: 385px;
+    width: 420px;
     margin: 20px auto 0;
     justify-content: space-between;
 
@@ -95,7 +99,7 @@
 }
 
 .formContainer form {
-    width: 385px;
+    width: 420px;
     margin: 0 auto;
 }
 
