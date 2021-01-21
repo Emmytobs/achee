@@ -58,28 +58,8 @@ function SignUp(props) {
                             id="password"
                             labelText="Create password"
                         />
-                        <Button buttonText="Signup for free" />
+                        <Button buttonText="Signup for free" rightIcon />
                     </Form>
-                    {/* <form>
-                        <div className={styles.inputContainer}>
-                            <label htmlFor="email">Email</label>
-                            <div className={`display-flex ${styles.inputGroup}`}>
-                                <img src={message} alt="mailbox" width='16px' height='16px' />
-                               <input type="text" name="email" id="email" placeholder="Enter your email"/>
-                            </div>
-                        </div>
-                        <div className={styles.inputContainer}>
-                            <label htmlFor="password">Create password</label>
-                            <div className={`display-flex ${styles.inputGroup}`}>
-                                <img src={lock} alt="padlock" width='16px' height='16px' />
-                                <input type="password" name="password" id="password" placeholder="Enter your password"/>
-                            </div>
-                        </div>
-                        <button className={`display-flex ${styles.submitBtn}`}>
-                            <span>Signup for free</span>
-                            <img src={arrowRight} alt="arrow-right" width="18px" height="18px" />
-                        </button>
-                    </form> */}
                     <div className={styles.switchToSigninContainer}>
                         <p>Already have an account?</p>
                         <button onClick={changeToSignIn} className={styles.switchToSigninBtn}>Sign in</button>

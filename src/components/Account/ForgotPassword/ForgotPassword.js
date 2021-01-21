@@ -40,7 +40,7 @@ function ForgotPassword(props) {
                         id="email"
                     />
                     <div className={styles.btnContainer}>
-                        <Button buttonText="Continue" />
+                        <Button buttonText="Continue" rightIcon />
                     </div>
                 </Form>
             </div>
