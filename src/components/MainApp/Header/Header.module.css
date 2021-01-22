@@ -1,0 +1,54 @@
+.header {
+    background: var(--main-background-color);
+    padding: 0 50px;
+    justify-content: space-between;
+}
+.logoContainer > * {
+    margin: 0;
+    padding: 0;
+}
+.logoContainer span {
+    margin-left: 12px;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #fff;
+}
+.navbar * {
+    margin: 0;
+    padding: 0;
+}
+.navbar > * {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resourcesTab > img {
+    margin-left: 7px;
+}
+
+.navbar > a {
+    padding: 0 10px;
+    margin: 0 3px;
+    color: #ffffffb3;
+    text-decoration: none;
+}
+
+
+.dropdownBtn > * {
+    margin: 0 4px;
+}
+
+.dropdownBtn > p {
+    color: #ffffffb3;
+}
+
+.upgradeButton {
+    border: none;
+    background: #ffffff1a;
+    color: #ffffffb3;
+    padding: 10px 12px;
+    border-radius: 5px;
+}
+
