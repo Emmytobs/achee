@@ -2,7 +2,7 @@
 /* 
     STYLING FOR THE HEADER
 */
-header {
+.header {
     /* The height makes the header jump up on mobile when the input is active (when the keyboard pops up) */
     /* height: 100vh; */
     padding-bottom: 30px;
@@ -14,7 +14,7 @@ header {
 }
 
 
-header nav {
+.header nav {
     width: 100%;
     padding: 20px 85px 0;
     display: flex;
@@ -24,29 +24,29 @@ header nav {
 }
 
 
-nav .logo {
+.header nav .logo {
     color: #fff;
     font-size: 2rem;
     cursor: pointer;
 }
-nav .logo > * {
+.header nav .logo > * {
     margin-right: 5px;
 }
-nav .logo img {
+.header nav .logo img {
     object-position: center;
     object-fit: cover;
 }
 
 @media screen and (max-width: 1000px) {
-    header nav {
+    .header header nav {
         display: block;
         padding: 20px 40px 0;
     }
-    nav.logo {
+    .header nav.logo {
         width: 200px;
         margin-right: auto;
     }
-    nav button {
+    .header nav button {
         display: none !important;
     }
 }

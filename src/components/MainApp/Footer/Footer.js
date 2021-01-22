@@ -4,6 +4,9 @@ import styles from './Footer.module.css';
 import { Button } from '../../Account/Form/Form';
 
 import acheeLogo from '../../Shared/icons/acheeLogo.png';
+import facebook from '../../Shared/icons/facebook-footer.png';
+import linkedIn from '../../Shared/icons/linked-in-footer.png';
+import twitter from '../../Shared/icons/twitter-footer.png';
 
 function Footer() {
     const currentYear = new Date().getFullYear();
@@ -49,7 +52,9 @@ function Footer() {
                     <div>
                         <p>Follow us on social media to find out the latest updates on our progress</p>
                         <div className={styles.socialMediaIcons}>
-                            
+                            <img src={facebook} alt="Facebook link" width="40px" height="40px" />
+                            <img src={linkedIn} alt="LinkedIn link" width="40px" height="40px" />
+                            <img src={twitter} alt="Twitter link" width="40px" height="40px" />
                         </div>
                     </div>
                 </div>

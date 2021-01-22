@@ -1,5 +1,5 @@
 import React from 'react'
-// import "./Header.css"
+import "./Header.css"
 import Icon from "../../Shared/Icon.js";
 
 import acheeLogo from "./acheeLogo.png";
@@ -10,7 +10,7 @@ import assetIconsDesktop from './Group 1500.png';
 
 function Header(props) {
     return (
-        <header>
+        <header class="header">
             <nav>
                 <div class="logo"><img src={acheeLogo} alt="Achee" /> achee</div>
                 <button class="join-waitlist-btn" onClick={props.showEmailModal}>Join the waitlist <Icon color="#fff" icon="arrow-right" addMargin/></button>

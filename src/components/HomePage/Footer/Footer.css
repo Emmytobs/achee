@@ -1,5 +1,5 @@
 /* Alsoe a flex container */
-footer {
+footer.footer {
     justify-content: space-between;
     align-items: center;
     width: 80%;
@@ -19,7 +19,7 @@ footer {
 }
 
 @media screen and (max-width: 1000px) {
-    footer {
+    footer.footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
