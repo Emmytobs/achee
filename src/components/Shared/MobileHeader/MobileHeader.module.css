@@ -1,10 +1,20 @@
 .mobileHeader {
+    width: 100%;
+    position: relative;
+    padding: 0 25px;
+    transition: all .4s ease-in;
+}
+.menuBar {
+    /* border-bottom: 3px solid #F7F7F8; */
     justify-content: space-between;
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 15px 25px;
-    border-bottom: 3px solid #F7F7F8
+    height: 70px;
+}
+.openMenuBtn {
+    background: transparent;
+    border: none;
 }
 .mobileLogo {
     width: 65px;
@@ -16,4 +26,16 @@
     font-weight: 700;
     margin-left: 7px;
     font-size: 1.2em;
+}
+
+.menuContainer {
+    width: 100%;
+    position: absolute;
+    /* top: -100vh; */
+    top: 72px;
+    left: 0;
+    /* left: 100%; */
+    min-height: calc(100vh - 72px);
+    background: var(--main-background-color);
+    transition: all .2s ease-out;
 }
