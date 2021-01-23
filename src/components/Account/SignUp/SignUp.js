@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './SignUp.module.css';
 
-import acheeLogo from '../images/acheeLogo.png';
+import acheeLogo from '../../Shared/icons/acheeLogo_blue.png';
 import google from '../images/google.png';
 import facebook from '../images/facebook.png';
+import menuIcon from '../../Shared/icons/menu-icon.png';
 
 import { Form, Input, Button } from '../Form/Form';
 import AsideContainer from '../AsideContainer/AsideContainer';
@@ -19,7 +20,9 @@ function SignUp(props) {
                     <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
                     <span>achee</span>
                 </div>
-                <span>menu</span>
+                <div className={styles.menu}>
+                    <img src={menuIcon} alt="Menu Icon"/>
+                </div>
             </header>
             <div className={styles.loginContainer}>
                 <div className={`display-flex ${styles.logo}`}>
@@ -50,10 +53,10 @@ function SignUp(props) {
                         <span className={styles.line}></span>
                     </div>
 
-                    <Form width="95%">
+                    <Form>
                         <Input 
                             name="email"
-                            type="text"
+                            type="email"
                             placeholder="Enter your email"
                             id="email"
                             labelText="Email"
@@ -65,7 +68,7 @@ function SignUp(props) {
                             id="password"
                             labelText="Create password"
                         />
-                        <Button buttonText="Signup for free" rightIcon />
+                        <Button buttonText="Signup for free" rightIcon rightIconStyle={{ left: '5%' }} />
                     </Form>
                     <div className={styles.switchToSigninContainer}>
                         <p>Already have an account?</p>
@@ -73,9 +76,7 @@ function SignUp(props) {
                     </div>
                 </div>
             </div>
-            {/* <div className={styles.asideContainer}> */}
-                <AsideContainer />
-            {/* </div> */}
+            <AsideContainer />
         </div>
     )
 }

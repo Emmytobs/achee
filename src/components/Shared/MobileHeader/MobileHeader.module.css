@@ -1,0 +1,19 @@
+.mobileHeader {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px 25px;
+    border-bottom: 3px solid #F7F7F8
+}
+.mobileLogo {
+    width: 65px;
+    justify-content: space-between;
+}
+
+.mobileLogo > span {
+    color: #4E4F51;
+    font-weight: 700;
+    margin-left: 7px;
+    font-size: 1.2em;
+}

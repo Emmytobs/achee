@@ -5,13 +5,9 @@ import lock from '../images/lock.png';
 import message from '../images/message.png';
 import arrowRight from '../images/arrow-right.png';
 
-export function Form({ children, width, marginAuto }) {
-    const formElementStyle = {
-        width,
-        marginAuto
-    } 
+export function Form({ children, style }) {
     return (
-        <form className={styles.form} style={formElementStyle}>
+        <form className={styles.form} style={style}>
             {children}
         </form>
     )
@@ -47,7 +43,7 @@ export function Button(props) {
         >
             <span>{props.buttonText}</span>
             {/* <img src={arrowRight} alt="arrow-right" width="18px" height="18px" /> */}
-            {props.rightIcon && <img src={arrowRight} alt="arrow-right" width="18px" height="18px" />}
+            {props.rightIcon && <img src={arrowRight} style={props.rightIconStyle} alt="arrow-right" width="18px" height="18px" />}
         </button>
     )
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styles from './Footer.module.css';
 import { Button } from '../../Account/Form/Form';
 
-import acheeLogo from '../../Shared/icons/acheeLogo.png';
+import acheeLogo from '../../Shared/icons/acheeLogo_white.png';
 import facebook from '../../Shared/icons/facebook-footer.png';
 import linkedIn from '../../Shared/icons/linked-in-footer.png';
 import twitter from '../../Shared/icons/twitter-footer.png';

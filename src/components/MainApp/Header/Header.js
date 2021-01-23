@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import styles from './Header.module.css'
 
-import acheeLogo from '../../Shared/icons/acheeLogo.png';
+import acheeLogo from '../../Shared/icons/acheeLogo_white.png';
 import arrowDown from '../../Shared/icons/arrow-down.png';
 import notificationIcon from '../../Shared/icons/Notification.png';
 import userDP from '../../Shared/icons/user-dp.png';

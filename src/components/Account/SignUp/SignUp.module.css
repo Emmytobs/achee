@@ -194,6 +194,10 @@
     .formContainer {
         width: 100%;
         margin: 30px auto 0;
+        padding: 0 10px;
+    }
+    .formContainer > form {
+        width: 95%;
     }
     .formContainer > h2 {
         width: 95%;
@@ -204,7 +208,7 @@
         background: #fff;
         min-height: 100vh;
     }
-    .loginWrapper > div:last-child {
+    .loginWrapper > *:last-child {
         min-height: 100vh;
         display: none;
     }

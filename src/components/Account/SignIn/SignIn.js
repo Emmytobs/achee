@@ -1,15 +1,15 @@
 import React from 'react'
+import { Form, Input, Button } from '../Form/Form';
+import MobileHeader from '../../Shared/MobileHeader/MobileHeader';
 
 import styles from './SignIn.module.css';
 
-import acheeLogo from '../images/acheeLogo.png';
+import acheeLogo from '../../Shared/icons/acheeLogo_blue.png';
 import google from '../images/google.png';
 import facebook from '../images/facebook.png';
-import arrowRight from '../images/arrow-right.png';
-import lock from '../images/lock.png';
-import message from '../images/message.png';
 import leftSignInIcon from '../images/left-sign-in-icon.png';
 import rightSignInIcon from '../images/right-sign-in-icon.png';
+import menuIcon from '../../Shared/icons/menu-icon.png';
 
 function SignIn(props) {
     const changeToSignUpView = (e) => {
@@ -22,13 +22,18 @@ function SignIn(props) {
 
     return (
         <div className={`display-flex ${styles.signinWrapper}`}>
-            <header className={`display-flex ${styles.mobileHeader}`}>
+            <div className={styles.mobileHeaderContainer}>
+                <MobileHeader />
+            </div>
+            {/* <header className={`display-flex ${styles.mobileHeader}`}>
                 <div className={`display-flex ${styles.mobileLogo}`}>
                     <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
                     <span>achee</span>
                 </div>
-                <span>menu</span>
-            </header>
+                <div className={styles.menu}>
+                    <img src={menuIcon} alt="Menu Icon"/>
+                </div>
+            </header> */}
             <img src={leftSignInIcon} alt="Left Icon" className={styles.signInIcon} />
             <div className={styles.signinFormContainer}>
                 <div className={`display-flex ${styles.logo}`}>
@@ -56,32 +61,26 @@ function SignIn(props) {
                     <span className={styles.orText}>OR</span>
                     <span className={styles.line}></span>
                 </div>
-
-                <form>
-                    <div className={styles.inputContainer}>
-                        <label htmlFor="email">Email</label>
-                        <div className={`display-flex ${styles.inputGroup}`}>
-                            <img src={message} alt="mailbox" width='16px' height='16px' />
-                            <input type="text" name="email" id="email" placeholder="Enter your registered email"/>
-                        </div>
-                    </div>
-                    <div className={styles.inputContainer}>
-                        <label htmlFor="password">Create password</label>
-                        <div className={`display-flex ${styles.inputGroup}`}>
-                            <img src={lock} alt="padlock" width='16px' height='16px' />
-                            <input type="password" name="password" id="password" placeholder="Enter your password"/>
-                        </div>
-                    </div>
-                    <div className={styles.forgotPasswordContainer}>
+                <Form>
+                    <Input 
+                        name="email"
+                        type="email"
+                        placeholder="Enter your registered email"
+                        id="email"
+                        labelText="Email"
+                    />
+                    <Input 
+                        name="password"
+                        type="password"
+                        placeholder="Enter your password"
+                        id="password"
+                        labelText="Create password"
+                    />
+                     <div className={styles.forgotPasswordContainer}>
                         <button className={styles.forgotPassword} onClick={changeToForgotPasswordView}>Forgot Password?</button>
                     </div>
-
-                    <button className={`display-flex ${styles.submitBtn}`}>
-                        <span>Signin account</span>
-                        <img src={arrowRight} alt="arrow-right" width="18px" height="18px" />
-                    </button>
-                </form>
-
+                    <Button buttonText="Signin account" rightIcon style={{marginTop: '25px'}} />
+                </Form>
                
                 <div className={styles.switchToSignupContainer}>
                     <p>First time here ?</p>

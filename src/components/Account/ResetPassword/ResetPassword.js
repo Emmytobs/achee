@@ -4,7 +4,7 @@ import AsideContainer from '../AsideContainer/AsideContainer'
 import Overlay from '../../Shared/Overlay'
 
 import styles from './ResetPassword.module.css'
-import acheeLogo from '../images/acheeLogo.png';
+import acheeLogo from '../../Shared/icons/acheeLogo_blue.png';
 
 import resetSuccess from '../images/reset-success.png'
 import resetFailure from '../images/reset-failure.png'
