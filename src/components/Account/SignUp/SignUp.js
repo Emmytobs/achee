@@ -14,6 +14,13 @@ function SignUp(props) {
     }
     return (
         <div className={`flex-container ${styles.loginWrapper}`}>
+            <header className={`display-flex ${styles.mobileHeader}`}>
+                <div className={`display-flex ${styles.mobileLogo}`}>
+                    <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
+                    <span>achee</span>
+                </div>
+                <span>menu</span>
+            </header>
             <div className={styles.loginContainer}>
                 <div className={`display-flex ${styles.logo}`}>
                     <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
@@ -43,7 +50,7 @@ function SignUp(props) {
                         <span className={styles.line}></span>
                     </div>
 
-                    <Form>
+                    <Form width="95%">
                         <Input 
                             name="email"
                             type="text"
@@ -66,7 +73,9 @@ function SignUp(props) {
                     </div>
                 </div>
             </div>
-            <AsideContainer />
+            {/* <div className={styles.asideContainer}> */}
+                <AsideContainer />
+            {/* </div> */}
         </div>
     )
 }
