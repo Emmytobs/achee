@@ -22,6 +22,13 @@ function SignIn(props) {
 
     return (
         <div className={`display-flex ${styles.signinWrapper}`}>
+            <header className={`display-flex ${styles.mobileHeader}`}>
+                <div className={`display-flex ${styles.mobileLogo}`}>
+                    <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
+                    <span>achee</span>
+                </div>
+                <span>menu</span>
+            </header>
             <img src={leftSignInIcon} alt="Left Icon" className={styles.signInIcon} />
             <div className={styles.signinFormContainer}>
                 <div className={`display-flex ${styles.logo}`}>

@@ -18,10 +18,9 @@ function App() {
       <Route path='/app' component={MainApp} />
       
       {/* <Route path='/404' component={Page404} /> */}
-
-      <Route path='*' component={Page404}>
+      <Route path='*' component={Page404} />
           {/* <Redirect to='404' /> */}
-      </Route>
+      {/* </Route> */}
     </Switch>
 
     </>

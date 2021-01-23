@@ -1,10 +1,14 @@
 import React from 'react'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 
 function CreatePortfolio() {
     return (
-        <div>
+        <>
+        <Header />
             Create Portfolio
-        </div>
+        <Footer />
+        </>
     )
 }
 

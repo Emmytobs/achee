@@ -1,10 +1,14 @@
 import React from 'react'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 
 function AddStockOrFund() {
     return (
-        <div>
+        <>
+        <Header />
             Add Stock Or Fund
-        </div>
+        <Footer />
+        </>
     )
 }
 

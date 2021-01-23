@@ -1,10 +1,14 @@
 import React from 'react'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 
 function AddCash() {
     return (
-        <div>
+        <>
+        <Header />
             Add Cash
-        </div>
+        <Footer />
+        </>
     )
 }
 
