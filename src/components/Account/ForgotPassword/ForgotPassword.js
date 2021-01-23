@@ -16,7 +16,7 @@ function ForgotPassword(props) {
 
     const [showEmailModal, setShowEmailModal] = useState(false);
 
-    const changeToSignIn = (e) => {
+    const changeToSignInView = (e) => {
         props.history.push('/account?page=sign-in');
     }
     
@@ -26,7 +26,7 @@ function ForgotPassword(props) {
                 <MobileHeader />
             </div>
             <div className={styles.mobileBackBtnContainer}>
-                <button onClick={changeToSignIn} >Go Back</button>
+                <button onClick={changeToSignInView} >Go Back</button>
             </div>
             <div className={styles.formContainer}>
                 <div className={`display-flex ${styles.logoAndBackBtnContainer}`}>
@@ -34,7 +34,7 @@ function ForgotPassword(props) {
                         <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
                         <span>achee</span>
                     </div>
-                    <button onClick={changeToSignIn} >Go Back</button>
+                    <button onClick={changeToSignInView} >Go Back</button>
                 </div>
 
 

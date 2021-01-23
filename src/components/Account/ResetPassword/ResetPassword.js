@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Form, Input, Button } from '../Form/Form';
 import AsideContainer from '../AsideContainer/AsideContainer'
 import Overlay from '../../Shared/Overlay'
+import MobileHeader from '../../Shared/MobileHeader/MobileHeader';
 
 import styles from './ResetPassword.module.css'
 import acheeLogo from '../../Shared/icons/acheeLogo_blue.png';
@@ -17,13 +18,19 @@ function ResetPassword(props) {
     }
     return (
         <div className={`display-flex ${styles.resetPasswordContainer}`}>
+            <div className={styles.mobileHeaderContainer}>
+                <MobileHeader />
+            </div>
+            <div className={styles.mobileBackBtnContainer}>
+                <button onClick={changeToSignInView} className={styles.backBtn} >Go Back</button>
+            </div>
             <div className={styles.formContainer}>
                 <div className={`display-flex ${styles.logoAndBackBtnContainer}`}>
                     <div className={`display-flex ${styles.logo}`}>
                         <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
                         <span>achee</span>
                     </div>
-                    <button className={styles.backbtn} onClick={changeToSignInView} >Go Back</button>
+                    <button className={styles.backBtn} onClick={changeToSignInView} >Go Back</button>
                 </div>
                 <div className={styles.textContainer}>
                     <h2>Reset Password</h2>
