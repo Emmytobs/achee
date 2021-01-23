@@ -1,10 +1,11 @@
 import React from 'react'
+import MobileHeader from '../../Shared/MobileHeader/MobileHeader';
+
 import styles from './SignUp.module.css';
 
 import acheeLogo from '../../Shared/icons/acheeLogo_blue.png';
 import google from '../images/google.png';
 import facebook from '../images/facebook.png';
-import menuIcon from '../../Shared/icons/menu-icon.png';
 
 import { Form, Input, Button } from '../Form/Form';
 import AsideContainer from '../AsideContainer/AsideContainer';
@@ -15,15 +16,9 @@ function SignUp(props) {
     }
     return (
         <div className={`flex-container ${styles.loginWrapper}`}>
-            <header className={`display-flex ${styles.mobileHeader}`}>
-                <div className={`display-flex ${styles.mobileLogo}`}>
-                    <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
-                    <span>achee</span>
-                </div>
-                <div className={styles.menu}>
-                    <img src={menuIcon} alt="Menu Icon"/>
-                </div>
-            </header>
+            <div className={styles.mobileHeaderContainer}>
+                <MobileHeader />
+            </div>
             <div className={styles.loginContainer}>
                 <div className={`display-flex ${styles.logo}`}>
                     <img src={acheeLogo} alt="Achee" width="16px" height="16px" />

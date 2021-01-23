@@ -7,7 +7,7 @@ import acheeLogo from '../../Shared/icons/acheeLogo_blue.png'
 import acheeLogoWhite from '../../Shared/icons/acheeLogo_white.png'
 import closeMenuIcon from '../../Shared/icons/close-menu-icon.png'
 function MobileHeader() {
-    const [isMenuShowing, setIsMenuShowing] = useState(true)
+    const [isMenuShowing, setIsMenuShowing] = useState(false)
     const toggleShowMenu = (e) => {
         setIsMenuShowing(!isMenuShowing)
     }

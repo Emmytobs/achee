@@ -155,7 +155,7 @@
 }
 
 @media screen and (max-width: 900px) {
-    header {
+    .header {
         padding-bottom: 60px;
     }
     .landing-page > img.small-overlay,

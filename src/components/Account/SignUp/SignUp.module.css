@@ -1,8 +1,12 @@
 /* A flex container */
 .loginWrapper {
     position: relative;
+    overflow-x: hidden;
     align-items: center;
     justify-content: center;
+}
+.mobileHeaderContainer > * {
+    display: none;
 }
 .mobileHeader {
     display: none;
@@ -136,6 +140,9 @@
         min-height: 100vh;
         display: block;
         background: #fff;
+    }
+    .mobileHeaderContainer > * {
+        display: block;
     }
     .mobileHeader {
         justify-content: space-between;
