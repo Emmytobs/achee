@@ -1,6 +1,7 @@
 .signinWrapper {
     background: var(--main-background-color);
     justify-content: space-between;
+    overflow-x: hidden;
     min-height: 100vh;
 }
 .mobileHeaderContainer > * {
