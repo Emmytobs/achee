@@ -63,7 +63,7 @@ function SignUp(props) {
                             id="password"
                             labelText="Create password"
                         />
-                        <Button buttonText="Signup for free" rightIcon rightIconStyle={{ left: '5%' }} />
+                        <Button buttonText="Signup for free" rightIcon />
                     </Form>
                     <div className={styles.switchToSigninContainer}>
                         <p>Already have an account?</p>

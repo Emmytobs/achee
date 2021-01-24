@@ -50,9 +50,7 @@ function ForgotPassword(props) {
                         labelText="Email"
                         id="email"
                     />
-                    <div className={styles.btnContainer}>
-                        <Button buttonText="Continue" rightIcon />
-                    </div>
+                    <Button buttonText="Continue" style={{ paddingTop: '15px', paddingBottom: '15px' }} rightIcon />
                 </Form>
             </div>
             <AsideContainer />

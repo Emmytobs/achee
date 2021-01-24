@@ -38,13 +38,14 @@
 }
 
 @media screen and (max-width: 1000px) {
-    .header header nav {
+    .header nav {
         display: block;
-        padding: 20px 40px 0;
+        padding: 20px 40px 30px;
     }
-    .header nav.logo {
+    .header nav .logo {
         width: 200px;
         margin-right: auto;
+        font-size: 1.4em;
     }
     .header nav button {
         display: none !important;
@@ -292,3 +293,5 @@
 /* 
     END OF STYLING FOR THE HEADER
  */
+
+ 

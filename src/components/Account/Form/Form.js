@@ -43,7 +43,7 @@ export function Button(props) {
         >
             <span>{props.buttonText}</span>
             {/* <img src={arrowRight} alt="arrow-right" width="18px" height="18px" /> */}
-            {props.rightIcon && <img src={arrowRight} style={props.rightIconStyle} alt="arrow-right" width="18px" height="18px" />}
+            {props.rightIcon && <img src={arrowRight} className={styles.rightIcon} style={props.rightIconStyle} alt="arrow-right" width="18px" height="18px" />}
         </button>
     )
 }
