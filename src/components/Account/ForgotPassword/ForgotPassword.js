@@ -22,12 +22,6 @@ function ForgotPassword(props) {
     
     return (
         <div className={`display-flex ${styles.forgotPasswordContainer}`}>
-            <div className={styles.mobileHeaderContainer}>
-                <MobileHeader />
-            </div>
-            <div className={styles.mobileBackBtnContainer}>
-                <button onClick={changeToSignInView} >Go Back</button>
-            </div>
             <div className={styles.formContainer}>
                 <div className={`display-flex ${styles.logoAndBackBtnContainer}`}>
                     <div className={`display-flex ${styles.logo}`}>

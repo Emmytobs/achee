@@ -16,9 +16,6 @@ function SignUp(props) {
     }
     return (
         <div className={`flex-container ${styles.loginWrapper}`}>
-            <div className={styles.mobileHeaderContainer}>
-                <MobileHeader />
-            </div>
             <div className={styles.loginContainer}>
                 <div className={`display-flex ${styles.logo}`}>
                     <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
