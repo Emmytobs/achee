@@ -6,6 +6,9 @@ import Account from './components/Account/Account.js';
 import MainApp  from './components/MainApp/MainApp.js';
 import Page404  from './components/Page404/Page404.js';
 
+import Landing  from './components/Landing/Landing.js';
+import AboutUs  from './components/AboutUs/AboutUs.js';
+
 import './App.css';
 
 function App() {
@@ -16,11 +19,12 @@ function App() {
       <Route path="/" exact component={HomePage} />
       <Route path='/account' exact component={Account} />
       <Route path='/app' component={MainApp} />
-      
-      {/* <Route path='/404' component={Page404} /> */}
+
+      <Route path='/landing' exact component={Landing} />
+      <Route path='/about' exact component={AboutUs} />
+
       <Route path='*' component={Page404} />
-          {/* <Redirect to='404' /> */}
-      {/* </Route> */}
+
     </Switch>
 
     </>

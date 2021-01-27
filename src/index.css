@@ -3,6 +3,8 @@
   --main-background-color: #805CF5;
   --secondary-background-color: #9C7DFF;
   --main-foreground-color: #FAFAFA;
+  
+  --gray-background-color : #F5F5F5;
 }
 
 * {

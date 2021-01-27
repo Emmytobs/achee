@@ -1,0 +1,19 @@
+.header {
+    width: 100%;
+    padding: 100px 60px 30px;
+    background: var(--main-background-color);
+}
+
+.pageTitle {
+    font-family: 'Bree', serif;
+    font-size: 1.7em;
+    color: #fff;
+    text-align: center;
+}
+
+.pageDescription {
+    font-size: 1.1em;
+    margin-top: 10px;
+    text-align: center;
+    color: #fff;
+}
