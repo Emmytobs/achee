@@ -1,0 +1,115 @@
+.createPortfolioContainer {
+    background: var(--gray-background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createPortfolioContainer > div {
+    width: 500px;
+    height: 500px;
+    margin: 120px auto;
+}
+.createPortfolioContainer img {
+    display: block;
+    margin: 0 auto;
+}
+
+.createPortfolioContainer h3 {
+    text-align: center;
+    font-family: 'Bree', serif;
+    margin-top: 20px;
+    color: var(--heading-text-color);
+    font-size: 1.5em;
+}
+
+.createPortfolioContainer p {
+    margin-top: 20px;
+    line-height: 30px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.buttonContainer {
+    display: grid;
+    grid-template-columns: 200px 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 25px;
+    grid-column-gap: 20px;
+    justify-content: center;
+    margin: 40px auto 0; 
+}
+
+.buttonContainer > button:hover {
+    color: #fff;
+    background: var(--main-background-color);
+}
+
+.buttonContainer > button {
+    padding: 10px 20px;
+    border: 1px solid var(--main-background-color);
+    border-radius: 5px;
+    background: transparent;
+    color: var(--main-background-color);
+    transition: all .1s ease-in;
+}
+
+.buttonContainer > .btnSpan  {
+    grid-column: 1 / 3;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.modalContainer {
+    width: 650px;
+    height: 570px;
+    padding: 10px 20px;
+    background: #fff;
+}
+
+.closeModalBtn {
+    cursor: pointer;
+}
+.closeModalBtn > img {
+    display: block;
+    margin: 10px 10px 0 auto;
+}
+
+.modalTitle,
+.modalDescription {
+    text-align: center;
+}
+
+.modalTitle {
+    color: var(--heading-text-color);
+    font-family: 'Bree', serif;
+    font-size: 1.5em;
+}
+
+.modalDescription {
+    color: var(--text-color);
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+.assetsList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+    margin-top: 50px;
+}
+
+.asset:hover {
+    border: 1px solid #aaa;
+}
+.asset > p {
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--heading-text-color);
+    text-align: center;
+}
+.asset > img {
+    display: block;
+    margin: 0 auto;
+}

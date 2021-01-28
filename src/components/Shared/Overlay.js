@@ -3,7 +3,10 @@ import styles from './Overlay.module.css'
 
 function Overlay(props) {
     const closeModal = (e) => {
-        if (e.target.id === 'overlay') {
+        // targetToCloseModal is used if you don't want to close the modal when any part of the overlay is clicked.
+        // This is useful for when you have a modal close button and you want only that button to close the modal
+        const targetId = props.targetToCloseModal ? props.targetToCloseModal : 'overlay';
+        if (e.target.id === targetId) {
             props.closeModalHandler(false);
         }
     }

@@ -41,7 +41,7 @@ export function Button(props) {
             type={props.type ? props.type : 'submit'}
             onClick={props.onClick}
         >
-            <span>{props.buttonText}</span>
+            <span className={props.buttonTextStyle}>{props.buttonText}</span>
             {/* <img src={arrowRight} alt="arrow-right" width="18px" height="18px" /> */}
             {props.rightIcon && <img src={arrowRight} className={styles.rightIcon} style={props.rightIconStyle} alt="arrow-right" width="18px" height="18px" />}
         </button>

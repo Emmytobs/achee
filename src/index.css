@@ -5,6 +5,9 @@
   --main-foreground-color: #FAFAFA;
   
   --gray-background-color : #F5F5F5;
+
+  --heading-text-color: #4B4C4E;
+  --text-color: #8f8e8e;
 }
 
 * {
