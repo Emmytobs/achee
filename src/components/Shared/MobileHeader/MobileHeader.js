@@ -6,7 +6,7 @@ import menuIcon from '../../Shared/icons/menu-icon.png';
 import acheeLogo from '../../Shared/icons/acheeLogo_blue.png'
 import acheeLogoWhite from '../../Shared/icons/acheeLogo_white.png'
 import closeMenuIcon from '../../Shared/icons/close-menu-icon.png'
-function MobileHeader() {
+function MobileHeader(props) {
     const [isMenuShowing, setIsMenuShowing] = useState(false)
     const toggleShowMenu = (e) => {
         setIsMenuShowing(!isMenuShowing)
@@ -14,7 +14,7 @@ function MobileHeader() {
 
     return (
         <header className={`${styles.mobileHeader}`}>
-            <div className={styles.menuBar}>
+            <div style={props.collapsedMenuStyle} className={styles.menuBar}>
                 <div className={`display-flex ${styles.mobileLogo}`}>
                     <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
                     <span>achee</span>
