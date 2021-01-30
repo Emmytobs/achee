@@ -1,3 +1,54 @@
 .container {
     background: var(--gray-background-color);
+    padding: 100px 0;
+    color: var(--heading-text-color);
+}
+.pageTitle {
+    margin-bottom: 32px;
+    color: var(--heading-text-color);
+    font-family: 'Bree Serif', serif;
+    font-weight: 400;
+}
+
+.importPortfolioContainer {
+    background: #fff;
+    width: 800px;
+    border-radius: 5px;
+    padding: 15px 30px;
+    color: var(--text-color);
+}
+.importPortfolioContainer > h3 {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.importPortfolioContainer > div {
+    margin-top: 40px;
+}
+.imgContainer {
+    background: #f5f5f5;
+    padding: 35px 30px;
+}
+
+.importPortfolioContainer > p > a {
+    text-transform: uppercase;
+}
+.uploadCSV {
+    align-self: stretch;
+    margin-left: 50px;
+}
+.uploadCSV > *{
+    display: block;
+}
+.uploadCSV > button {
+    margin-top: 30px;
+}
+
+.importPortfolioContainer > p {
+    font-weight: 700;
+    color: var(--heading-text-color);
+    padding: 18px 30px;
+    margin-top: 50px;
+    border-radius: 5px;
+    background: #f5f5f5;
+    line-height: 25px;
 }
