@@ -38,12 +38,19 @@
     display: inline-block;
     grid-area: upgrade-btn;
 }
-
+.btnContainer > button {
+    width: 250px;
+    padding: 15px 0;
+    color: #fff;
+    border: 1px solid var(--text-color);
+}
 .sitemap > h3,
 .company > h3,
 .support > h3,
 .socialMedia > h3 {
+    font-family: 'Bree Serif';
     font-size: 1.3em;
+    font-weight: 400;
     color: #fff;
 }
 .logo > span {

@@ -1,4 +1,6 @@
 import React, { useState, Component } from 'react'
+import { Link, useRouteMatch } from 'react-router-dom';
+
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import styles from './Homepage.module.css';
@@ -21,6 +23,8 @@ function Homepage(props) {
     const [isModalShowing, setIsModalShowing] = useState(false);
     const [isWalkthroughModalShowing, setIsWalkthroughModalShowing] = useState(true);
 
+    const { url } = useRouteMatch()
+
     const toggleModal = () => {
         setIsModalShowing(!isModalShowing);
     }
@@ -39,22 +43,32 @@ function Homepage(props) {
                             headerText="Manually add Assets To Your Portfolio"
                             text="Stocks, crypto, fixed income and cash reserve."
                             onClick={toggleModal}
+                            backgroundColor="#F6F3FF"
                         />
-                        <Card 
-                            image={<img src={spreadsheet} alt="Card Img" width="100px" height="98px" />}
-                            headerText="Import from a spreadsheet"
-                            text="Bringing in information from your sheet into Achee."
-                        />
-                        <Card 
-                            image={<img src={mailBox} alt="Card Img" width="100px" height="51px" />}
-                            headerText="Send Achee your trades via email"
-                            text="Trades can be sent to Achee via the official mail."
-                        />
-                        <Card 
-                            image={<img src={investmentCompany} alt="Card Img" width="100px" height="98px" />}
-                            headerText="Import from an investment company"
-                            text="Bringing in information from Your Sheet into Achee."
-                        />
+                        <Link to={`${url}/create-portfolio/spreadsheet`}>
+                            <Card 
+                                image={<img src={spreadsheet} alt="Card Img" width="100px" height="98px" />}
+                                headerText="Import from a spreadsheet"
+                                text="Bringing in information from your sheet into Achee."
+                                backgroundColor='#FFF2F7'
+                            />
+                        </Link>
+                        <Link>
+                            <Card 
+                                image={<img src={mailBox} alt="Card Img" width="100px" height="51px" />}
+                                headerText="Send Achee your trades via email"
+                                text="Trades can be sent to Achee via the official mail."
+                                backgroundColor="#FFF7EF"
+                            />
+                        </Link>
+                        <Link>
+                            <Card 
+                                image={<img src={investmentCompany} alt="Card Img" width="100px" height="98px" />}
+                                headerText="Import from an investment company"
+                                text="Bringing in information from Your Sheet into Achee."
+                                backgroundColor="#F5F7FF"
+                            />
+                        </Link>
                     </div>
 
                     <div className={styles.rightChild}>
@@ -133,7 +147,7 @@ export default Homepage;
 function Card(props) {
     return (
         <div className={styles.card} onClick={props.onClick}>
-            <div className={'display-flex '+ styles.cardImage}>
+            <div style={{ background: props.backgroundColor }} className={'display-flex '+ styles.cardImage}>
                 {props.image}
             </div>
             <div className={styles.cardText}>

@@ -8,6 +8,7 @@ import AddStockOrFund from './CreatePortfolio/AddStockOrFund/AddStockOrFund'
 import AddCryptocurrency from './CreatePortfolio/AddCryptocurrency/AddCryptocurrency'
 import AddFixedAsset from './CreatePortfolio/AddFixedAsset/AddFixedAsset'
 import AddCash from './CreatePortfolio/AddCash/AddCash'
+import ImportFromSpreadsheet from './CreatePortfolio/ImportFromSpreadsheet/ImportFromSpreadsheet'
 
 import Page404 from '../Page404/Page404'
 
@@ -24,6 +25,7 @@ function App() {
             <Route path={`${url}/create-portfolio/add-cryptocurrency`} exact component={AddCryptocurrency} />
             <Route path={`${url}/create-portfolio/add-fixed-asset`} exact component={AddFixedAsset} />
             <Route path={`${url}/create-portfolio/add-cash`} exact component={AddCash} />
+            <Route path={`${url}/create-portfolio/spreadsheet`} exact component={ImportFromSpreadsheet} />
 
             <Route path={`${url}/*`} component={Page404} />
         </Switch>

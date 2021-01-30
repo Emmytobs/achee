@@ -20,7 +20,7 @@ function Footer() {
                 </div>
 
                 <div className={styles.btnContainer}>
-                    <Button buttonText="Click to Update" style={{ background: 'rgba(0,0,0,0.2)', margin: '0'}} />
+                    <Button buttonText="Click to Upgrade" style={{ background: 'rgba(0,0,0,0.2)', margin: '0'}} />
                 </div>
 
                 <div className={`${styles.menuList} ${styles.sitemap}`}>

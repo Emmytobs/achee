@@ -87,3 +87,7 @@ p.bold-text {
   font-weight: 700;
 }
 /* End of Utility Styling */
+
+.inline-link {
+  color: var(--main-background-color);
+}
