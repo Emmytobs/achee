@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link, useRouteMatch } from 'react-router-dom';
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import Overlay from '../../Shared/Overlay'
@@ -11,14 +12,15 @@ import cash from './icons/cash.png';
 import fixedAsset from './icons/fixed_asset.png';
 import stocks from './icons/stocks.png';
 import closeModal from '../../Shared/icons/close_modal.png';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 
 function CreatePortfolio() {
     const [isModalShowing, setIsModalShowing] = useState(false);
+
     const toggleModal = () => {
         setIsModalShowing(!isModalShowing);
     }
-
     return (
         <>
         <Header />
@@ -46,13 +48,24 @@ function CreatePortfolio() {
                             />
                         </div> */}
                         <button onClick={toggleModal}>Manually add assets </button>
-                        <button onClick={toggleModal}>Import Assets from Spreadsheet </button>
-                        <button onClick={toggleModal} className={styles.btnSpan}>Send Stock and crypto trades via email </button>
+                        <button>Import Assets from Spreadsheet </button>
+                        <button className={styles.btnSpan}>Send Stock and crypto trades via email </button>
                     </div>
                 </div>
             </div>
-        {isModalShowing &&
-        <Overlay closeModalHandler={setIsModalShowing} targetToCloseModal="closeModal">
+        {isModalShowing && <AddPortfolioModal setIsModalShowing={setIsModalShowing} />}
+        <Footer />
+        </>
+    )
+}
+
+export default CreatePortfolio
+
+export function AddPortfolioModal(props) {
+    const { url } = useRouteMatch();
+    
+    return (
+        <Overlay closeModalHandler={props.setIsModalShowing} targetToCloseModal="closeModal">
             <div className={styles.modalContainer}>
                 <div className={styles.closeModalBtn}>
                     <img id='closeModal' src={closeModal} alt="" width="35px" height="35px" />
@@ -62,28 +75,25 @@ function CreatePortfolio() {
                 <p className={styles.modalDescription}>Which of your assets so you want to add to a portfolio?</p>
                     
                 <div className={styles.assetsList}>
-                    <div className={styles.asset}>
+                    {/* <Link to={`${url}/add-cryptocurrency`} className={styles.asset}> */}
+                    <Link to={`/app/create-portfolio/add-cryptocurrency`} className={styles.asset}>
                         <img src={cryptocurrency} alt="Asset" width="80px" height="80px" />
                         <p>Add Cryptocurrency</p>
-                    </div>
-                    <div className={styles.asset}>
+                    </Link>
+                    <Link to={`/app/create-portfolio/add-cash`} className={styles.asset}>
                         <img src={cash} alt="Asset" width="80px" height="80px" />
                         <p>Add Cash</p>
-                    </div>
-                    <div className={styles.asset}>
+                    </Link>
+                    <Link to={`/app/create-portfolio/add-fixed-asset`} className={styles.asset}>
                         <img src={fixedAsset} alt="Asset" width="80px" height="80px" />
                         <p>Add Fixed Asset</p>
-                    </div>
-                    <div className={styles.asset}>
+                    </Link>
+                    <Link to={`/app/create-portfolio/add-stocks-or-funds`} className={styles.asset}>
                         <img src={stocks} alt="Asset" width="80px" height="80px" />
                         <p>Add Stocks/Funds</p>
-                    </div>
+                    </Link>
                 </div>
             </div>
-        </Overlay>}
-        <Footer />
-        </>
+        </Overlay>
     )
 }
-
-export default CreatePortfolio

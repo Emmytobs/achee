@@ -4,9 +4,10 @@
   --secondary-background-color: #9C7DFF;
   --main-foreground-color: #FAFAFA;
   
-  --gray-background-color : #F5F5F5;
+  --gray-background-color : #E5E5E5;
 
-  --heading-text-color: #4B4C4E;
+  /* --heading-text-color: #4B4C4E; */
+  --heading-text-color: #4E4F51;
   --text-color: #8f8e8e;
 }
 

@@ -16,8 +16,8 @@ function Header() {
                 <span>achee</span>
             </div>
             <nav className={`display-flex ${styles.navbar}`}>
-                <Link to="">Home</Link>
-                <Link to="">Portfolio</Link>
+                <Link to="/app">Home</Link>
+                <Link to="/app/create-portfolio">Portfolio</Link>
                 <Link to="" className={styles.resourcesTab}>Resources <img src={arrowDown} alt="Arrow Down"/></Link>
                 <Link to="">Contact Us</Link>
                 <Link><button className={styles.upgradeButton}>Upgrade</button></Link>

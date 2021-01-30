@@ -1,0 +1,220 @@
+.homepageContainer {
+    background: var(--gray-background-color);
+    padding: 15px 25px;
+}
+
+.blurb {
+    text-align: left;
+    width: 95%;
+    margin: 50px auto 50px;
+}
+.blurb > h2 {
+    font-size: 2em;
+    text-transform: capitalize;
+    color: var(--heading-text-color);
+    font-family: 'Bree', serif;
+    font-weight: 700;
+}
+.blurb > p {
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.flexContainer {
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 auto 100px;
+}
+.leftChild {
+    flex: 1;
+}
+.rightChild {
+    margin-left: 40px;
+    flex: 1;
+    align-self: stretch;
+}
+.card {
+    cursor: pointer;
+}
+.card:not(.card:first-child) {
+    border-radius: 4px;
+    margin-top: 30px;
+}
+.cardImage {
+    width: 100%;
+    padding: 30px 0;
+    height: 210px;
+    /* background-color: #F6F3FF; */
+    background-color: #eeebf8;
+}
+.cardImage > img {
+    display: block;
+    margin: 0 auto;
+}
+.cardText {
+    background: #fff;
+    padding: 30px 22px;
+}
+.cardText h3 {
+    color: var(--heading-text-color);
+    font-weight: 700;
+    font-size: 1.2em;
+}
+.cardText p {
+    margin: 5px 0 0 0 ;
+    color: var(--text-color);
+    font-size: 1.05em;
+}
+
+.accountUpgradeStatus {
+    padding: 30px 25px;
+    border-radius: 7px;
+    background: #fff;
+    justify-content: space-between;
+}
+.imgContainer {
+    background: #F5F7FF;
+    align-self: stretch;
+    flex: 0 0 30%;
+}
+.upgradeContainer {
+    margin-left: 20px;
+}
+.upgradeContainer > h3 {
+    font-weight: 700;
+    color: var(--heading-text-color);
+    font-size: 1.4em;
+}
+
+.upgradeContainer > p {
+    line-height: 25px;
+    color: var(--text-color);
+}
+.upgradeContainer > button {
+    padding: 13px 60px;
+    font-size: 1.05em;
+}
+
+.learn {
+    background: var(--main-background-color);
+    margin-top: 20px;
+    padding: 15px 35px;
+    justify-content: space-between;
+    border-radius: 7px;
+}
+.learn > .imgContainer {
+    background: #997DF7;
+    padding: 10px 0;
+    border-radius: 7px;
+}
+.learn > h3 {
+    margin-right: 25px;
+    line-height: 30px;
+    color: #fff;
+    font-family: 'Bree', serif;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.newsContainer {
+    margin-top: 20px;
+    background: #fff;
+    padding: 18px 20px;
+    border-radius: 7px;
+}
+.newsContainer > h2 {
+    font-size: 1.5em;
+    /* width: 90%;
+    margin: 0 auto; */
+    color: var(--heading-text-color);
+    font-weight: 700;
+    padding: 10px 0;
+    border-bottom: 1px solid #eeebf8;
+}
+.news {
+    margin-top: 30px;
+}
+.news > h3 {
+    font-size: 1.2em;
+    margin-top: 25px;
+    color: var(--heading-text-color);
+    font-weight: 700;
+}
+.timeAndTags {
+    justify-content: space-between;
+}
+.timeAndTags > p {
+    font-size: .9em;
+    color: var(--text-color);
+}
+.tags > span {
+    margin-left: 10px;
+    padding: 1px 7px;
+    font-size: .7em;
+    color: var(--heading-text-color);
+    background: gray;
+}
+.newsContent > p {
+    color: var(--text-color);
+    margin: 0;
+    line-height: 25px;
+}
+
+/* Carousel Container */
+.carouselContainer {
+    background: #fff;
+    width: 700px;
+    height: 380px;
+    padding: 20px 30px;
+}
+.closeModalIcon {
+    display: block;
+    cursor: pointer;
+    margin-left: auto;
+}
+.page {
+    background: #fff;
+    width: 100%;
+    min-height: 200px;
+}
+.page h2 {
+    color: var(--heading-text-color);
+    font-size: 1.6em;
+    text-align: center;
+}
+.page p {
+    color: var(--text-color);
+    font-size: 1.1em;
+    text-align: center;
+}
+.progressBarContainer {
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.progressBars {
+    /* background: #000; */
+    padding: 10px 0;
+    flex: 0 0 200px;
+    height: 10px;
+}
+.progressBars > span {
+    display: inline-block;
+    border-radius: 10px;
+    width: 60px;
+    height: 12px;
+    padding: 3px 0;
+    margin-left: 5px;
+    background: #F6F3FF;
+}
+
+.backButton {
+    border: 1px solid var(--main-background-color);
+    background: transparent;
+    border-radius: 5px;
+}
+
+.buttonContainer > button {
+    padding: 12px 40px;
+    font-size: 1em;
+    margin-right: 20px;
+}

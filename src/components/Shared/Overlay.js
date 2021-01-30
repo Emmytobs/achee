@@ -6,6 +6,7 @@ function Overlay(props) {
         // targetToCloseModal is used if you don't want to close the modal when any part of the overlay is clicked.
         // This is useful for when you have a modal close button and you want only that button to close the modal
         const targetId = props.targetToCloseModal ? props.targetToCloseModal : 'overlay';
+        // console.log(e.target.id)
         if (e.target.id === targetId) {
             props.closeModalHandler(false);
         }
