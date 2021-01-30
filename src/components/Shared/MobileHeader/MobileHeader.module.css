@@ -4,6 +4,10 @@
     overflow-x: hidden;
     min-height: 100vh;
 }
+
+.collapsedMenuBar {
+    background: #fff;
+}
 .menuBar {
     border-bottom: 3px solid #F7F7F8;
     justify-content: space-between;

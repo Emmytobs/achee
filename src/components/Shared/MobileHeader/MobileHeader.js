@@ -14,7 +14,7 @@ function MobileHeader(props) {
 
     return (
         <header className={`${styles.mobileHeader}`}>
-            <div style={props.collapsedMenuStyle} className={styles.menuBar}>
+            <div style={props.collapsedMenuStyle} className={`${styles.collapsedMenuBar} ${styles.menuBar}`}>
                 <div className={`display-flex ${styles.mobileLogo}`}>
                     <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
                     <span>achee</span>
