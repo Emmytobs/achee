@@ -35,18 +35,6 @@ function CreatePortfolio(props) {
                     </p>
 
                     <div className={styles.buttonContainer}>
-                        {/* <Button 
-                            // style={{ width: 'auto', height: 'auto', paddingTop: 0, margin: 0 }}
-                            buttonText="Manually add assets"
-                        />
-                        <Button 
-                            buttonText="Import Assets from Spreadsheet"
-                        />
-                        <div className={styles.btnSpan}>
-                            <Button 
-                                buttonText="Send Stock and crypto trades via email "
-                            />
-                        </div> */}
                         <button onClick={toggleModal}>Manually add assets </button>
                         <button>Import Assets from Spreadsheet </button>
                         <button className={styles.btnSpan}>Send Stock and crypto trades via email </button>

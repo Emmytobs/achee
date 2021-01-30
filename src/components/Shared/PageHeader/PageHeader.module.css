@@ -5,8 +5,9 @@
 }
 
 .pageTitle {
-    font-family: 'Bree', serif;
+    font-family: 'Bree Serif', serif;
     font-size: 1.7em;
+    font-weight: 500;
     color: #fff;
     text-align: center;
 }

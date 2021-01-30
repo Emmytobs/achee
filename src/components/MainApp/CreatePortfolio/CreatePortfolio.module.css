@@ -17,9 +17,10 @@
 
 .createPortfolioContainer h3 {
     text-align: center;
-    font-family: 'Bree', serif;
+    font-family: 'Bree Serif', serif;
     margin-top: 20px;
     color: var(--heading-text-color);
+    font-weight: 500;
     font-size: 1.5em;
 }
 
@@ -82,7 +83,8 @@
 
 .modalTitle {
     color: var(--heading-text-color);
-    font-family: 'Bree', serif;
+    font-family: 'Bree Serif', serif;
+    font-weight: 500;
     font-size: 1.5em;
 }
 
@@ -112,4 +114,51 @@
 .asset > img {
     display: block;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+    .createPortfolioContainer > div {
+        width: 70%;
+    }
+    .createPortfolioContainer h3 {
+        font-size: 1.2em;
+    }
+    .createPortfolioContainer p {
+        font-size: 1em;
+    }
+    .buttonContainer {
+        display: block;
+    }
+    .buttonContainer > button {
+        display: block;
+        padding: 7px 15px;
+        font-size: .7em;
+        margin: 20px auto;
+    }
+
+    .modalContainer {
+        width: 95%;
+        height: 70vh;
+        overflow-y: auto;
+        padding: 10px 20px;
+        background: #fff;
+    }
+    
+    .modalTitle {
+        font-size: 1.2em;
+    }
+    
+    .assetsList {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 20px;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .createPortfolioContainer > div {
+        width: 90%;
+    }
 }

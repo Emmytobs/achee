@@ -26,7 +26,8 @@ function MobileHeader(props) {
 
             {/* Menu Items Container */}
             <div
-                style={{ left: isMenuShowing ? 0 : '100%', visibility: isMenuShowing ? 'visible' : 'hidden' }}
+                // style={{ left: isMenuShowing ? 0 : '100%', visibility: isMenuShowing ? 'visible' : 'hidden' }}
+                style={{ opacity: isMenuShowing ? 1 : 0}}
                 className={styles.menuContainer}>
                 <div className={styles.menuBar}>
                     <div className={`display-flex ${styles.mobileLogo}`}>
