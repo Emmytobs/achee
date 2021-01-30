@@ -11,7 +11,7 @@
 }
 
 .firstRow > h2 {
-    font-family: 'Bree', serif;
+    font-family: 'Bree Serif', serif;
     font-size: 1.5em;
     color: var(--heading-text-color);
     flex: 0 0 35%;

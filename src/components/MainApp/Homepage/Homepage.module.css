@@ -12,7 +12,7 @@
     font-size: 2em;
     text-transform: capitalize;
     color: var(--heading-text-color);
-    font-family: 'Bree', serif;
+    font-family: 'Bree Serif', serif;
     font-weight: 700;
 }
 .blurb > p {
@@ -111,7 +111,7 @@
     margin-right: 25px;
     line-height: 30px;
     color: #fff;
-    font-family: 'Bree', serif;
+    font-family: 'Bree Serif', serif;
     font-size: 1.3em;
     font-weight: 500;
 }
