@@ -10,10 +10,9 @@
 }
 .blurb > h2 {
     font-size: 2em;
-    text-transform: capitalize;
     color: var(--heading-text-color);
     font-family: 'Bree Serif', serif;
-    font-weight: 700;
+    font-weight: 500;
 }
 .blurb > p {
     font-size: 1em;

@@ -15,7 +15,7 @@ import closeModal from '../../Shared/icons/close_modal.png';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 
-function CreatePortfolio() {
+function CreatePortfolio(props) {
     const [isModalShowing, setIsModalShowing] = useState(false);
 
     const toggleModal = () => {
@@ -23,7 +23,7 @@ function CreatePortfolio() {
     }
     return (
         <>
-        <Header />
+        <Header {...props} />
             <div className={styles.createPortfolioContainer}>
                 <div>
                     <img src={briefcase} alt="Briefcase" width="120px"  height="120px" />

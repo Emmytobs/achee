@@ -17,7 +17,7 @@ import learn from './images/learn.png';
 import upgrade from './images/upgrade.png';
 import closeModal from '../../Shared/icons/close_modal.png';
 
-function Homepage() {
+function Homepage(props) {
     const [isModalShowing, setIsModalShowing] = useState(false);
     const [isWalkthroughModalShowing, setIsWalkthroughModalShowing] = useState(true);
 
@@ -26,7 +26,7 @@ function Homepage() {
     }
     return (
         <>
-        <Header />
+        <Header {...props} />
             <div className={styles.homepageContainer}>
                 <div className={styles.blurb}>
                     <h2>Integrate your portfolio</h2>
