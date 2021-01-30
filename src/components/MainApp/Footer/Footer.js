@@ -20,21 +20,21 @@ function Footer() {
                 </div>
 
                 <div className={styles.btnContainer}>
-                    <Button buttonText="Click to Upgrade" style={{ background: 'rgba(0,0,0,0.2)', margin: '0'}} />
+                    <Link to="/app/upgrade"><Button buttonText="Click to Upgrade" style={{ background: 'rgba(0,0,0,0.2)', margin: '0'}} /></Link>
                 </div>
 
                 <div className={`${styles.menuList} ${styles.sitemap}`}>
                     <h3>Sitemap</h3>
                     <ul>
-                        <li><Link>Home</Link></li>
-                        <li><Link>Portfolio</Link></li>
+                        <li><Link onClick={() => window.location = '/app'}>Home</Link></li>
+                        <li><Link onClick={() => window.location = '/app/create-portfolio'}>Portfolio</Link></li>
                         <li><Link>Learn</Link></li>
                     </ul>
                 </div>
                 <div className={`${styles.menuList} ${styles.company}`}>
                     <h3>Company</h3>
                     <ul>
-                        <li><Link>About Us</Link></li>
+                        <li><Link to="/about">About Us</Link></li>
                         <li><Link>Terms of Use</Link></li>
                         <li><Link>Privacy Policy</Link></li>
                     </ul>
