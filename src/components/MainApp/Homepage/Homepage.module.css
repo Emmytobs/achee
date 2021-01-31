@@ -19,18 +19,24 @@
     color: var(--text-color);
 }
 
-.flexContainer {
-    justify-content: space-between;
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 270px 120px 1fr;
+    grid-template-areas: 
+        'card accountUpgradeStatus'
+        'card learn'
+        'card news';
+    grid-gap: 20px 30px;
     width: 95%;
     margin: 0 auto 100px;
 }
-.leftChild {
-    flex: 1;
+.cardContainer > a {
+    text-decoration: none;
+    color: initial;
 }
-.rightChild {
-    margin-left: 40px;
-    flex: 1;
-    align-self: stretch;
+.cardContainer {
+    grid-area: card;
 }
 .card {
     cursor: pointer;
@@ -66,6 +72,7 @@
 }
 
 .accountUpgradeStatus {
+    grid-area: accountUpgradeStatus;
     padding: 30px 25px;
     border-radius: 7px;
     background: #fff;
@@ -95,6 +102,7 @@
 }
 
 .learn {
+    grid-area: learn;
     background: var(--main-background-color);
     margin-top: 20px;
     padding: 15px 35px;
@@ -116,6 +124,8 @@
 }
 
 .newsContainer {
+    grid-area: news;
+    grid-row: 1 / 4;
     margin-top: 20px;
     background: #fff;
     padding: 18px 20px;
@@ -258,5 +268,89 @@
         border: 1px solid var(--main-background-color);
         background: transparent;
         border-radius: 5px;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .gridContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 270px 120px 1fr;
+        grid-template-areas: 
+            'accountUpgradeStatus accountUpgradeStatus'
+            'learn learn'
+            'card news';
+        grid-gap: 20px 30px;
+        width: 95%;
+        margin: 0 auto 100px;
+    }
+    .upgradeContainer > button {
+        padding: auto 10px;;
+    }
+    .upgradeContainer > h3 {
+        font-size: 1.3em;
+    }
+    .learn {
+        grid-area: learn;
+        background: var(--main-background-color);
+        margin-top: 20px;
+        padding: 15px 10px;
+        justify-content: space-around;
+        border-radius: 7px;
+    }
+    .learn > .imgContainer {
+        background: #997DF7;
+        padding: 10px 0;
+        border-radius: 7px;
+    }
+    .imgContainer > img {
+        width: 40px;
+        height: 40px
+    }
+    .learn > h3 {
+        margin-left: 25px;
+        line-height: 25px;
+        color: #fff;
+        font-family: 'Bree Serif', serif;
+        font-size: 1em;
+        font-weight: 500;
+    }   
+}
+
+@media screen and (max-width: 700px) {
+    .gridContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 270px 120px 1fr 1fr;
+        grid-template-areas: 
+            'accountUpgradeStatus'
+            'learn'
+            'card'
+            'news';
+        grid-gap: 20px 30px;
+        width: 95%;
+        margin: 0 auto 100px;
+    }
+    .upgradeContainer > button {
+        padding: 15px 0;
+        width: 100%;
+        font-size: 1em;
+    }
+    .upgradeContainer > h3 {
+        font-size: 1.1em;
+    }
+    .upgradeContainer > p {
+        font-size: 1em;
+        line-height: 20px;
+    }
+    .learn {
+        justify-content: space-between;
+    }
+    .learn > h3 {
+        flex: 1;
+    }
+    .newsContainer {
+        grid-row-start: 4;
     }
 }

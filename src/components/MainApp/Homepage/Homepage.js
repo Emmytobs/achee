@@ -36,8 +36,8 @@ function Homepage(props) {
                     <h2>Integrate your portfolio</h2>
                     <p>Gain more insights into your investments with Achee</p>
                 </div>
-                <div className={'display-flex '+ styles.flexContainer}>
-                    <div className={styles.leftChild}>
+                <div className={'display-flex '+ styles.gridContainer}>
+                    <div className={styles.cardContainer}>
                         <Card 
                             image={<img src={addPortfolio} alt="Card Img" width="100px" height="98px" />}
                             headerText="Manually add Assets To Your Portfolio"
@@ -70,65 +70,60 @@ function Homepage(props) {
                             />
                         </Link>
                     </div>
-
-                    <div className={styles.rightChild}>
-                        <div className={'display-flex '+ styles.accountUpgradeStatus}>
-                            <div className={'display-flex '+ styles.imgContainer}>
-                                <img src={upgrade} alt="Upgrade Icon" width="80px" height="84px" />
+                    <div className={'display-flex '+ styles.accountUpgradeStatus}>
+                        <div className={'display-flex '+ styles.imgContainer}>
+                            <img src={upgrade} alt="Upgrade Icon" width="80px" height="84px" />
+                        </div>
+                        <div className={styles.upgradeContainer}>
+                            <h3>Upgrade your account</h3>
+                            <p>You can get more and more out of upgrading to premium. Click on the upgrade button below to get all features.</p>
+                            <PrimaryButton>Upgrade now</PrimaryButton>
+                        </div>
+                    </div>
+                    <div className={'display-flex '+ styles.learn}>
+                        <div className={'display-flex '+ styles.imgContainer}>
+                            <img src={learn} alt="Learn" width="80px" height="80px" />
+                        </div>
+                        <h3>
+                            Learn and upgrade your knowledge <br />
+                            on investment.
+                        </h3>
+                    </div>
+                    <div className={styles.newsContainer}>
+                        <h2>News Feed</h2>
+                        <div className={styles.news}>
+                            <h3>How safe is it to switch and space COVID-19 vaccine doses?</h3>
+                            <div className={'display-flex '+ styles.timeAndTags}>
+                                <p>12 minutes ago</p>
+                                <div className={styles.tags}>
+                                    <span className={styles.tag}>KBH</span>
+                                    <span className={styles.tag}>JPM</span>
+                                    <span className={styles.tag}>PNC</span>
+                                    <span className={styles.tag}>+12</span>
+                                </div>
                             </div>
-                            <div className={styles.upgradeContainer}>
-                                <h3>Upgrade your account</h3>
-                                <p>You can get more and more out of upgrading to premium. Click on the upgrade button below to get all features.</p>
-                                <PrimaryButton>Upgrade now</PrimaryButton>
+                            <div className={styles.newsContent}>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe repudiandae corporis vitae quas aspernatur! Reiciendis voluptatem cupiditate tempore similique ex quibusdam debitis, eius officia quis temporibus in velit, eaque pariatur.
+                                </p>
                             </div>
                         </div>
-                        <div className={'display-flex '+ styles.learn}>
-                            {/* <img src={learn} alt="Learn" width="80px" height="80px" /> */}
-                            <div className={'display-flex '+ styles.imgContainer}>
-                                <img src={learn} alt="Learn" />
-                            </div>
-                            <h3>
-                                Learn and upgrade your knowledge <br />
-                                on investment.
-                            </h3>
-                        </div>
-                        <div className={styles.newsContainer}>
-                            <h2>News Feed</h2>
-                            <div className={styles.news}>
-                                <h3>How safe is it to switch and space COVID-19 vaccine doses?</h3>
-                                <div className={'display-flex '+ styles.timeAndTags}>
-                                    <p>12 minutes ago</p>
-                                    <div className={styles.tags}>
-                                        <span className={styles.tag}>KBH</span>
-                                        <span className={styles.tag}>JPM</span>
-                                        <span className={styles.tag}>PNC</span>
-                                        <span className={styles.tag}>+12</span>
-                                    </div>
-                                </div>
-                                <div className={styles.newsContent}>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe repudiandae corporis vitae quas aspernatur! Reiciendis voluptatem cupiditate tempore similique ex quibusdam debitis, eius officia quis temporibus in velit, eaque pariatur.
-                                    </p>
+                        <div className={styles.news}>
+                            <h3>How safe is it to switch and space COVID-19 vaccine doses?</h3>
+                            <div className={'display-flex '+ styles.timeAndTags}>
+                                <p>12 minutes ago</p>
+                                <div className={styles.tags}>
+                                    <span className={styles.tag}>KBH</span>
+                                    <span className={styles.tag}>JPM</span>
+                                    <span className={styles.tag}>PNC</span>
+                                    <span className={styles.tag}>+12</span>
                                 </div>
                             </div>
-                            <div className={styles.news}>
-                                <h3>How safe is it to switch and space COVID-19 vaccine doses?</h3>
-                                <div className={'display-flex '+ styles.timeAndTags}>
-                                    <p>12 minutes ago</p>
-                                    <div className={styles.tags}>
-                                        <span className={styles.tag}>KBH</span>
-                                        <span className={styles.tag}>JPM</span>
-                                        <span className={styles.tag}>PNC</span>
-                                        <span className={styles.tag}>+12</span>
-                                    </div>
-                                </div>
-                                <div className={styles.newsContent}>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe repudiandae corporis vitae quas aspernatur! Reiciendis voluptatem cupiditate tempore similique ex quibusdam debitis, eius officia quis temporibus in velit, eaque pariatur.
-                                    </p>
-                                </div>
+                            <div className={styles.newsContent}>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe repudiandae corporis vitae quas aspernatur! Reiciendis voluptatem cupiditate tempore similique ex quibusdam debitis, eius officia quis temporibus in velit, eaque pariatur.
+                                </p>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
