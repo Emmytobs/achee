@@ -9,6 +9,7 @@ import TermsOfUseAndPrivacyPolicy  from './components/TermsOfUseAndPrivacyPolicy
 
 import Landing  from './components/Landing/Landing.js';
 import AboutUs  from './components/AboutUs/AboutUs.js';
+import Contact  from './components/Contact/Contact.js';
 
 import './App.css';
 
@@ -24,6 +25,7 @@ function App() {
       <Route path='/landing' exact component={Landing} />
       <Route path='/about' exact component={AboutUs} />
       <Route path='/terms' exact component={TermsOfUseAndPrivacyPolicy} />
+      <Route path='/contact' exact component={Contact} />
 
       <Route path='*' component={Page404} />
 

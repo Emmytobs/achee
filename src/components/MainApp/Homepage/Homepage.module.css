@@ -291,6 +291,16 @@
         width: 95%;
         margin: 0 auto 100px;
     }
+    .cardText h3 {
+        color: var(--heading-text-color);
+        font-weight: 700;
+        font-size: 1.1em;
+    }
+    .cardText p {
+        margin: 5px 0 0 0 ;
+        color: var(--text-color);
+        font-size: 1em;
+    }
     .upgradeContainer > button {
         padding: auto 10px;;
     }
