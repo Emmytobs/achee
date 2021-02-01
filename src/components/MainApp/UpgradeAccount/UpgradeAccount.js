@@ -9,7 +9,7 @@ function UpgradeAccount() {
         <>
           <Header />
             <div className={styles.upgradeContainer}>
-
+              
             </div>
           <Footer />  
         </>

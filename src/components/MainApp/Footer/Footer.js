@@ -34,16 +34,16 @@ function Footer() {
                 <div className={`${styles.menuList} ${styles.company}`}>
                     <h3>Company</h3>
                     <ul>
-                        <li><Link to="/about">About Us</Link></li>
-                        <li><Link>Terms of Use</Link></li>
-                        <li><Link>Privacy Policy</Link></li>
+                        <li><Link onClick={() => window.location = '/about'}>About Us</Link></li>
+                        <li><Link onClick={() => window.location = '/terms'}>Terms of Use</Link></li>
+                        <li><Link onClick={() => window.location = '/terms'}>Privacy Policy</Link></li>
                     </ul>
                 </div>
                 <div className={`${styles.menuList} ${styles.support}`}>
                     <h3>Support</h3>
                     <ul>
                         <li><Link>FAQ</Link></li>
-                        <li><Link>Referrals</Link></li>
+                        <li><Link onClick={() => window.location = '/app/referrals'}>Referrals</Link></li>
                         <li><Link>Contact Us</Link></li>
                     </ul>
                 </div>

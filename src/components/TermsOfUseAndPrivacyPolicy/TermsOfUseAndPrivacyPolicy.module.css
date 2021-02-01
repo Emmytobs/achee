@@ -1,0 +1,48 @@
+.container {
+    background: var(--gray-background-color);
+}
+
+.termsOfService,
+.privacyPolicy {
+    width: 90%;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+}
+
+.termsOfService > h3,
+.privacyPolicy > h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--heading-text-color);
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ededed;
+} 
+
+.termsOfService > p,
+.privacyPolicy > p {
+    font-size: 1em;
+    line-height: 40px;
+    margin: 20px 0 0 0;
+    color: var(--text-color);
+} 
+
+@media screen and (max-width: 900px) {
+    .termsOfService,
+    .privacyPolicy {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .termsOfService > h3,
+    .privacyPolicy > h3 {
+        font-size: 1.3em;
+        padding-bottom: 15px;
+    } 
+
+    .termsOfService > p,
+    .privacyPolicy > p {
+        font-size: 1em;
+        line-height: 30px;
+    } 
+}

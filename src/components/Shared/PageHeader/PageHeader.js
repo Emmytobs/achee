@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './PageHeader.module.css';
 
-function PageHeader({ title, description }) {
+function PageHeader({ title, description="" }) {
     return (
         <header className={styles.header}>
             <h2 className={styles.pageTitle}>{ title }</h2>

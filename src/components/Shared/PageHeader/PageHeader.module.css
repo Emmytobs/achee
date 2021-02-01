@@ -1,12 +1,12 @@
 .header {
     width: 100%;
-    padding: 100px 60px 30px;
+    padding: 100px 60px 50px;
     background: var(--main-background-color);
 }
 
 .pageTitle {
     font-family: 'Bree Serif', serif;
-    font-size: 1.7em;
+    font-size: 2.2em;
     font-weight: 500;
     color: #fff;
     text-align: center;
@@ -17,4 +17,17 @@
     margin-top: 10px;
     text-align: center;
     color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+    .header {
+        padding: 60px 40px 20px;
+    }
+    .pageTitle {
+        font-size: 1.5em;
+    }
+
+    .pageDescription {
+        font-size: 1em;
+    }   
 }

@@ -5,6 +5,7 @@ import HomePage from './components/HomePage/HomePage.js';
 import Account from './components/Account/Account.js';
 import MainApp  from './components/MainApp/MainApp.js';
 import Page404  from './components/Page404/Page404.js';
+import TermsOfUseAndPrivacyPolicy  from './components/TermsOfUseAndPrivacyPolicy/TermsOfUseAndPrivacyPolicy.js';
 
 import Landing  from './components/Landing/Landing.js';
 import AboutUs  from './components/AboutUs/AboutUs.js';
@@ -22,6 +23,7 @@ function App() {
 
       <Route path='/landing' exact component={Landing} />
       <Route path='/about' exact component={AboutUs} />
+      <Route path='/terms' exact component={TermsOfUseAndPrivacyPolicy} />
 
       <Route path='*' component={Page404} />
 

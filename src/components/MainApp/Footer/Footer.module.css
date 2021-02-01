@@ -7,6 +7,10 @@
     left: 0;
 }
 
+.footer a {
+    text-decoration: none;
+}
+
 .gridContainer {
     display: grid;
     width: 90%;
