@@ -106,7 +106,7 @@
     background: var(--main-background-color);
     margin-top: 20px;
     padding: 15px 35px;
-    justify-content: space-between;
+    justify-content: space-around;
     border-radius: 7px;
 }
 .learn > .imgContainer {
@@ -115,7 +115,7 @@
     border-radius: 7px;
 }
 .learn > h3 {
-    margin-right: 25px;
+    margin-left: 40px;
     line-height: 30px;
     color: #fff;
     font-family: 'Bree Serif', serif;
@@ -125,7 +125,6 @@
 
 .newsContainer {
     grid-area: news;
-    grid-row: 1 / 4;
     margin-top: 20px;
     background: #fff;
     padding: 18px 20px;
@@ -232,8 +231,11 @@
 
 @media screen and (max-width: 900px) {
     .carouselContainer {
-        width: 70%;
+        width: 95%;
         height: auto;
+    }
+    .page {
+        min-height: 300px;
     }
     .page h2 {
         font-size: 1.2em;
@@ -260,9 +262,10 @@
         flex: 1;
     }
     .buttonContainer > button {
+        display: block;
         padding: 10px 25px;
         font-size: 1em;
-        margin-right: 15px;
+        margin: 15px auto 0;
     }
     .backButton {
         border: 1px solid var(--main-background-color);
@@ -271,6 +274,9 @@
     }
 }
 
+/* 
+    END OF CAROUSEL STYLING
+*/
 
 @media screen and (max-width: 1000px) {
     .gridContainer {

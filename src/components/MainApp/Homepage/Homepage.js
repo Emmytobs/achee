@@ -125,6 +125,23 @@ function Homepage(props) {
                                 </p>
                             </div>
                         </div>
+                        <div className={styles.news}>
+                            <h3>How safe is it to switch and space COVID-19 vaccine doses?</h3>
+                            <div className={'display-flex '+ styles.timeAndTags}>
+                                <p>12 minutes ago</p>
+                                <div className={styles.tags}>
+                                    <span className={styles.tag}>KBH</span>
+                                    <span className={styles.tag}>JPM</span>
+                                    <span className={styles.tag}>PNC</span>
+                                    <span className={styles.tag}>+12</span>
+                                </div>
+                            </div>
+                            <div className={styles.newsContent}>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe repudiandae corporis vitae quas aspernatur! Reiciendis voluptatem cupiditate tempore similique ex quibusdam debitis, eius officia quis temporibus in velit, eaque pariatur.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
