@@ -1,0 +1,347 @@
+.headerContainer {
+    min-height: 100vh;
+    background: var(--main-background-color);
+}
+
+.headerContainer > nav {
+    justify-content: space-between;
+    padding: 18px 50px;
+    height: 10vh;
+}
+
+.landing {
+    background: url('./images/landing-page-mask.png') center no-repeat;
+    background-size: cover;
+    height: 90vh;
+    padding-top: 60px;
+}
+.landing > h1 {
+    color: #fff;
+    font-weight: 400;
+    word-spacing: 5px;
+    font-family: 'Bree serif', serif;
+    font-size: 2.7em;
+    width: 43%;
+    line-height: 60px;
+    text-decoration: underline;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.landing > p {
+    width: 43%;
+    color: #ccc;
+    font-size: 1.15em;
+    line-height: 30px;
+    text-align: center;
+    margin: 20px auto 0;
+}
+.landing > button {
+    width: 200px;
+    display: block;
+    margin: 30px auto 50px;
+    padding: 20px auto;
+    border: 1px solid #ccc;
+}
+.landing > img {
+    display: block;
+    margin: -80px auto 0;
+    width: 90%;
+}
+.mainContent {
+    margin-top: 300px;
+}
+.mainContent > * {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.section_one {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+    width: 90%;
+    height: 630px;
+    margin: auto;
+}
+
+.title {
+    width: 70%;
+}
+.title > div {
+    position: relative;
+}
+.title > div > span {
+    position: absolute;
+    width: 7px;
+    background: var(--main-background-color);
+    height: 100%;
+}
+.title > div > h3 {
+    line-height: 40px;
+    color: var(--heading-text-color);
+    font-weight: 700;
+    font-size: 2em;
+    text-transform: capitalize;
+    margin-left: 20px;
+}
+.title > p {
+    color: var(--text-color);
+    padding-left: 20px;
+    line-height: 30px;
+}
+
+.features {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    width: 100%;
+}
+.features > li {
+    margin-top: 35px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.features > li > span {
+    background: #F9F6FF;
+    color: var(--main-background-color);
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 0 50px 0 0;
+}
+.features > li h3 {
+    font-weight: 500;
+    font-family: 'Bree serif', serif;
+    font-size: 1.5em;
+    color: var(--heading-text-color)
+}
+.features > li p {
+    margin-top: 10px;
+    color: var(--text-color);
+}
+
+.mobile.financeImg {
+    display: none;
+}
+.desktop.financeImg {
+    display: block;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    background: #F9F6FF;
+    width: 60%;
+}
+
+/* 
+    SECTION TWO
+*/
+.section_two {
+    padding: 100px 0;
+}
+.section_two > h2 {
+    width: 40%;
+    margin: 0 auto;
+    font-family: 'Bree Serif', serif;
+    font-weight: 500;
+    font-size: 1.7em;
+    text-align: center;
+    color: var(--heading-text-color);
+    position: relative;
+}
+.section_two > h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    background: var(--main-background-color);
+    width: 100px;
+    height: 5px;
+    transform: translateX(-50%);
+}
+.steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    width: 100%;
+    grid-gap: 50px 60px;
+    margin-top: 50px;
+    padding: 20px 30px;
+}
+.steps > * {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.steps h3 {
+    font-family: 'Bree Serif', serif;
+    font-weight: 500;
+    color: var(--heading-text-color);
+}
+.steps p {
+    line-height: 30px;
+}
+.stepOne {
+    grid-column: 1 / 2;
+}
+.stepTwo {
+    grid-column: 2 / 3;
+    margin-left: auto;
+}
+.stepThree {
+    grid-column: 1 / 3;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.section_three {
+    background: #F9F6FF;
+    justify-content: space-between;
+}
+.section_three > div {
+    flex: 0 0 45%;
+}
+.sectionThreeTitle > div {
+    position: relative;
+}
+.sectionThreeTitle > div > span {
+    position: absolute;
+    width: 7px;
+    background: var(--main-background-color);
+    height: 100%;
+}
+.sectionThreeTitle > div > h3 {
+    line-height: 40px;
+    color: var(--heading-text-color);
+    font-weight: 700;
+    font-size: 2em;
+    text-transform: capitalize;
+    margin-left: 20px;
+}
+.sectionThreeTitle > p {
+    color: var(--text-color);
+    padding-left: 20px;
+    line-height: 30px;
+}
+
+
+@media screen and (max-width: 900px) {
+    .headerContainer {
+        min-height: auto;
+    }
+    .landing {
+        height: 55vh;
+    }
+    .landing > h1 {
+        word-spacing: 5px;
+        font-family: 'Bree serif', serif;
+        font-size: 1.8em;
+        width: 90%;
+        line-height: 45px;
+        margin-top: 30px;
+    }
+    
+    .landing > p {
+        width: 90%;
+        font-size: 1.1em;
+        line-height: 30px;
+        text-align: center;
+        margin: 20px auto 0;
+    }
+    .landing > button {
+        display: none;
+        width: 200px;
+    }
+    .landing > img {
+        display: block;
+        margin: 15px auto 0;
+        width: 90%;
+    }
+    .mainContent {
+        margin-top: 250px;
+    }
+    .section_one {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        width: 90%;
+        height: auto;
+        margin: auto;
+    }
+
+    .section_one > * {
+        width: 100%;
+    }
+    .title {
+        grid-row: 1 / 2;
+    }
+    .title > div > h3 {
+        line-height: 35px;
+        font-size: 1.7em;
+    }
+    .title > p {
+        line-height: 25px;
+    }
+    
+    .features {
+        padding: 0;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;    
+    }
+    .features > li {
+        display: block;
+    }
+    .features > li > span {
+        margin-bottom: 25px;
+        display: inline-block;
+    }
+
+    .desktop.financeImg {
+        display: none;
+    }
+    .mobile.financeImg {
+        display: block;
+    }
+
+    .section_two > h2 {
+        width: 90%;
+        font-size: 1.7em;
+    }
+    .section_two > h2::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -15px;
+        background: var(--main-background-color);
+        width: 100px;
+        height: 5px;
+        transform: translateX(-50%);
+    }
+    .steps {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        width: 100%;
+        grid-row-gap: 20px;
+        margin-top: 50px;
+        padding: 20px 30px;
+    }
+    .steps > * {
+        grid-column: 1 / 2;
+        margin: 0;
+        display: block;
+    }
+    .steps p {
+        line-height: 30px;
+    }
+    .stepOne {
+        grid-row: 1 / 2;
+    }
+    .stepTwo {
+        grid-row: 2 / 3;
+    }
+    .stepThree {
+        grid-row: 3 / 4;
+        /* Cos i set a width in the desktop view */
+        width: 100%;
+    }
+}

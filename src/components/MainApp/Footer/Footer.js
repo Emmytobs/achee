@@ -44,7 +44,7 @@ function Footer() {
                     <ul>
                         <li><Link>FAQ</Link></li>
                         <li><Link onClick={() => window.location = '/app/referrals'}>Referrals</Link></li>
-                        <li><Link>Contact Us</Link></li>
+                        <li><Link onClick={() => window.location = '/contact'}>Contact Us</Link></li>
                     </ul>
                 </div>
                 <div className={styles.socialMedia}>
