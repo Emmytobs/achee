@@ -41,8 +41,8 @@ function Contact() {
                 <div className={styles.phone}>
                     <Input 
                         type="phone"
-                        labelText="First Name"
-                        placeholder="Enter your first name"
+                        labelText="Phone"
+                        placeholder="Enter your phone number"
                     />
                 </div>
                 <div className={styles.textarea}>
