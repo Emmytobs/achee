@@ -46,8 +46,35 @@
 .landing > img {
     display: block;
     margin: -80px auto 0;
+    position: relative;
     width: 90%;
+    animation: bounce 2.5s infinite ease-out;
 }
+@keyframes bounce {
+    0% {
+        top: 0px;
+    }
+    50% {
+        top: 20px;
+    }
+    100% {
+        top: 0;
+    }
+}
+@media screen and (max-width: 900px) {
+    @keyframes bounce {
+        0% {
+            top: 0px;
+        }
+        50% {
+            top: 10px;
+        }
+        100% {
+            top: 0;
+        }
+    }
+}
+
 .mainContent {
     margin-top: 300px;
 }
@@ -173,6 +200,9 @@
     justify-content: space-between;
     align-items: flex-start;
 }
+.steps > * > div {
+    margin-left: 20px;
+}
 .steps h3 {
     font-family: 'Bree Serif', serif;
     font-weight: 500;
@@ -220,33 +250,102 @@
 }
 .sectionThreeTitle > p {
     color: var(--text-color);
-    padding-left: 20px;
     line-height: 30px;
 }
+.section_three ul {
+    margin: 0;
+    padding: 0;
+}
+.section_three li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 25px auto;
+}
+.section_three li > * {
+    display: inline-block;
+}
+.section_three li div {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #E6DDFF;
+}
+.section_three li p {
+    margin: 0;
+    width: 86%;
+    color: var(--text-color);
+}
+/* 
+    SECTION THREE
+ */ 
 
+.section_four {
+    width: 100%;
+    background: #200E32;
+    color: #fff;
+}
+.section_four > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, auto);
+    padding: 50px 0;
+    width: 85%;
+    margin: auto;
+    border-bottom: 1px dashed var(--main-background-color);
+}
+.section_four > div > * {
+    padding: 0 40px;
+}
+.section_four > div > h5 {
+    font-size: 1.5em;
+}
+.newsAndResources {
+    border-right: 1px dashed var(--main-background-color);
+    border-left: 1px dashed var(--main-background-color);
+}
+
+.sectionFourTitle > h2 {
+    position: relative;
+    text-transform: capitalize;
+    font-size: 2em;
+}
+.sectionFourTitle > h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20px;
+    height: 100%;
+    width: 7px;
+    background: var(--main-background-color);
+}
 
 @media screen and (max-width: 900px) {
     .headerContainer {
         min-height: auto;
     }
     .landing {
-        height: 55vh;
+        height: 50vh;
     }
     .landing > h1 {
         word-spacing: 5px;
         font-family: 'Bree serif', serif;
-        font-size: 1.8em;
+        font-size: 1.5em;
         width: 90%;
-        line-height: 45px;
-        margin-top: 30px;
+        margin: 20px auto 10px;
+        line-height: 40px;
     }
     
     .landing > p {
         width: 90%;
-        font-size: 1.1em;
+        font-size: 1em;
         line-height: 30px;
         text-align: center;
-        margin: 20px auto 0;
+        margin: 20px auto;
     }
     .landing > button {
         display: none;
@@ -264,7 +363,7 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, auto);
-        width: 90%;
+        width: 95%;
         height: auto;
         margin: auto;
     }
@@ -277,10 +376,11 @@
     }
     .title > div > h3 {
         line-height: 35px;
-        font-size: 1.7em;
+        font-size: 1.4em;
     }
     .title > p {
         line-height: 25px;
+        padding: 0;
     }
     
     .features {
@@ -295,17 +395,25 @@
         margin-bottom: 25px;
         display: inline-block;
     }
-
+    .features > li h3 {
+        font-size: 1.4em;
+    }
     .desktop.financeImg {
         display: none;
     }
     .mobile.financeImg {
         display: block;
+        background: #F9F6FF;
+    }
+    .mobile.financeImg > img {
+        width: 80%; 
+        display: block;
+        margin: 0 auto;
     }
 
     .section_two > h2 {
-        width: 90%;
-        font-size: 1.7em;
+        width: 95%;
+        font-size: 1.4em;
     }
     .section_two > h2::after {
         content: '';
@@ -323,7 +431,7 @@
         width: 100%;
         grid-row-gap: 20px;
         margin-top: 50px;
-        padding: 20px 30px;
+        padding: 0;
     }
     .steps > * {
         grid-column: 1 / 2;
@@ -343,5 +451,55 @@
         grid-row: 3 / 4;
         /* Cos i set a width in the desktop view */
         width: 100%;
+    }
+
+    .section_three {
+        background: #F9F6FF;
+        display: block;
+        width: 95%;
+    }
+    .sectionThreeTitle > div > h3 {
+        font-size: 1.4em;
+    }
+    .sectionThreeTitle > p {
+        color: var(--text-color);
+        line-height: 30px;
+    }
+    .section_three li {
+        list-style: none;
+        display: block;
+        margin: 25px auto;
+    }
+    .section_three li p {
+        width: 100%;
+    }
+    .section_three > img {
+        display: none;
+    }
+    
+    
+    .section_four > div {
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: 1fr;
+        width: 95%;
+        padding: 30px 0;
+        border: none;
+    }
+    
+    .section_four > div > h5 {
+        font-size: 1em;
+    }
+    .section_four > div > * {
+        padding: 20px 0;
+    }
+    .sectionFourTitle > h2 {
+        margin-left: 12px;
+        font-size: 1.4em;
+    }
+    .sectionFourTitle > h2::before {
+        left: -10px;
+    }
+    .newsAndResources {
+        border: none;
     }
 }
