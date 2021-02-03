@@ -19,7 +19,7 @@
     color: #fff;
     font-weight: 400;
     word-spacing: 5px;
-    font-family: 'Bree serif', serif;
+    font-family: 'DM Serif Display', serif;
     font-size: 2.7em;
     width: 43%;
     line-height: 60px;
@@ -107,10 +107,11 @@
 .title > div > h3 {
     line-height: 40px;
     color: var(--heading-text-color);
-    font-weight: 700;
+    font-weight: 400;
     font-size: 2em;
     text-transform: capitalize;
     margin-left: 20px;
+    font-family: 'DM Serif Display', serif;
 }
 .title > p {
     color: var(--text-color);
@@ -139,8 +140,8 @@
     margin: 0 50px 0 0;
 }
 .features > li h3 {
-    font-weight: 500;
-    font-family: 'Bree serif', serif;
+    font-weight: 400;
+    font-family: 'DM Serif Display', serif;
     font-size: 1.5em;
     color: var(--heading-text-color)
 }
@@ -161,7 +162,7 @@
 }
 
 /* 
-    SECTION TWO
+    SECTION TWO - HOW TO START TRACKING YOUR PORTFOLIO WITH ACHEE
 */
 .section_two {
     padding: 100px 0;
@@ -169,8 +170,8 @@
 .section_two > h2 {
     width: 40%;
     margin: 0 auto;
-    font-family: 'Bree Serif', serif;
-    font-weight: 500;
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
     font-size: 1.7em;
     text-align: center;
     color: var(--heading-text-color);
@@ -204,8 +205,8 @@
     margin-left: 20px;
 }
 .steps h3 {
-    font-family: 'Bree Serif', serif;
-    font-weight: 500;
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
     color: var(--heading-text-color);
 }
 .steps p {
@@ -223,9 +224,17 @@
     width: 50%;
     margin: 0 auto;
 }
+/* 
+    END OF SECTION TWO
+*/
 
+
+/* 
+    SECTION THREE - ACHEE USEFUL FEATURES
+*/
 .section_three {
     background: #F9F6FF;
+    padding: 50px auto;
     justify-content: space-between;
 }
 .section_three > div {
@@ -243,7 +252,8 @@
 .sectionThreeTitle > div > h3 {
     line-height: 40px;
     color: var(--heading-text-color);
-    font-weight: 700;
+    font-weight: 400;
+    font-family: 'DM Serif Display', serif;
     font-size: 2em;
     text-transform: capitalize;
     margin-left: 20px;
@@ -313,6 +323,8 @@
     position: relative;
     text-transform: capitalize;
     font-size: 2em;
+    font-weight: 400;
+    font-family: 'DM Serif Display', serif;
 }
 .sectionFourTitle > h2::before {
     content: '';
@@ -333,7 +345,7 @@
     }
     .landing > h1 {
         word-spacing: 5px;
-        font-family: 'Bree serif', serif;
+        font-family: 'DM Serif Display', serif;
         font-size: 1.5em;
         width: 90%;
         margin: 20px auto 10px;
@@ -376,6 +388,7 @@
     }
     .title > div > h3 {
         line-height: 35px;
+        width: 70%;
         font-size: 1.4em;
     }
     .title > p {
@@ -396,7 +409,7 @@
         display: inline-block;
     }
     .features > li h3 {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
     .desktop.financeImg {
         display: none;
@@ -438,6 +451,13 @@
         margin: 0;
         display: block;
     }
+    .steps > * > div {
+        margin: 0;
+    }
+    .steps > * > img {
+        width: 50px;
+        height: 50px;
+    }
     .steps p {
         line-height: 30px;
     }
@@ -456,6 +476,7 @@
     .section_three {
         background: #F9F6FF;
         display: block;
+        padding: 30px 10px;
         width: 95%;
     }
     .sectionThreeTitle > div > h3 {
@@ -468,7 +489,10 @@
     .section_three li {
         list-style: none;
         display: block;
-        margin: 25px auto;
+        margin: 35px auto;
+    }
+    .section_three li > div {
+        margin-bottom: 15px;
     }
     .section_three li p {
         width: 100%;
@@ -476,7 +500,6 @@
     .section_three > img {
         display: none;
     }
-    
     
     .section_four > div {
         grid-template-rows: repeat(3, auto);
@@ -486,18 +509,24 @@
         border: none;
     }
     
-    .section_four > div > h5 {
+    .section_four > div h5 {
+        font-weight: 400;
+        font-family: 'DM Serif Display', serif;
         font-size: 1em;
     }
     .section_four > div > * {
         padding: 20px 0;
     }
     .sectionFourTitle > h2 {
-        margin-left: 12px;
+        line-height: 35px;
+        margin-left: 15px;
         font-size: 1.4em;
+        width: 60%;
+        font-weight: 400;
+        font-family: 'DM Serif Display', serif;
     }
     .sectionFourTitle > h2::before {
-        left: -10px;
+        left: -14px;
     }
     .newsAndResources {
         border: none;
