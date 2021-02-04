@@ -12,6 +12,7 @@ import featuresImg from './images/Group 9855.png';
 import checkIcon from './images/check-icon.png';
 import newsAndResources from './images/news-and-resources.png';
 import premiumPlan from './images/premium-plan.png';
+import acheeUnderlayLogo from './images/achee-underlay-logo.png';
 
 import stepOne from './images/step-one.png'
 import stepTwo from './images/step-two.png'
@@ -94,6 +95,8 @@ function Landing() {
                             </div>
                         </li>
                     </ol>
+
+                    <img src={acheeUnderlayLogo} alt="Achee logo" width="505px" height="513px" className={styles.acheeUnderlayLogo} />
                 </section>
                 
                 <section className={styles.section_two}>
@@ -122,8 +125,9 @@ function Landing() {
                                 <p>Keeping track of your investments should be simple. Achee helps investors like you to manage their portfolios effortlessly and allows them to see how they are performing periodically.</p>
                             </div>
                         </div>
-
                     </div>
+                    
+                    <img src={acheeUnderlayLogo} alt="Achee logo" width="505px" height="513px" className={styles.acheeUnderlayLogo} />
                 </section>
 
                 <section className={'display-flex '+ styles.section_three}>
@@ -164,7 +168,7 @@ function Landing() {
                             </li>
                         </ul>
                     </div>
-                    
+
                     <img src={featuresImg} alt="Features Img" width="421px" height="482px" />
                 </section>
             
@@ -192,6 +196,19 @@ function Landing() {
                         <div>
                             <PrimaryButton>Google</PrimaryButton>
                             <PrimaryButton>Apple</PrimaryButton>
+                        </div>
+                    </div>
+                    <img src={acheeUnderlayLogo} alt="Achee logo" width="505px" height="513px" className={styles.acheeUnderlayLogo} />
+                </section>
+                <section className={styles.section_five}>
+                    <div>
+                        <h2>Signup To our <span>Newsletter</span></h2>
+                        <p>Receive latest news, articles and many other things that <br />
+                            has to do with investment.
+                        </p>
+                        <div className={styles.emailContainer}>
+                            <input type="email" placeholder="Enter Your Email Addresss" />
+                            <button>Send</button>
                         </div>
                     </div>
                 </section>

@@ -90,8 +90,16 @@
     width: 90%;
     height: 630px;
     margin: auto;
+    position: relative;
 }
-
+.section_one > *:not(.section_one > img.acheeUnderlayLogo) {
+    z-index: 30;
+}
+.section_one > img.acheeUnderlayLogo {
+    position: absolute;
+    top: -40px;
+    right: 0%;
+}
 .title {
     width: 70%;
 }
@@ -147,6 +155,7 @@
 }
 .features > li p {
     margin-top: 10px;
+    line-height: 30px;
     color: var(--text-color);
 }
 
@@ -166,6 +175,16 @@
 */
 .section_two {
     padding: 100px 0;
+    position: relative;
+}
+.section_two > *:not(.section_two > img.acheeUnderlayLogo) {
+    z-index: 30;
+}
+.section_two > img.acheeUnderlayLogo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .section_two > h2 {
     width: 40%;
@@ -211,6 +230,7 @@
 }
 .steps p {
     line-height: 30px;
+    color: var(--text-color);
 }
 .stepOne {
     grid-column: 1 / 2;
@@ -289,23 +309,30 @@
     margin: 0;
     width: 86%;
     color: var(--text-color);
+    line-height: 30px;
 }
 /* 
-    SECTION THREE
+    END OF SECTION THREE
  */ 
 
 .section_four {
     width: 100%;
     background: #200E32;
     color: #fff;
+    position: relative;
+}
+.section_four > *:not(.section_four > img) {
+    z-index: 30;
 }
 .section_four > div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, auto);
-    padding: 50px 0;
+    padding: 70px 0 50px;
     width: 85%;
     margin: auto;
+}
+.section_four > div:first-child {
     border-bottom: 1px dashed var(--main-background-color);
 }
 .section_four > div > * {
@@ -336,6 +363,89 @@
     background: var(--main-background-color);
 }
 
+.section_four > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 
+    END OF SECTION FOUR
+*/
+
+/* 
+    SECTION FIVE
+*/
+.section_five {
+    margin: 120px auto;
+}
+
+.section_five > div {
+    width: 70%;
+    margin: auto;
+    padding: 50px 30px;
+    background: #200E32;
+    border-radius: 15px;
+}
+
+.section_five h2 {
+    font-family: 'DM Sans Display', serif;
+    /* font-weight: 400; */
+    font-size: 2.2em;
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.section_five h2 > span {
+    color: var(--main-background-color);
+    font-family: inherit;
+}
+
+.section_five p {
+    line-height: 30px;
+    color: #fff;
+    font-size: 1.2em;
+    margin: 30px 0 0 0;
+    text-align: center;
+}
+
+.section_five .emailContainer {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    margin: 20px auto 0;
+    background: #fff;
+    padding: 3px 0;
+}
+.emailContainer > input {
+    border: none;
+    height: auto;
+    outline: none;
+    border: none;
+    background: transparent;
+    flex: 1;
+    padding-left: 25px;
+    font-size: 1.1em;
+}
+.emailContainer > button {
+    padding: 15px 0px;
+    background: #200E32;
+    flex: 0 0 25%;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    margin-left: 20px;
+    margin-right: 3px;
+    font-size: 1.1em;
+    transition: all .1s ease-in;
+}
+.emailContainer > button:hover {
+    background: #200e32b9;
+}
+
 @media screen and (max-width: 900px) {
     .headerContainer {
         min-height: auto;
@@ -346,9 +456,9 @@
     .landing > h1 {
         word-spacing: 5px;
         font-family: 'DM Serif Display', serif;
-        font-size: 1.5em;
+        font-size: 1.4em;
         width: 90%;
-        margin: 20px auto 10px;
+        margin: 0px auto 10px;
         line-height: 40px;
     }
     
@@ -530,5 +640,84 @@
     }
     .newsAndResources {
         border: none;
+    }
+    img.acheeUnderlayLogo {
+        display: none;
+    }
+    
+
+    .section_five > div {
+        width: 100%;
+        padding: 50px 10px;
+    }
+
+    .section_five h2 {
+        font-size: 1.4em;
+    }
+
+    .section_five p {
+        line-height: 25px;
+        font-size: 1em;
+        margin: 30px 0 0 0;
+    }
+
+    .section_five .emailContainer {
+        border-radius: 10px;
+        margin: 20px auto 0;
+        background: #fff;
+        padding: 3px 0;
+    }
+    .emailContainer > input {
+        border: none;
+        padding-left: 10px;
+        font-size: 1em;
+        margin-left: 0;
+    }
+    .emailContainer > button {
+        background: #200E32;
+        border-radius: 10px;
+        margin-left: 10px;
+        flex: 0 0 20%;
+        font-size: 1em;
+    }
+    .emailContainer > button:hover {
+        background: #200e32b9;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .emailContainer {
+        width: 100% !important;
+    }
+    .emailContainer > input {
+        border: none;
+        padding-left: 10px;
+        font-size: .9em;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .landing > h1 {
+        font-size: 1.3em;
+    }
+    .landing > p {
+        line-height: 25px;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .landing {
+        height: 50vh;
+    }
+    .landing > h1 {
+        font-size: 1.1em;
+        line-height: 25px;
+        margin-top: -20px;
+    }
+    .landing > p {
+        font-size: 1em;
+        line-height: 25px;
     }
 }
