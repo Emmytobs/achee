@@ -2,8 +2,10 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 import Header from '../../Header/Header'
 import Footer from '../../Footer/Footer'
-import { Button, Input, Select, Option } from '../../../Shared/Utilities';
+import ImportPortfolioButtons from '../ImportPortfolioButtons/ImportPortfolioButtons';
+import AddPortfolioForm, { SubmitBtn } from '../AddPortfolioForm';
 
+import { Input, Select, Option, Textarea } from '../../../Shared/Utilities';
 import styles from './AddCash.module.css';
 
 function AddCash() {
@@ -11,17 +13,8 @@ function AddCash() {
         <>
         <Header />
         <div className={styles.addCash}>
-            <div className={'display-flex '+ styles.firstRow}>
-                <h2>Manually Add Cash</h2>
-                <div className={styles.addPortfolioButtons}>
-                    <Button style={{ padding: '5px 12px', marginLeft: '5px', color: "#4B4C4E" }}>Import from Spreadsheet</Button>
-
-                    <Button style={{ padding: '5px 12px', marginLeft: '5px', color: "#4B4C4E" }}>Send via email</Button>
-
-                    <Button style={{ padding: '5px 12px', marginLeft: '5px', color: "#4B4C4E" }}>Import from an investment company</Button>
-                </div>
-            </div>
-            <div className={styles.addPortfolioForm}>
+            <ImportPortfolioButtons title="Add Cash" />
+            <AddPortfolioForm>
                 <div>
                     <p className={styles.fieldName}>Type</p>
                     <Select>
@@ -32,28 +25,36 @@ function AddCash() {
                 <div>
                     <p className={styles.fieldName}>Date</p>
                     <div className={styles.date}>
-                        <p className={styles.fieldName}>Date</p>
-                        <p>Date Picker</p>
+                        {/* <p>Date Picker</p> */}
+                        <Input type='date' onChange={(e) => console.log(e.target.valueAsNumber)} style={{ width: "100%" }} />
                     </div>
                 </div>
                 <div>
                     <p className={styles.fieldName}>Return Interval</p>
-                    <div className={styles.amount}>
-                        <Select style={{ 
-                            paddingLeft: "10px",
-                            paddingRight: "10px",
-                            background: '#F6F3FF'
-                         }}>
+                    <div className={'display-flex justify-start '+ styles.amount}>
+                        <Select 
+                            style={{ 
+                                border:"2px solid #805CF5",
+                                backgroundColor: "#805CF531",
+                                color: "#805CF5",
+                                fontSize: '1.2em',
+                                fontWeight: '500',
+                                padding: '0 20px 0 5px'
+                            }}
+                            onChange={(e) => console.log(e.target.value)}>
+
                             <Option value='usd' selected>$</Option>
+                            <Option value='eur'>#</Option>
                         </Select>
-                        <Input />
+                        <Input style={{ marginLeft: '5px' }} />
                     </div>
                 </div>
                 <div>
                     <p className={styles.fieldName}>Notes</p>
-                    <textarea placeholder="(Optional)" rows="5" />
+                    <Textarea placeholder="(Optional)" />
                 </div>
-            </div>
+                <SubmitBtn>Add Cash</SubmitBtn>
+            </AddPortfolioForm>
         </div>
         <Footer />
         </>

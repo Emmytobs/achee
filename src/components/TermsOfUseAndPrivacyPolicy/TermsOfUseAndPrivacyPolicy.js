@@ -5,10 +5,10 @@ import PageHeader from '../Shared/PageHeader/PageHeader'
 
 import styles from './TermsOfUseAndPrivacyPolicy.module.css';
 
-function TermsOfUseAndPrivacyPolicy() {
+function TermsOfUseAndPrivacyPolicy(props) {
     return (
         <>
-           <Header />
+           <Header {...props} />
            <div className={styles.container}>
 
                 <PageHeader
@@ -26,7 +26,7 @@ function TermsOfUseAndPrivacyPolicy() {
                     </p>
                 </div>
 
-                <div className={styles.privacyPolicy}>
+                <div id="privacy-policy" className={styles.privacyPolicy}>
                     <h3>
                         Privacy Policy
                     </h3>

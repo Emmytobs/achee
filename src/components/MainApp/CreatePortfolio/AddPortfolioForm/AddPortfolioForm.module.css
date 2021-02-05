@@ -1,26 +1,4 @@
-.addCash {
-    background: var(--gray-background-color);
-    padding: 40px 0 100px;
-}
-.search {
-    background: #fff;
-    padding: 10px;
-    width: 80%;
-    margin: 0 auto 20px;
-}
-
-.search > input {
-    border: none;
-    background: none;
-    width: 80%;
-    font-size: 1em;
-}
-.search > input:focus {
-    outline: none;
-    border: none;
-}
-
-/* .addPortfolioForm {
+.addPortfolioForm {
     background: #fff;
     width: 80%;
     padding: 25px 65px;
@@ -40,25 +18,28 @@
 }
 .addPortfolioForm > div > *:last-child {
     flex: 0 0 70%;
-} */
+    margin-left: 12px;
+}
 
 @media screen and (max-width: 800px) {
-    /* .addPortfolioForm {
+    .addPortfolioForm {
         width: 90%;
         padding: 12px 15px;
     }
-
+    .addPortfolioForm > div p {
+        font-size: .8em;
+    }
     .addPortfolioForm > div > *:first-child {
         flex: 0 0 50px;
         font-weight: 500;
     }
     .addPortfolioForm > div > *:last-child {
-        flex: 0 0 80%;
-    } */
+        flex: 0 0 60%;
+    }
 }
 
 @media screen and (max-width: 530px) {
-    /* .addPortfolioForm {
+    .addPortfolioForm {
         width: 95%;
         padding: 12px 15px;
     }
@@ -66,14 +47,7 @@
         flex: 0 0 50px;
         font-weight: 500;
     }
-    .addPortfolioForm > div > *:last-child {
-        flex: 1;
+    /* .addPortfolioForm > div > *:last-child {
         justify-content: flex-end;
     } */
-    .amount > input {
-        width: 70%;
-    }
-    .date > input {
-        width: 85%;
-    }
 }

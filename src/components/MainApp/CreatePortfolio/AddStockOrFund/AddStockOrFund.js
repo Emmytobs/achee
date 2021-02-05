@@ -4,28 +4,22 @@ import styles from './AddStockOrFund.module.css'
 import Header from '../../Header/Header'
 import Footer from '../../Footer/Footer'
 
-import { Button, Input, Select, Option } from '../../../Shared/Utilities';
+import AddPortfolioForm, { SubmitBtn } from '../AddPortfolioForm'
+import ImportPortfolioButtons from '../ImportPortfolioButtons/ImportPortfolioButtons'
+import { Button, Input, Select, Option, Textarea } from '../../../Shared/Utilities';
 
 function AddStockOrFund() {
     return (
         <>
         <Header />
+
         <div className={styles.addStockOrFund}>
-            <div className={'display-flex '+ styles.firstRow}>
-                <h2>Manually add Stock/Fund</h2>
-                <div className={styles.addPortfolioButtons}>
-                    <Button style={{ padding: '5px 12px', marginLeft: '5px', color: "#4B4C4E" }}>Import from Spreadsheet</Button>
-
-                    <Button style={{ padding: '5px 12px', marginLeft: '5px', color: "#4B4C4E" }}>Send via email</Button>
-
-                    <Button style={{ padding: '5px 12px', marginLeft: '5px', color: "#4B4C4E" }}>Import from an investment company</Button>
-                </div>
-            </div>
+            <ImportPortfolioButtons title="Add Stock/Fund" />
             <div className={styles.search}>
                 <img src="" alt="Search Icon"/>
                 <Input type="text" placeholder="Search" />
             </div>
-            <div className={styles.addPortfolioForm}>
+            <AddPortfolioForm>
                 <div>
                     <p className={styles.fieldName}>Transaction</p>
                     <Select>
@@ -35,7 +29,7 @@ function AddStockOrFund() {
                 </div>
                 <div>
                     <p className={styles.fieldName}>Date</p>
-                    <p>Date Picker</p>
+                    <Input type='date' />
                 </div>
                 <div>
                     <p className={styles.fieldName}>Shares</p>
@@ -43,9 +37,11 @@ function AddStockOrFund() {
                 </div>
                 <div>
                     <p className={styles.fieldName}>Notes</p>
-                    <textarea placeholder="(Optional)" rows="5" />
+                    <Textarea placeholder="(Optional)" rows="5" />
                 </div>
-            </div>
+
+                <SubmitBtn>Add Stock/Fund</SubmitBtn>
+            </AddPortfolioForm>
         </div>
         <Footer />
         </>

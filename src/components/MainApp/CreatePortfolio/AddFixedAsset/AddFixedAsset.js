@@ -1,7 +1,10 @@
 import React from 'react'
 import Header from '../../Header/Header'
 import Footer from '../../Footer/Footer'
-import { Button, Input, Select, Option } from '../../../Shared/Utilities'
+import { PrimaryButton, Input, Select, Option, Textarea } from '../../../Shared/Utilities'
+
+import ImportPortfolioButtons from '../ImportPortfolioButtons/ImportPortfolioButtons'
+import AddPortfolioForm, { SubmitBtn } from '../AddPortfolioForm'
 
 import styles from './AddFixedAsset.module.css';
 
@@ -10,35 +13,32 @@ function AddFixedAsset() {
         <>
         <Header />
         <div className={styles.addFixedAsset}>
-            <div className={'display-flex '+ styles.firstRow}>
-                <h2>Manually Add Fixed Asset</h2>
-                <div className={styles.addPortfolioButtons}>
-                    <Button style={{ padding: '5px 12px', marginLeft: '5px', color: "#4B4C4E" }}>Import from Spreadsheet</Button>
+            <ImportPortfolioButtons title="Add Fixed Asset" />
 
-                    <Button style={{ padding: '5px 12px', marginLeft: '5px', color: "#4B4C4E" }}>Send via email</Button>
-
-                    <Button style={{ padding: '5px 12px', marginLeft: '5px', color: "#4B4C4E" }}>Import from an investment company</Button>
-                </div>
-            </div>
-            <div className={styles.addPortfolioForm}>
+            <AddPortfolioForm>
                 <div>
                     <p className={styles.fieldName}>Amount</p>
-                    <div className={styles.amount}>
-                        <Select style={{ 
-                            paddingLeft: "10px",
-                            paddingRight: "10px",
-                            background: '#F6F3FF'
-                         }}>
+                    <div className={'display-flex justify-start '+ styles.amount}>
+                        <Select
+                            style={{ 
+                                border:"2px solid #805CF5",
+                                backgroundColor: "#805CF531",
+                                color: "#805CF5",
+                                fontSize: '1.2em',
+                                fontWeight: '500',
+                                padding: '0 20px 0 5px'
+                            }}>
                             <Option value='usd' selected>$</Option>
+                            <Option value='eur'>#</Option>
                         </Select>
-                        <Input />
+                        <Input styles={{ marginLeft: '5px' }} />
                     </div>
                 </div>
-                <div>
+                <div className={styles.percentageReturn}>
                     <p className={styles.fieldName}>Percentage Return</p>
                     <Input type="number" />
                 </div>
-                <div>
+                <div className={styles.returnInterval}>
                     <p className={styles.fieldName}>Return Interval</p>
                     <Select>
                         <Option value="Buy">Option 1</Option>
@@ -58,18 +58,28 @@ function AddFixedAsset() {
                 
                 <div>
                     <p className={styles.fieldName}>Commission</p>
-                    <div className={styles.commission}>
-                        <Select>
+                    <div className={'display-flex justify-start '+ styles.commission}>
+                        <Select 
+                            style={{ 
+                                border:"2px solid #805CF5",
+                                backgroundColor: "#805CF531",
+                                color: "#805CF5",
+                                fontSize: '1.2em',
+                                fontWeight: '500',
+                                padding: '0 20px 0 5px'
+                            }}>
                             <Option value='usd' selected>$</Option>
                         </Select>
-                        <Input />
+                        <Input style={{ marginLeft: '5px' }} />
                     </div>
                 </div>
                 <div>
                     <p className={styles.fieldName}>Notes</p>
-                    <textarea placeholder="(Optional)" rows="5" />
+                    <Textarea placeholder="(Optional)" />
                 </div>
-            </div>
+
+                <SubmitBtn>Add Fixed Asset</SubmitBtn>
+            </AddPortfolioForm>
         </div>
         <Footer />
         </>

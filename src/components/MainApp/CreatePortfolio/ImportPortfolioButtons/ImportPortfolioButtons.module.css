@@ -1,0 +1,56 @@
+.firstRow {
+    width: 80%;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.firstRow > h2 {
+    font-family: 'Bree Serif', serif;
+    font-size: 1.5em;
+    font-weight: 400;
+    color: var(--heading-text-color);
+    flex: 0 0 20%;
+}
+.firstRow > .addPortfolioButtons {
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.firstRow > .addPortfolioButtons > button {
+    margin-top: 7px;
+}
+
+@media screen and (max-width: 800px) {
+    .firstRow > .addPortfolioButtons {
+        flex: 0 0 60%;
+    }
+    .firstRow > .addPortfolioButtons > button {
+        padding: 1px;
+        font-size: .8em;
+        margin-top: 7px;
+    }
+    .firstRow > h2 {
+        flex: 1;
+        font-size: 1.4em;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .firstRow {
+        display: block;
+        width: 95%;
+    }
+    .firstRow > .addPortfolioButtons {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .firstRow > .addPortfolioButtons > button {
+        padding: 1px;
+    }
+    .firstRow > h2 {
+        font-size: 1.2em;
+    }
+}

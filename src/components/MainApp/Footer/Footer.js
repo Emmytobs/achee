@@ -36,7 +36,7 @@ function Footer() {
                     <ul>
                         <li><Link onClick={() => window.location = '/about'}>About Us</Link></li>
                         <li><Link onClick={() => window.location = '/terms'}>Terms of Use</Link></li>
-                        <li><Link onClick={() => window.location = '/terms'}>Privacy Policy</Link></li>
+                        <li><Link onClick={() => window.location = '/terms#privacy-policy'}>Privacy Policy</Link></li>
                     </ul>
                 </div>
                 <div className={`${styles.menuList} ${styles.support}`}>
