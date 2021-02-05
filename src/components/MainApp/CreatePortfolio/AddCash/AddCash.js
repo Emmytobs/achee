@@ -26,7 +26,7 @@ function AddCash() {
                     <p className={styles.fieldName}>Date</p>
                     <div className={styles.date}>
                         {/* <p>Date Picker</p> */}
-                        <Input type='date' onChange={(e) => console.log(e.target.valueAsNumber)} style={{ width: "100%" }} />
+                        <Input type='date' onChange={(e) => console.log(e.target.valueAsNumber)} />
                     </div>
                 </div>
                 <div>
