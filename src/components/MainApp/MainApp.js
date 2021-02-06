@@ -11,9 +11,7 @@ import AddCash from './CreatePortfolio/AddCash/AddCash'
 import ImportFromSpreadsheet from './CreatePortfolio/ImportFromSpreadsheet/ImportFromSpreadsheet'
 
 import UpgradeAccount from './UpgradeAccount/UpgradeAccount'
-
 import Referrals from './Referrals/Referrals'
-
 import Page404 from '../Page404/Page404'
 
 function App() {

@@ -48,14 +48,14 @@
     margin: -80px auto 0;
     position: relative;
     width: 90%;
-    animation: bounce 2.5s infinite ease-out;
+    animation: bounce 1.5s infinite ease-out;
 }
 @keyframes bounce {
     0% {
         top: 0px;
     }
     50% {
-        top: 20px;
+        top: 5px;
     }
     100% {
         top: 0;
@@ -67,7 +67,7 @@
             top: 0px;
         }
         50% {
-            top: 10px;
+            top: 5px;
         }
         100% {
             top: 0;
@@ -80,7 +80,6 @@
 }
 .mainContent > * {
     margin: 0 auto;
-    width: 90%;
 }
 
 .section_one {
@@ -175,6 +174,7 @@
 */
 .section_two {
     padding: 100px 0;
+    width: 90%;
     position: relative;
 }
 .section_two > *:not(.section_two > img.acheeUnderlayLogo) {
@@ -254,7 +254,8 @@
 */
 .section_three {
     background: #F9F6FF;
-    padding: 50px auto;
+    width: 100%;
+    padding: 50px 70px;
     justify-content: space-between;
 }
 .section_three > div {
@@ -341,6 +342,9 @@
 .section_four > div > h5 {
     font-size: 1.5em;
 }
+.section_four > div p {
+    line-height: 25px;
+}
 .newsAndResources {
     border-right: 1px dashed var(--main-background-color);
     border-left: 1px dashed var(--main-background-color);
@@ -377,15 +381,18 @@
     SECTION FIVE
 */
 .section_five {
+    width: 70%;
     margin: 120px auto;
+    background: #200E32;
+    border-radius: 15px;
 }
 
 .section_five > div {
-    width: 70%;
-    margin: auto;
+    width: 100%;
     padding: 50px 30px;
-    background: #200E32;
-    border-radius: 15px;
+    background: url('./images/newsletter-underlay.png') no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .section_five h2 {
@@ -646,6 +653,9 @@
     }
     
 
+    .section_five {
+        width: 95%;
+    }
     .section_five > div {
         width: 100%;
         padding: 50px 10px;

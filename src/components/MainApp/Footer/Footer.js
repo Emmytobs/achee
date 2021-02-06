@@ -28,7 +28,7 @@ function Footer() {
                     <ul>
                         <li><Link onClick={() => window.location = '/app'}>Home</Link></li>
                         <li><Link onClick={() => window.location = '/app/create-portfolio'}>Portfolio</Link></li>
-                        <li><Link>Learn</Link></li>
+                        <li><Link onClick={() => window.location = '/app/resources'}>Learn</Link></li>
                     </ul>
                 </div>
                 <div className={`${styles.menuList} ${styles.company}`}>
@@ -42,7 +42,7 @@ function Footer() {
                 <div className={`${styles.menuList} ${styles.support}`}>
                     <h3>Support</h3>
                     <ul>
-                        <li><Link>FAQ</Link></li>
+                        <li><Link onClick={() => window.location = '/faq'}>FAQ</Link></li>
                         <li><Link onClick={() => window.location = '/app/referrals'}>Referrals</Link></li>
                         <li><Link onClick={() => window.location = '/contact'}>Contact Us</Link></li>
                     </ul>

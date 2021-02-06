@@ -22,9 +22,6 @@
 
 
 @media screen and (max-width: 420px) {
-    .transaction > * {
-        /* width: 40%; */
-    }
     .price > input,
     .commission > input {
         width: 70%;

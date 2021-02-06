@@ -45,9 +45,9 @@ function Header(props) {
                         Resources <img src={arrowDown} alt="Arrow Down"/>
                         {activeTab === "resources" && <span className={styles.indicator}></span>}
                     </Link>
-                    <Link onClick={takeTo.bind(null, null, 'contact')} className={styles.tab} to="">
-                        Contact Us
-                        {activeTab === "contact" && <span className={styles.indicator}></span>}
+                    <Link onClick={takeTo.bind(null, '/app/referrals', 'referrals')} className={styles.tab} to="">
+                        Refer a Friend
+                        {activeTab === "referrals" && <span className={styles.indicator}></span>}
                     </Link>
                     <Link><button className={styles.upgradeButton}>Upgrade</button></Link>
                     <Link><img src={notificationIcon} alt="Notification" /></Link>

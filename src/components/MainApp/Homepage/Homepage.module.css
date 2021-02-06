@@ -22,7 +22,7 @@
 .gridContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 270px 120px 1fr;
+    grid-template-rows: 270px 120px auto;
     grid-template-areas: 
         'card accountUpgradeStatus'
         'card learn'
@@ -289,7 +289,7 @@
             'card news';
         grid-gap: 20px 30px;
         width: 95%;
-        margin: 0 auto 100px;
+        margin: 0 auto;
     }
     .cardText h3 {
         color: var(--heading-text-color);
@@ -338,15 +338,15 @@
     .gridContainer {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 270px 120px 1fr 1fr;
+        grid-template-rows: 270px 120px repeat(2, auto);
         grid-template-areas: 
             'accountUpgradeStatus'
             'learn'
             'card'
             'news';
-        grid-gap: 20px 30px;
+        grid-gap: 10px 0;
         width: 95%;
-        margin: 0 auto 100px;
+        margin: 0 auto;
     }
     .upgradeContainer > button {
         padding: 15px 0;
@@ -368,5 +368,6 @@
     }
     .newsContainer {
         grid-row-start: 4;
+        margin: 0 auto;
     }
 }
