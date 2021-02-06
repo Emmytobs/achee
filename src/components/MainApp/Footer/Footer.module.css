@@ -1,5 +1,8 @@
 .footer {
-    background: var(--main-background-color);
+    background: url('./footer-underlay.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: var(--main-background-color);
     width: 100%;
     padding-top: 50px;
     position: relative;

@@ -55,23 +55,10 @@
         top: 0px;
     }
     50% {
-        top: 5px;
+        top: 3px;
     }
     100% {
         top: 0;
-    }
-}
-@media screen and (max-width: 900px) {
-    @keyframes bounce {
-        0% {
-            top: 0px;
-        }
-        50% {
-            top: 5px;
-        }
-        100% {
-            top: 0;
-        }
     }
 }
 
