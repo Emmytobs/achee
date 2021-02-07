@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Input, Button } from '../Form/Form';
-import MobileHeader from '../../Shared/MobileHeader/MobileHeader';
+import { connect } from 'react-redux'
+// import axios from 'axios';
 
 import styles from './SignIn.module.css';
 
@@ -9,15 +10,26 @@ import google from '../images/google.png';
 import facebook from '../images/facebook.png';
 import leftSignInIcon from '../images/left-sign-in-icon.png';
 import rightSignInIcon from '../images/right-sign-in-icon.png';
-import menuIcon from '../../Shared/icons/menu-icon.png';
 
 function SignIn(props) {
+    const [form, setForm] = useState({ email: '', password: '' });
+
     const changeToSignUpView = (e) => {
         props.history.push('/account?page=sign-up')
     }
 
     const changeToForgotPasswordView = (e) => {
         props.history.push('/account?page=forgot-password');
+    }
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm({ [name]: value });
+    }
+
+    const sendUserData = (e) => {
+        e.preventDefault();
+        // Make POST request to '/users/login'
     }
 
     return (
@@ -49,13 +61,15 @@ function SignIn(props) {
                     <span className={styles.orText}>OR</span>
                     <span className={styles.line}></span>
                 </div>
-                <Form>
+                <Form onSubmit={sendUserData}>
                     <Input 
                         name="email"
                         type="email"
                         placeholder="Enter your registered email"
                         id="email"
                         labelText="Email"
+                        onChange={handleChange}
+                        value={form.email}
                     />
                     <Input 
                         name="password"
@@ -63,6 +77,8 @@ function SignIn(props) {
                         placeholder="Enter your password"
                         id="password"
                         labelText="Create password"
+                        onChange={handleChange}
+                        value={form.password}
                     />
                      <div className={styles.forgotPasswordContainer}>
                         <button className={styles.forgotPassword} onClick={changeToForgotPasswordView}>Forgot Password?</button>
@@ -80,4 +96,4 @@ function SignIn(props) {
     )
 }
 
-export default SignIn
+export default connect(SignIn)(null, null)

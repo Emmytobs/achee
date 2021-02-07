@@ -9,12 +9,23 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import { Provider } from 'react-redux'
+import { createStore, compose } from 'redux'
+import reducer from './redux/reducer';
+
+const store = createStore(reducer, compose(
+  typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : (f) => f
+));
+
+
 library.add(fas)
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

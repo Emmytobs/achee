@@ -1,5 +1,4 @@
 import React from 'react'
-import MobileHeader from '../../Shared/MobileHeader/MobileHeader';
 
 import styles from './SignUp.module.css';
 
