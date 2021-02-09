@@ -1,6 +1,7 @@
-import React from 'react'
-
+import React, { useState } from 'react'
 import styles from './SignUp.module.css';
+
+import axios from 'axios';
 
 import acheeLogo from '../../Shared/icons/acheeLogo_blue.png';
 import google from '../images/google.png';
@@ -10,9 +11,33 @@ import { Form, Input, Button } from '../Form/Form';
 import AsideContainer from '../AsideContainer/AsideContainer';
 
 function SignUp(props) {
+    const [ form, setForm ] = useState({ email: '', password: '' })
     const changeToSignIn = (e) => {
         props.history.push('/account?page=sign-in')
     }
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm({ ...form, [name]: value });
+    }
+
+    const createUser = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/register`, { ...form });
+            if(!response) {
+                // Display no internet page
+                return
+            }
+            console.log(response);
+            if (response.status === 201) {
+                props.history.push('/account?page=sign-in');
+            }
+        } catch(error) {
+            console.log(error.response)
+        }
+    }
+
     return (
         <div className={`flex-container ${styles.loginWrapper}`}>
             <div className={styles.loginContainer}>
@@ -44,13 +69,14 @@ function SignUp(props) {
                         <span className={styles.line}></span>
                     </div>
 
-                    <Form>
+                    <Form onSubmit={createUser}>
                         <Input 
                             name="email"
                             type="email"
                             placeholder="Enter your email"
                             id="email"
                             labelText="Email"
+                            onChange={handleChange}
                         />
                         <Input 
                             name="password"
@@ -58,6 +84,7 @@ function SignUp(props) {
                             placeholder="Enter your password"
                             id="password"
                             labelText="Create password"
+                            onChange={handleChange}
                         />
                         <Button buttonText="Signup for free" rightIcon />
                     </Form>

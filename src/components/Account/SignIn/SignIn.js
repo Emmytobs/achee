@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import styles from './SignIn.module.css';
 import { Form, Input, Button } from '../Form/Form';
 import { connect } from 'react-redux'
-// import axios from 'axios';
-
-import styles from './SignIn.module.css';
+import axios from 'axios';
+import {
+    saveAccessToken
+} from '../../../redux/dispatchers'
 
 import acheeLogo from '../../Shared/icons/acheeLogo_blue.png';
 import google from '../images/google.png';
@@ -24,12 +26,30 @@ function SignIn(props) {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setForm({ [name]: value });
+        setForm({ ...form, [name]: value });
     }
 
-    const sendUserData = (e) => {
+    const sendUserData = async (e) => {
         e.preventDefault();
-        // Make POST request to '/users/login'
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/login`, { ...form });
+            if(!response) {
+                // Display no internet page
+                return
+            }
+            const accessToken = response.data.data.accessToken;
+            localStorage.setItem('accessToken', JSON.stringify(accessToken));
+            console.log(props.dispatch)
+            saveAccessToken(accessToken, props.dispatch);
+            props.history.push('/app');
+            // console.log(response)
+        }
+        catch(error) {
+            // Display custom form errors
+            console.log(error.response)
+        }
+        
+        
     }
 
     return (
@@ -96,4 +116,4 @@ function SignIn(props) {
     )
 }
 
-export default connect(SignIn)(null, null)
+export default connect(null, null)(SignIn)
