@@ -1,46 +1,27 @@
 import React, { useState } from 'react'
 import styles from './SignUp.module.css';
+import { Form, Input, Button } from '../Form/Form';
+import AsideContainer from '../AsideContainer/AsideContainer';
 
 import axios from 'axios';
+
+import { Formik } from 'formik';
+import * as Yup from 'yup';
 
 import acheeLogo from '../../Shared/icons/acheeLogo_blue.png';
 import google from '../images/google.png';
 import facebook from '../images/facebook.png';
 
-import { Form, Input, Button } from '../Form/Form';
-import AsideContainer from '../AsideContainer/AsideContainer';
 
 function SignUp(props) {
-    const [ form, setForm ] = useState({ email: '', password: '' })
-    const [ inputError, setInputError ] = useState({ email: '', password: '' });
     
     const changeToSignIn = (e) => {
         props.history.push('/account?page=sign-in')
     }
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        if(value === '') {
-            setInputError({ ...inputError, [name]: '' })
-        }
-        setForm({ ...form, [name]: value });
-    }
-
-    const dataIsValid = () => {
-        return false
-    }
-
-    const createUser = async (e) => {
-        e.preventDefault();
-        if( !dataIsValid() ) {
-            // Error for password error
-            // Password doesnt meet criteria [8 chars min]
-            setInputError({ email: 'Email address not valid', password: 'Password doesnt meet criteria [8 chars min]' })
-            return
-        }
-
+    const createUser = async (formData) => {
         try {
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/register`, { ...form });
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/register`, formData);
             if(!response) {
                 // Display no internet page
                 return
@@ -53,6 +34,15 @@ function SignUp(props) {
             console.log(error.response)
         }
     }
+
+    const SignUpSchema = Yup.object().shape({
+        email: Yup.string()
+            .email('Email is not valid')
+            .required('Required'),
+        password: Yup.string()
+            .min(8, 'Password doesn\'t meet criteria [8 chars min]')
+            .required('Required')
+    })
 
     return (
         <div className={`flex-container ${styles.loginWrapper}`}>
@@ -85,28 +75,42 @@ function SignUp(props) {
                         <span className={styles.line}></span>
                     </div>
 
-                    <Form onSubmit={createUser} noValidate>
-                        <Input 
-                            name="email"
-                            type="email"
-                            placeholder="Enter your email"
-                            id="email"
-                            labelText="Email"
-                            onChange={handleChange}
-                            inputError={inputError}
-                            // errorText='Email address not valid'
-                        />
-                        <Input 
-                            name="password"
-                            type="password"
-                            placeholder="Enter your password"
-                            id="password"
-                            labelText="Create password"
-                            onChange={handleChange}
-                            inputError={inputError}
-                        />
-                        <Button buttonText="Signup for free" rightIcon />
-                    </Form>
+                    <Formik
+                        initialValues = {{ email: '', password: '' }}
+                        validationSchema = {SignUpSchema}
+                        onSubmit = {(values) => {
+                            createUser(values)
+                        }}
+                    >
+                        {
+                            ({ errors, touched, values, handleSubmit, handleChange }) => (
+                                <Form onSubmit={handleSubmit} noValidate>
+                                    <Input 
+                                        name="email"
+                                        type="email"
+                                        placeholder="Enter your email"
+                                        id="email"
+                                        labelText="Email"
+                                        onChange={handleChange}
+                                        value={values.email}
+                                        errors={(touched.email && errors.email) && errors.email}
+                                    />
+                                    <Input 
+                                        name="password"
+                                        type="password"
+                                        placeholder="Enter your password"
+                                        id="password"
+                                        labelText="Create password"
+                                        onChange={handleChange}
+                                        value={values.password}
+                                        errors={(touched.password && errors.password) && errors.password}
+                                    />
+                                    <Button buttonText="Signup for free" rightIcon />
+                                </Form>
+                            )
+                        }
+                    </Formik>
+
                     <div className={styles.switchToSigninContainer}>
                         <p>Already have an account?</p>
                         <button onClick={changeToSignIn} className={styles.switchToSigninBtn}>Sign in</button>

@@ -22,7 +22,7 @@ export function Input(props) {
     }
 
     const inputErrorStyle = () => {
-        if (props.inputError[props.name] || props.inputError === true) {
+        if (props.errors) {
             return {
                 border: '1px red solid',
                 color: 'red'
@@ -49,7 +49,7 @@ export function Input(props) {
                 {props.addShowPassword && <button type="button" className={styles.showPasswordBtn} onClick={toggleShowPasswordText}>{isPasswordShowing ? 'Hide' : 'Show'}</button>}
 
             </div>
-            {props.inputError[props.name] && <small style={{color: 'red'}}>{props.inputError[props.name]}</small>}
+            {props.errors && <small style={{color: 'red'}}>{props.errors}</small>}
         </div>
     )
 }

@@ -7,6 +7,9 @@ import {
     saveAccessToken
 } from '../../../redux/dispatchers'
 
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+
 import acheeLogo from '../../Shared/icons/acheeLogo_blue.png';
 import google from '../images/google.png';
 import facebook from '../images/facebook.png';
@@ -14,8 +17,6 @@ import leftSignInIcon from '../images/left-sign-in-icon.png';
 import rightSignInIcon from '../images/right-sign-in-icon.png';
 
 function SignIn(props) {
-    const [form, setForm] = useState({ email: '', password: '' });
-
     const changeToSignUpView = (e) => {
         props.history.push('/account?page=sign-up')
     }
@@ -24,33 +25,32 @@ function SignIn(props) {
         props.history.push('/account?page=forgot-password');
     }
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setForm({ ...form, [name]: value });
-    }
-
-    const sendUserData = async (e) => {
-        e.preventDefault();
+    const sendUserData = async (formData) => {
         try {
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/login`, { ...form });
-            if(!response) {
-                // Display no internet page
-                return
-            }
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/login`, formData);
             const accessToken = response.data.data.accessToken;
             localStorage.setItem('accessToken', JSON.stringify(accessToken));
             console.log(props.dispatch)
             saveAccessToken(accessToken, props.dispatch);
             props.history.push('/app');
-            // console.log(response)
         }
         catch(error) {
-            // Display custom form errors
+            if(!error.response) {
+                // Display no internet page
+                return
+            }
             console.log(error.response)
-        }
-        
-        
+        }        
     }
+
+    const SignInSchema = Yup.object().shape({
+        email: Yup.string()
+            .email('Email is not valid')
+            .required('Required'),
+        password: Yup.string()
+            .min(8, 'Password doesn\'t meet criteria [8 chars min]')
+            .required('Required')
+    })
 
     return (
         <div className={`display-flex ${styles.signinWrapper}`}>
@@ -81,30 +81,44 @@ function SignIn(props) {
                     <span className={styles.orText}>OR</span>
                     <span className={styles.line}></span>
                 </div>
-                <Form onSubmit={sendUserData}>
-                    <Input 
-                        name="email"
-                        type="email"
-                        placeholder="Enter your registered email"
-                        id="email"
-                        labelText="Email"
-                        onChange={handleChange}
-                        value={form.email}
-                    />
-                    <Input 
-                        name="password"
-                        type="password"
-                        placeholder="Enter your password"
-                        id="password"
-                        labelText="Create password"
-                        onChange={handleChange}
-                        value={form.password}
-                    />
-                     <div className={styles.forgotPasswordContainer}>
-                        <button className={styles.forgotPassword} onClick={changeToForgotPasswordView}>Forgot Password?</button>
-                    </div>
-                    <Button buttonText="Signin account" rightIcon style={{marginTop: '25px'}} />
-                </Form>
+                <Formik
+                    initialValues = {{ email: '', password: '' }}
+                    validationSchema = {SignInSchema}
+                    onSubmit = {(values) => {
+                        sendUserData(values);
+                    }}
+                >
+                    {
+                        ({ errors, values, touched, handleSubmit, handleChange }) => (
+                            <Form onSubmit={handleSubmit} noValidate>
+                                <Input 
+                                    name="email"
+                                    type="email"
+                                    placeholder="Enter your registered email"
+                                    id="email"
+                                    labelText="Email"
+                                    onChange={handleChange}
+                                    value={values.email}
+                                    errors={(touched.email && errors.email) && errors.email}
+                                />
+                                <Input 
+                                    name="password"
+                                    type="password"
+                                    placeholder="Enter your password"
+                                    id="password"
+                                    labelText="Create password"
+                                    onChange={handleChange}
+                                    value={values.password}
+                                    errors={(touched.password && errors.password) && errors.password}
+                                />
+                                <div className={styles.forgotPasswordContainer}>
+                                    <button className={styles.forgotPassword} onClick={changeToForgotPasswordView}>Forgot Password?</button>
+                                </div>
+                                <Button buttonText="Signin account" rightIcon style={{marginTop: '25px'}} />
+                            </Form>
+                        )
+                    }
+                </Formik>
                
                 <div className={styles.switchToSignupContainer}>
                     <p>First time here ?</p>
