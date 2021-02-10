@@ -12,17 +12,33 @@ import AsideContainer from '../AsideContainer/AsideContainer';
 
 function SignUp(props) {
     const [ form, setForm ] = useState({ email: '', password: '' })
+    const [ inputError, setInputError ] = useState({ email: '', password: '' });
+    
     const changeToSignIn = (e) => {
         props.history.push('/account?page=sign-in')
     }
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+        if(value === '') {
+            setInputError({ ...inputError, [name]: '' })
+        }
         setForm({ ...form, [name]: value });
+    }
+
+    const dataIsValid = () => {
+        return false
     }
 
     const createUser = async (e) => {
         e.preventDefault();
+        if( !dataIsValid() ) {
+            // Error for password error
+            // Password doesnt meet criteria [8 chars min]
+            setInputError({ email: 'Email address not valid', password: 'Password doesnt meet criteria [8 chars min]' })
+            return
+        }
+
         try {
             const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/register`, { ...form });
             if(!response) {
@@ -69,7 +85,7 @@ function SignUp(props) {
                         <span className={styles.line}></span>
                     </div>
 
-                    <Form onSubmit={createUser}>
+                    <Form onSubmit={createUser} noValidate>
                         <Input 
                             name="email"
                             type="email"
@@ -77,6 +93,8 @@ function SignUp(props) {
                             id="email"
                             labelText="Email"
                             onChange={handleChange}
+                            inputError={inputError}
+                            // errorText='Email address not valid'
                         />
                         <Input 
                             name="password"
@@ -85,6 +103,7 @@ function SignUp(props) {
                             id="password"
                             labelText="Create password"
                             onChange={handleChange}
+                            inputError={inputError}
                         />
                         <Button buttonText="Signup for free" rightIcon />
                     </Form>

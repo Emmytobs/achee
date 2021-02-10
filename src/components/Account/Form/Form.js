@@ -5,10 +5,10 @@ import lock from '../images/lock.png';
 import message from '../images/message.png';
 import arrowRight from '../images/arrow-right.png';
 
-export function Form({ children, style, onSubmit }) {
+export function Form(props) {
     return (
-        <form className={styles.form} style={style} onSubmit={onSubmit}>
-            {children}
+        <form className={styles.form} {...props}>
+            {props.children}
         </form>
     )
 }
@@ -21,10 +21,22 @@ export function Input(props) {
         setsPasswordShowing(!isPasswordShowing);
     }
 
+    const inputErrorStyle = () => {
+        if (props.inputError[props.name] || props.inputError === true) {
+            return {
+                border: '1px red solid',
+                color: 'red'
+            }
+        }
+    }
+
     return (
         <div className={styles.inputContainer}>
             <label htmlFor={props.id}>{props.labelText}</label>
-            <div className={`display-flex ${styles.inputGroup}`}>
+            <div 
+                style={inputErrorStyle()}
+                className={`display-flex ${styles.inputGroup}`}
+            >
                 <img src={props.type === 'password' ? lock : message} alt={props.type === 'password' ? "lock" : "mailbox"} width='16px' height='16px' />
                 <input type={isPasswordShowing ? 'text' : props.type} {...props}/>
                 {/* <input 
@@ -35,7 +47,9 @@ export function Input(props) {
                     placeholder={props.placeholder}
                     value={props.value}/> */}
                 {props.addShowPassword && <button type="button" className={styles.showPasswordBtn} onClick={toggleShowPasswordText}>{isPasswordShowing ? 'Hide' : 'Show'}</button>}
+
             </div>
+            {props.inputError[props.name] && <small style={{color: 'red'}}>{props.inputError[props.name]}</small>}
         </div>
     )
 }
