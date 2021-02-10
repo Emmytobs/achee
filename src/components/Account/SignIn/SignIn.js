@@ -7,6 +7,7 @@ import {
     saveAccessToken
 } from '../../../redux/dispatchers'
 
+import ErrorBox from '../ErrorBox'
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
@@ -17,6 +18,8 @@ import leftSignInIcon from '../images/left-sign-in-icon.png';
 import rightSignInIcon from '../images/right-sign-in-icon.png';
 
 function SignIn(props) {
+    const [errorMessage, setErrorMessage] = useState('')
+
     const changeToSignUpView = (e) => {
         props.history.push('/account?page=sign-up')
     }
@@ -30,16 +33,20 @@ function SignIn(props) {
             const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/login`, formData);
             const accessToken = response.data.data.accessToken;
             localStorage.setItem('accessToken', JSON.stringify(accessToken));
-            console.log(props.dispatch)
+            
             saveAccessToken(accessToken, props.dispatch);
+            
+            setErrorMessage('')
             props.history.push('/app');
         }
         catch(error) {
             if(!error.response) {
                 // Display no internet page
+                setErrorMessage('Couldn\'t make request. Please check your internet connection')
                 return
             }
-            console.log(error.response)
+            const { message } = error.response.data
+            setErrorMessage(message)
         }        
     }
 
@@ -81,6 +88,11 @@ function SignIn(props) {
                     <span className={styles.orText}>OR</span>
                     <span className={styles.line}></span>
                 </div>
+
+                <div>
+                    {errorMessage && <ErrorBox errorMessage={errorMessage} />}
+                </div>
+
                 <Formik
                     initialValues = {{ email: '', password: '' }}
                     validationSchema = {SignInSchema}

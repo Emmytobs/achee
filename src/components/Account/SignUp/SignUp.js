@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './SignUp.module.css';
 import { Form, Input, Button } from '../Form/Form';
+import ErrorBox from '../ErrorBox';
 import AsideContainer from '../AsideContainer/AsideContainer';
 
 import axios from 'axios';
@@ -14,7 +15,8 @@ import facebook from '../images/facebook.png';
 
 
 function SignUp(props) {
-    
+    const [errorMessage, setErrorMessage] = useState('')
+
     const changeToSignIn = (e) => {
         props.history.push('/account?page=sign-in')
     }
@@ -22,16 +24,18 @@ function SignUp(props) {
     const createUser = async (formData) => {
         try {
             const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/register`, formData);
-            if(!response) {
-                // Display no internet page
-                return
-            }
-            console.log(response);
             if (response.status === 201) {
                 props.history.push('/account?page=sign-in');
+                setErrorMessage('')
             }
         } catch(error) {
-            console.log(error.response)
+            if(!error.response) {
+                // Display no internet page
+                setErrorMessage('Couldn\'t make request. Please check your internet connection')
+                return
+            }
+            const { message } = error.response.data
+            setErrorMessage(message)
         }
     }
 
@@ -73,6 +77,10 @@ function SignUp(props) {
                         <span className={styles.line}></span>
                         <span className={styles.orText}>OR</span>
                         <span className={styles.line}></span>
+                    </div>
+
+                    <div>
+                        {errorMessage && <ErrorBox errorMessage={errorMessage} />}
                     </div>
 
                     <Formik

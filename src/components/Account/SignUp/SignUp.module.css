@@ -34,6 +34,11 @@
     margin: 50px auto 0;
 }
 
+.formContainer > * {
+    width: 420px;
+    margin: 0 auto;
+}
+
 .formContainer > h2 {
     width: 385px;
     font-family: 'Bree Serif', serif;
@@ -189,6 +194,12 @@
         margin: 30px auto 0;
         padding: 0 10px;
     }
+
+    .formContainer > * {
+        width: 50%;
+        margin: 0 auto;
+    }
+
     .formContainer > form {
         width: 50%;
     }
@@ -257,6 +268,12 @@
         margin: 30px auto 0;
         padding: 0 10px;
     }
+
+    .formContainer > * {
+        width: 95%;
+        margin: 0 auto;
+    }
+
     .formContainer > form {
         width: 95%;
     }
