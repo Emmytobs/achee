@@ -29,6 +29,8 @@ function SignIn(props) {
     }
 
     const sendUserData = async (formData) => {
+        setErrorMessage('')
+        console.log(process.env.REACT_APP_API_URL)
         try {
             const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/login`, formData);
             const accessToken = response.data.data.accessToken;
@@ -36,7 +38,6 @@ function SignIn(props) {
             
             saveAccessToken(accessToken, props.dispatch);
             
-            setErrorMessage('')
             props.history.push('/app');
         }
         catch(error) {

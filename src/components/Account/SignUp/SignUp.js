@@ -81,6 +81,10 @@ function SignUp(props) {
 
                     <div>
                         {errorMessage && <ErrorBox errorMessage={errorMessage} />}
+                        {errorMessage && <ErrorBox errorMessage={errorMessage} />}
+                        {errorMessage && <ErrorBox errorMessage={errorMessage} />}
+                        {errorMessage && <ErrorBox errorMessage={errorMessage} />}
+                        {errorMessage && <ErrorBox errorMessage={errorMessage} />}
                     </div>
 
                     <Formik
