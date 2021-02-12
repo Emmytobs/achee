@@ -220,12 +220,10 @@
         padding: 10px;
         background: #fff;
         margin-top: 50px;
-        padding: 10px;
     }
 
     .signinFormContainer > * {
         width: 95%;
-        margin: auto;
     }
 
     .logo {
