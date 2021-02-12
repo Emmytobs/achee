@@ -19,6 +19,7 @@ import rightSignInIcon from '../images/right-sign-in-icon.png';
 
 function SignIn(props) {
     const [errorMessage, setErrorMessage] = useState('')
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     const changeToSignUpView = (e) => {
         props.history.push('/account?page=sign-up')
@@ -29,18 +30,19 @@ function SignIn(props) {
     }
 
     const sendUserData = async (formData) => {
-        setErrorMessage('')
-        console.log(process.env.REACT_APP_API_URL)
+        setErrorMessage('');
+        setIsSubmitting(true);
         try {
             const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/login`, formData);
             const accessToken = response.data.data.accessToken;
             localStorage.setItem('accessToken', JSON.stringify(accessToken));
             
             saveAccessToken(accessToken, props.dispatch);
-            
+            setIsSubmitting(false)
             props.history.push('/app');
         }
         catch(error) {
+            setIsSubmitting(false)
             if(!error.response) {
                 // Display no internet page
                 setErrorMessage('Couldn\'t make request. Please check your internet connection')
@@ -63,7 +65,7 @@ function SignIn(props) {
     return (
         <div className={`display-flex ${styles.signinWrapper}`}>
             <img src={leftSignInIcon} alt="Left Icon" className={styles.signInIcon} />
-            <div className={styles.signinFormContainer}>
+            <div className={styles.signinFormContainer} style={{ opacity: isSubmitting && '0.5' }}>
                 <div className={`display-flex ${styles.logo}`}>
                     <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
                     <span>achee</span>

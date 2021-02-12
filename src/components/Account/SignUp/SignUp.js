@@ -16,19 +16,23 @@ import facebook from '../images/facebook.png';
 
 function SignUp(props) {
     const [errorMessage, setErrorMessage] = useState('')
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     const changeToSignIn = (e) => {
         props.history.push('/account?page=sign-in')
     }
 
     const createUser = async (formData) => {
+        setErrorMessage('')
+        setIsSubmitting(true)
         try {
             const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/register`, formData);
             if (response.status === 201) {
                 props.history.push('/account?page=sign-in');
-                setErrorMessage('')
+                setIsSubmitting(false)
             }
         } catch(error) {
+            setIsSubmitting(false)
             if(!error.response) {
                 // Display no internet page
                 setErrorMessage('Couldn\'t make request. Please check your internet connection')
@@ -50,7 +54,7 @@ function SignUp(props) {
 
     return (
         <div className={`flex-container ${styles.loginWrapper}`}>
-            <div className={styles.loginContainer}>
+            <div className={styles.loginContainer} style={{ opacity: isSubmitting && '0.5' }}>
                 <div className={`display-flex ${styles.logo}`}>
                     <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
                     <span>achee</span>
@@ -80,10 +84,6 @@ function SignUp(props) {
                     </div>
 
                     <div>
-                        {errorMessage && <ErrorBox errorMessage={errorMessage} />}
-                        {errorMessage && <ErrorBox errorMessage={errorMessage} />}
-                        {errorMessage && <ErrorBox errorMessage={errorMessage} />}
-                        {errorMessage && <ErrorBox errorMessage={errorMessage} />}
                         {errorMessage && <ErrorBox errorMessage={errorMessage} />}
                     </div>
 
@@ -129,7 +129,9 @@ function SignUp(props) {
                     </div>
                 </div>
             </div>
-            <AsideContainer />
+            <div className={styles.asideContainer}>
+                <AsideContainer />
+            </div>
         </div>
     )
 }
