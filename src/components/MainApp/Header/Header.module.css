@@ -50,13 +50,52 @@
     text-decoration: none;
 }
 
-
+.dropdownBtn {
+    position: relative;
+    cursor: pointer;
+}
+.dropdownBtn:focus-within .dropdown {
+    opacity: 1;
+}
 .dropdownBtn > * {
     margin: 0 4px;
+    display: inline-block;
+}
+.dropdownBtn > .userFullName {
+    color: #ffffffb3;
+    text-decoration: none;
 }
 
-.dropdownBtn > p {
-    color: #ffffffb3;
+.dropdown {
+    position: absolute;
+    top: 80%;
+    background: #fff;
+    color: var(--text-color);
+    border: 1px solid var(--main-background-color);
+    padding: 40px 10px 20px;
+    width: 80%;
+    display: block;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+    border-radius: 10px;
+    z-index: 20;
+    clip-path: polygon(0% 7%, 80% 7%, 88% 0%, 96% 7%, 100% 7%, 100% 100%, 0% 100%, 0% 0%);
+}
+.dropdown li {
+    padding: 8px;
+    width: 100%;
+    list-style: none;
+}
+.dropdown li:hover {
+    background: #eee;
+}
+/* There's no links... yet */
+.dropdown a {
+    text-decoration: none;
+    color: #ccc;
+}
+.dropdown .logoutBtn {
+    color: red;
 }
 
 .upgradeButton {

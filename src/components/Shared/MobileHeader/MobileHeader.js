@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './MobileHeader.module.css';
 
@@ -8,6 +8,13 @@ import acheeLogoWhite from '../../Shared/icons/acheeLogo_white.png'
 import closeMenuIcon from '../../Shared/icons/close-menu-icon.png'
 function MobileHeader(props) {
     const [isMenuShowing, setIsMenuShowing] = useState(false)
+    
+    useEffect(() => {
+        // The following code prevents the body from scrolling when the modal is showing
+        const bodyElement = document.querySelector('body');
+        isMenuShowing ? bodyElement.style.overflowY = "hidden" : bodyElement.style.overflowY = "scroll"
+    }, [isMenuShowing])
+
     const toggleShowMenu = (e) => {
         setIsMenuShowing(!isMenuShowing)
     }
@@ -40,13 +47,13 @@ function MobileHeader(props) {
                 </div>
                 <div className={styles.menuItems}>
                     <ul>
-                        <li><Link>Home</Link></li>
-                        <li><Link>Portfolio</Link></li>
-                        <li><Link>Learn</Link></li>
-                        <li><Link>Contact Us</Link></li>
-                        <li><Link>My Profile</Link></li>
-                        <li><Link>Upgrade</Link></li>
-                        <li><Link>Sign out</Link></li>
+                        <li><Link to="/app">Home</Link></li>
+                        <li><Link to="/app/create-portfolio">Portfolio</Link></li>
+                        <li><Link>Resources</Link></li>
+                        <li><Link to="/app/referrals">Refer a friend</Link></li>
+                        <li><Link><img src=""  alt="Your profile picture" />My Profile</Link></li>
+                        <li className={styles.upgrade}><Link>Upgrade</Link></li>
+                        <li className={styles.signOut}><Link>Sign out</Link></li>
                     </ul>
                 </div>
             </div>

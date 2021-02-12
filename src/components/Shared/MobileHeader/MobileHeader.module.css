@@ -60,7 +60,7 @@
 }
 
 .menuItems li {
-    width: 100px;
+    width: 170px;
     margin: 30px auto;
     list-style: none;
     text-align: center;
@@ -70,4 +70,18 @@
     font-size: 1.1em;
     color: #F7F7F8;
     text-decoration: none;
+}
+
+.upgrade {
+    border: 1px solid #fff;
+    background: #ffffff1a;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 5px;
+}
+.signOut {
+    background: red;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 5px;
 }

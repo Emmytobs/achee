@@ -9,6 +9,7 @@ import notificationIcon from '../../Shared/icons/Notification.png';
 import userDP from '../../Shared/icons/user-dp.png';
 
 import MobileHeader from '../../Shared/MobileHeader/MobileHeader';
+import { library } from '@fortawesome/fontawesome-svg-core';
 
 function Header(props) {
     const { url } = useRouteMatch()
@@ -51,11 +52,16 @@ function Header(props) {
 
                     <Link><img src={notificationIcon} alt="Notification" /></Link>
 
-                    <div className={`display-flex ${styles.dropdownBtn}`}>
+                    <Link className={`display-flex ${styles.dropdownBtn}`}>
                         <img src={userDP} alt="User's Profile Pic" />
                         <p className={styles.userFullName}>Adesanoye Dorcas</p>
                         <img src={arrowDown} alt="Arrow Down"/>
-                    </div>
+                        <ul className={styles.dropdown}>
+                            <li>My Profile</li>
+                            <li>Change Password</li>
+                            <li className={styles.logoutBtn}>Sign out</li>
+                        </ul>
+                    </Link>
                 </nav>
             </header>
             <div className={styles.mobileHeaderContainer}>

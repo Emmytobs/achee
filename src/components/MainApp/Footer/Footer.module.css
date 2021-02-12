@@ -105,6 +105,10 @@
 }
 
 @media screen and (max-width: 700px) {
+    .footer {
+        background: none;
+        background-color: var(--main-background-color);
+    }
     .gridContainer {
         display: grid;
         width: 80%;
