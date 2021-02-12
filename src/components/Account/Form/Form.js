@@ -38,14 +38,8 @@ export function Input(props) {
                 className={`display-flex ${styles.inputGroup}`}
             >
                 <img src={props.type === 'password' ? lock : message} alt={props.type === 'password' ? "lock" : "mailbox"} width='16px' height='16px' />
-                <input type={isPasswordShowing ? 'text' : props.type} {...props}/>
-                {/* <input 
-                    type={isPasswordShowing ? 'text' : props.type} 
-                    name={props.name} 
-                    onChange={props.onChange} 
-                    id={props.id} 
-                    placeholder={props.placeholder}
-                    value={props.value}/> */}
+                <input {...props} type={isPasswordShowing ? 'text' : props.type}/>
+                
                 {props.addShowPassword && <button type="button" className={styles.showPasswordBtn} onClick={toggleShowPasswordText}>{isPasswordShowing ? 'Hide' : 'Show'}</button>}
 
             </div>

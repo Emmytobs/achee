@@ -125,6 +125,7 @@ function SignIn(props) {
                                     onChange={handleChange}
                                     value={values.password}
                                     errors={(touched.password && errors.password) && errors.password}
+                                    addShowPassword
                                 />
                                 <div className={styles.forgotPasswordContainer}>
                                     <button className={styles.forgotPassword} onClick={changeToForgotPasswordView}>Forgot Password?</button>

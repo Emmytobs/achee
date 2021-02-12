@@ -116,6 +116,7 @@ function SignUp(props) {
                                         onChange={handleChange}
                                         value={values.password}
                                         errors={(touched.password && errors.password) && errors.password}
+                                        addShowPassword
                                     />
                                     <Button buttonText="Signup for free" rightIcon />
                                 </Form>
