@@ -4,7 +4,7 @@ import { Form, Input, Button } from '../Form/Form';
 import { connect } from 'react-redux'
 import axios from 'axios';
 import {
-    saveAccessToken
+    saveAuthTokens
 } from '../../../redux/dispatchers'
 
 import ErrorBox from '../ErrorBox'
@@ -34,10 +34,11 @@ function SignIn(props) {
         setIsSubmitting(true);
         try {
             const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/login`, formData);
-            const accessToken = response.data.data.accessToken;
-            localStorage.setItem('accessToken', JSON.stringify(accessToken));
+            const{ accessToken, refreshToken }= response.data.data;
+            localStorage.setItem('achee_accessToken', JSON.stringify(accessToken));
+            localStorage.setItem('achee_refreshToken', JSON.stringify(refreshToken));
             
-            saveAccessToken(accessToken, props.dispatch);
+            saveAuthTokens([accessToken, refreshToken], props.dispatch);
             setIsSubmitting(false)
             props.history.push('/app');
         }

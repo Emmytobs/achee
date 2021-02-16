@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 import styles from './SignUp.module.css';
 import { Form, Input, Button } from '../Form/Form';
 import ErrorBox from '../ErrorBox';
 import AsideContainer from '../AsideContainer/AsideContainer';
+import { saveAuthTokens } from '../../../redux/dispatchers'
 
 import axios from 'axios';
 
@@ -22,14 +24,38 @@ function SignUp(props) {
         props.history.push('/account?page=sign-in')
     }
 
+    const loginUser = async (formData) => {
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/login`, formData);
+            if (response.status === 200) {
+                const { accessToken, refreshToken } = response.data.data;
+                localStorage.setItem('achee_accessToken', JSON.stringify(accessToken));
+                localStorage.setItem('achee_refreshToken', JSON.stringify(refreshToken));
+                
+                saveAuthTokens([accessToken, refreshToken], props.dispatch);
+
+                props.history.push('/app');
+                setIsSubmitting(false)
+            }
+        } catch (error) {
+            setIsSubmitting(false)
+            if(!error.response) {
+                // Display no internet page
+                setErrorMessage('Couldn\'t make request. Please check your internet connection')
+                return
+            }
+            const { message } = error.response.data
+            setErrorMessage(message)
+        }
+    }
+
     const createUser = async (formData) => {
         setErrorMessage('')
         setIsSubmitting(true)
         try {
             const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/register`, formData);
             if (response.status === 201) {
-                props.history.push('/account?page=sign-in');
-                setIsSubmitting(false)
+                loginUser(formData)
             }
         } catch(error) {
             setIsSubmitting(false)
@@ -137,4 +163,4 @@ function SignUp(props) {
     )
 }
 
-export default SignUp
+export default connect(null, null)(SignUp)

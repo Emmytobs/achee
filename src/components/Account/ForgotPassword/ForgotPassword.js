@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 
 import { Form, Input, Button } from '../Form/Form';
+import axios from 'axios';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+import ErrorBox from '../ErrorBox'
 import MobileHeader from '../../Shared/MobileHeader/MobileHeader';
 
 import AsideContainer from '../AsideContainer/AsideContainer'
@@ -8,6 +12,7 @@ import Overlay from '../../Shared/Overlay';
 
 import acheeLogo from '../../Shared/icons/acheeLogo_blue.png';
 import modalMailbox from '../images/modal-mailbox.png';
+import resetFailure from '../images/reset-failure.png'
 
 import styles from './ForgotPassword.module.css';
 
@@ -15,14 +20,37 @@ import styles from './ForgotPassword.module.css';
 function ForgotPassword(props) {
 
     const [showEmailModal, setShowEmailModal] = useState(false);
+    const [error, setError] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const changeToSignInView = (e) => {
         props.history.push('/account?page=sign-in');
     }
+
+    const submitForm = async () => {
+        setError('');
+        setIsSubmitting(true);
+        try {
+            // Add user's access token to request body
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/me/reset-password`);
+            if (response.status === 200) {
+                // Show success modal
+                setIsSubmitting(false)
+                setShowEmailModal(true)
+            }
+        } catch (error) {
+            const { message } = error.response.data;
+            setError(message)
+        }
+    }
     
+    const forgotPasswordSchema = Yup.object().shape({
+        email: Yup.string().required('Required').email('Please enter a valid email')
+    })
+
     return (
         <div className={`display-flex ${styles.forgotPasswordContainer}`}>
-            <div className={styles.formContainer}>
+            <div className={styles.formContainer} styles={{ opacity: isSubmitting && '0.5' }}>
                 <div className={`display-flex ${styles.logoAndBackBtnContainer}`}>
                     <div className={`display-flex ${styles.logo}`}>
                         <img src={acheeLogo} alt="Achee" width="16px" height="16px" />
@@ -36,21 +64,40 @@ function ForgotPassword(props) {
                     <h2>Forgot Password</h2>
                     <p>Fill the information below to help. This would help retrieve your password.</p>
                 </div>
-                <Form>
-                    <Input 
-                        name="email"
-                        type="text"
-                        placeholder="Enter registered email"
-                        labelText="Email"
-                        id="email"
-                    />
-                    <Button buttonText="Continue" style={{ paddingTop: '15px', paddingBottom: '15px' }} rightIcon />
-                </Form>
+
+                {error && <ErrorBox errorMessage={error} close={() => setError('')} />}
+
+                <Formik
+                    initialValues={{ email: '' }}
+                    validationSchema={forgotPasswordSchema}
+                    onSubmit={(values) => {
+                        submitForm()
+                    }}
+                >
+                    {
+                        ({ errors, touched, values, handleSubmit, handleChange }) => (
+                            <Form onSubmit={handleSubmit} noValidate>
+                                <Input 
+                                    name="email"
+                                    type="text"
+                                    placeholder="Enter registered email"
+                                    labelText="Email"
+                                    id="email"
+                                    onChange={handleChange}
+                                    value={values.email}
+                                    errors={(touched.email && errors.email) && errors.email}
+                                />
+                                <Button buttonText="Continue" style={{ paddingTop: '15px', paddingBottom: '15px' }} rightIcon />
+                            </Form>
+                        )
+                    }
+
+                </Formik>
             </div>
             <AsideContainer />
 
             { 
-            showEmailModal &&  
+            showEmailModal &&
             <Overlay closeModalHandler={setShowEmailModal}>
                 <div className={styles.modalContainer} name="modal">
                     <img src={modalMailbox} alt="mailbox" width="150px" height="150px" />
@@ -61,7 +108,9 @@ function ForgotPassword(props) {
                     </p>
                 </div>
             </Overlay>
+            
             }
+            
         </div>
     )
 }
