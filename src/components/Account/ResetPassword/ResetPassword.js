@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useLocation, Redirect } from 'react-router-dom';
 import { Form, Input, Button } from '../Form/Form';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -19,6 +20,19 @@ function ResetPassword(props) {
     const [status, setStatus] = useState(null);
     const [error, setError] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const useQuery = () => {
+        return new URLSearchParams(useLocation().search)
+    }
+
+    const query = useQuery()
+    
+    React.useEffect(() => {
+        if (!query.has('token')) {
+            // If there is no token in the url when the user clicks on the button in the email, do something (redirect the user to login for now)
+            changeToSignInView()
+        }
+    })
 
     const changeToSignInView = () => {
         props.history.push('/account?page=sign-in');
