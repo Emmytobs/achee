@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 
 import { Form, Input, Button } from '../Form/Form';
 import axios from 'axios';
@@ -32,13 +33,22 @@ function ForgotPassword(props) {
         setIsSubmitting(true);
         try {
             // Add user's access token to request body
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/me/reset-password`);
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/me/reset-password`, null, {
+                headers: {
+                    Authorization: `Bearer ${props.accessToken}`
+                }
+            });
             if (response.status === 200) {
                 // Show success modal
                 setIsSubmitting(false)
                 setShowEmailModal(true)
             }
         } catch (error) {
+            if(!error.response) {
+                // Display no internet page
+                setError('Couldn\'t make request. Please check your internet connection')
+                return
+            }
             const { message } = error.response.data;
             setError(message)
         }
@@ -115,4 +125,10 @@ function ForgotPassword(props) {
     )
 }
 
-export default ForgotPassword
+const mapStateToProps = (state) => {
+    return {
+        accessToken: state.accessToken
+    }
+}
+
+export default connect(mapStateToProps, null)(ForgotPassword);
