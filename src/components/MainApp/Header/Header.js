@@ -9,15 +9,24 @@ import notificationIcon from '../../Shared/icons/Notification.png';
 import userDP from '../../Shared/icons/user-dp.png';
 
 import MobileHeader from '../../Shared/MobileHeader/MobileHeader';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import Overlay from '../../Shared/Overlay';
 
 function Header(props) {
+    const [profileMenu, setProfileMenu] = useState(false);
+
     const { url } = useRouteMatch()
     const routeIsInUrl = (route, exact) => {
         if (exact) {
             return url === route
         }
         return url.includes(route);
+    }
+
+    const showProfileDropdown = (e) => {
+        const name = e.target.getAttribute('name');
+        if (name === 'dropdown-item') 
+            return;
+        setProfileMenu(!profileMenu);
     }
    
     return (
@@ -38,8 +47,8 @@ function Header(props) {
                         {routeIsInUrl('/create-portfolio') && <span className={styles.indicator}></span>}
                     </Link>
 
-                    <Link className={`${styles.tab} ${styles.resourcesTab}`}>
-                        Resources <img src={arrowDown} alt="Arrow Down"/>
+                    <Link className={`${styles.tab} ${styles.resourcesTab}`} to="/app/resources" >
+                        Resources
                         {routeIsInUrl('/resources') && <span className={styles.indicator}></span>}
                     </Link>
 
@@ -50,16 +59,15 @@ function Header(props) {
 
                     <Link><button className={styles.upgradeButton}>Upgrade</button></Link>
 
-                    <Link><img src={notificationIcon} alt="Notification" /></Link>
-
-                    <Link className={`display-flex ${styles.dropdownBtn}`}>
+                    <Link onClick={showProfileDropdown} className={`display-flex ${styles.dropdownBtn}`}>
                         <img src={userDP} alt="User's Profile Pic" />
                         <p className={styles.userFullName}>Adesanoye Dorcas</p>
                         <img src={arrowDown} alt="Arrow Down"/>
-                        <ul className={styles.dropdown}>
-                            <li>My Profile</li>
-                            <li>Change Password</li>
-                            <li className={styles.logoutBtn}>Sign out</li>
+                        <ul style={{ opacity: profileMenu ? '1' : '0' }} className={styles.dropdown}>
+                            <li name="dropdown-item">My Profile</li>
+                            <li name="dropdown-item">Change Password</li>
+                            <li name="dropdown-item">Reports</li>
+                            <li name="dropdown-item" className={styles.logoutBtn}>Sign out</li>
                         </ul>
                     </Link>
                 </nav>
@@ -67,6 +75,7 @@ function Header(props) {
             <div className={styles.mobileHeaderContainer}>
                 <MobileHeader />
             </div>
+            {profileMenu && <Overlay closeModalHandler={setProfileMenu}></Overlay>}
         </div>
     )
 }

@@ -2,18 +2,18 @@ import React from 'react'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 
-import styles from './UpgradeAccount.module.css';
+import styles from './Profile.module.css';
 
-function UpgradeAccount() {
+function Profile() {
     return (
         <>
           <Header />
-            <div className={styles.upgradeContainer}>
+            <div className={styles.profileContainer}>
               
             </div>
-          <Footer />  
+          <Footer />
         </>
     )
 }
 
-export default UpgradeAccount
+export default Profile

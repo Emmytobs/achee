@@ -10,8 +10,9 @@ import AddFixedAsset from './CreatePortfolio/AddFixedAsset/AddFixedAsset'
 import AddCash from './CreatePortfolio/AddCash/AddCash'
 import ImportFromSpreadsheet from './CreatePortfolio/ImportFromSpreadsheet/ImportFromSpreadsheet'
 
-import UpgradeAccount from './UpgradeAccount/UpgradeAccount'
+// import UpgradeAccount from './UpgradeAccount/UpgradeAccount'
 import Referrals from './Referrals/Referrals'
+import Resources from './Resources/Resources'
 import Page404 from '../Page404/Page404'
 
 function App() {
@@ -29,8 +30,10 @@ function App() {
             <Route path={`${url}/create-portfolio/add-cash`} exact component={AddCash} />
             <Route path={`${url}/create-portfolio/spreadsheet`} exact component={ImportFromSpreadsheet} />
             
-            <Route path={`${url}/upgrade`} exact component={UpgradeAccount} />
+            {/* <Route path={`${url}/upgrade`} exact component={UpgradeAccount} /> */}
             <Route path={`${url}/referrals`} exact component={Referrals} />
+            
+            <Route path={`${url}/resources`} exact component={Resources} />
             
             <Route path={`${url}/*`} component={Page404} />
         </Switch>

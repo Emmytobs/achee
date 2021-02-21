@@ -106,7 +106,7 @@
     background: var(--main-background-color);
     margin-top: 20px;
     padding: 15px 35px;
-    justify-content: space-around;
+    justify-content: flex-start;
     border-radius: 7px;
 }
 .learn > .imgContainer {
@@ -173,8 +173,9 @@
  */
 .carouselContainer {
     background: #fff;
-    width: 700px;
-    height: 380px;
+    width: 850px;
+    height: 400px;
+    border-radius: 5px;
     padding: 20px 30px;
 }
 .closeModalIcon {
@@ -185,16 +186,21 @@
 .page {
     background: #fff;
     width: 100%;
-    min-height: 200px;
+    min-height: 220px;
 }
 .page h2 {
     color: var(--heading-text-color);
-    font-size: 1.6em;
+    font-size: 2.4em;
+    font-weight: 400;
+    font-family: 'Bree Serif', serif;
     text-align: center;
 }
 .page p {
     color: var(--text-color);
-    font-size: 1.1em;
+    font-size: 1.3em;
+    line-height: 35px;
+    width: 90%;
+    margin: 30px auto;
     text-align: center;
 }
 .progressBarContainer {

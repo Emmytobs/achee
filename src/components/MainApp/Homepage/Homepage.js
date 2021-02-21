@@ -1,5 +1,5 @@
 import React, { useState, Component } from 'react'
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link, useRouteMatch, useLocation } from 'react-router-dom';
 
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
@@ -28,6 +28,13 @@ function Homepage(props) {
     const toggleModal = () => {
         setIsModalShowing(!isModalShowing);
     }
+
+    const useQuery = () => {
+        return new URLSearchParams(useLocation().search)
+    }
+
+    const query = useQuery();
+    
     return (
         <>
         <Header {...props} />
@@ -85,8 +92,8 @@ function Homepage(props) {
                             <img src={learn} alt="Learn" width="80px" height="80px" />
                         </div>
                         <h3>
-                            Learn and upgrade your knowledge <br />
-                            on investment.
+                            Book a free 1-on-1 walkthrough <br />
+                            today.
                         </h3>
                     </div>
                     <div className={styles.newsContainer}>
@@ -148,7 +155,8 @@ function Homepage(props) {
             </div>
             
             {isModalShowing && <AddPortfolioModal setIsModalShowing={setIsModalShowing} />}
-            {isWalkthroughModalShowing && <WalkThroughModal setIsWalkthroughModalShowing={setIsWalkthroughModalShowing} />}
+            {/* If there's a 'new-user' query, show the walkth */}
+            {query.has('new-user') && <WalkThroughModal setIsWalkthroughModalShowing={setIsWalkthroughModalShowing} />}
         <Footer/>
         </>
     )
@@ -252,10 +260,10 @@ function WalkThroughModal(props) {
                                 <span style={{ backgroundColor: this.state.currentSlide === 2 && '#805CF5' }}></span>
                             </div>
                             <div className={styles.buttonContainer}>
-                                {this.state.currentSlide !== 0 && <button className={styles.backButton} onClick={this.prev}>Back</button>}
+                                {this.state.currentSlide !== 0 && <Button style={{ backgroundColor: '#F6F3FF' }} onClick={this.prev}>Back</Button>}
                                 {
                                 this.state.currentSlide === 2 ? 
-                                <PrimaryButton id="closeModal">Get Started</PrimaryButton> :
+                                <PrimaryButton id="closeModal" >Get Started</PrimaryButton> :
                                 <PrimaryButton onClick={this.next}>Next</PrimaryButton>
                                 }
                             </div>
