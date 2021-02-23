@@ -3,6 +3,8 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import Homepage from './Homepage/Homepage'
 
+import Portfolio from './Portfolio/Portfolio'
+
 import CreatePortfolio from './CreatePortfolio/CreatePortfolio'
 import AddStockOrFund from './CreatePortfolio/AddStockOrFund/AddStockOrFund'
 import AddCryptocurrency from './CreatePortfolio/AddCryptocurrency/AddCryptocurrency'
@@ -25,6 +27,8 @@ function App() {
         <>
         <Switch>
             <Route path={url} exact component={Homepage} />
+
+            <Route path={`${url}/portfolio`} exact component={Portfolio} />
                 
             <Route path={`${url}/create-portfolio`} exact component={CreatePortfolio} />
             <Route path={`${url}/create-portfolio/add-stocks-or-funds`} exact component={AddStockOrFund} />

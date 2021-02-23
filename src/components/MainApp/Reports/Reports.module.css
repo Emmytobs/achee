@@ -14,6 +14,8 @@
 }
 .reports {
     flex-wrap: wrap;
+    width: auto;
+    margin: 0 auto;
 }
 .report {
     border: 1px solid #ccc;

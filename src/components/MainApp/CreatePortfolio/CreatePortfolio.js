@@ -12,7 +12,6 @@ import cash from './icons/cash.png';
 import fixedAsset from './icons/fixed_asset.png';
 import stocks from './icons/stocks.png';
 import closeModal from '../../Shared/icons/close_modal.png';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 
 function CreatePortfolio(props) {
@@ -50,7 +49,6 @@ function CreatePortfolio(props) {
 export default CreatePortfolio
 
 export function AddPortfolioModal(props) {
-    const { url } = useRouteMatch();
     
     return (
         <Overlay closeModalHandler={props.setIsModalShowing} targetToCloseModal="closeModal">
