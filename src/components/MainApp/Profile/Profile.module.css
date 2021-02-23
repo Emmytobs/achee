@@ -1,3 +1,214 @@
 .profileContainer {
+    padding: 100px 0;
     background: var(--gray-background-color);
+}
+.profileContainer > * {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.avatar {
+    /* margin-top: 100px; */
+}
+.avatar > * {
+    margin: 0 auto;
+}
+.avatar > img,
+.avatar > button {
+    display: block;
+}
+.avatar > button {
+    width: 150px;
+    margin-top: 20px;
+    background: #F6F3FF;
+}
+
+.userInformation {
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 50px;
+    padding: 30px;
+}
+.userInformation > h3 {
+    color: var(--heading-text-color)
+}
+
+.gridUserInformation {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+}
+
+.formContainer button {
+    display: block;
+    width: 150px;
+    margin-left: auto;
+}
+
+.plansContainer {
+    background: #fff;
+    padding: 35px 25px;
+}
+
+.currentContainer {
+    width: 500px;
+    padding: 35px 30px;
+    border-radius: 5px;
+    border: 1px solid #DBDBDB;
+}
+
+.current {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+}
+.current > div {
+    color: var(--text-color);
+}
+.current > div > * {
+    display: inline-block;
+}
+.current > div > h3 {
+    font-family: 'Bree Serif', serif;
+    color: var(--heading-text-color);
+    font-size: 1.5em;
+    font-weight: 400;
+}
+.current > div > span:first-of-type {
+    font-weight: 400;
+    font-family: 'Bree Serif', serif;
+    margin-left: 5px;
+    color: var(--main-background-color);
+}
+.current > button {
+    display: block;
+    margin-top: 15px;
+    background: #F6F3FF;
+}
+
+.features {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.feature {
+    margin-top: 20px;
+}
+.feature > * {
+    text-align: left;
+    display: block;
+}
+.feature > span {
+    margin-left: 20px;
+    color: var(--text-color);
+}
+
+.premium {
+    margin: 40px auto;
+}
+.premium > * {
+    display: block;
+    width: auto;
+    margin: 0 auto;
+}
+.premium > h2,
+.premium > p {
+    text-align: center;
+}
+.premium > h2 {
+    color: var(--heading-text-color);
+    font-weight: 400;
+    font-size: 2em;
+    font-family: 'Bree Serif', serif;
+}
+.premium > p {
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+.plans {
+    margin-top: 30px;
+}
+.plans > * {
+    flex: 1;
+}
+.plan {
+    padding: 20px 30px;
+    border: 1px solid #DBDBDB;
+    border-radius: 5px;
+    color: var(--text-color);
+    margin: 0 20px;
+    height: 660px;
+}
+.plan > .planTitle {
+    color: var(--text-color);
+    position: relative;
+}
+.plan > .planTitle::after {
+    content: '';
+    position: absolute;
+    top: 140%;
+    left: 0;
+    width: 25px;
+    height: 3px;
+    background: var(--main-background-color);
+}
+
+.planPricing > * {
+    display: inline-block;
+    font-family: 'Bree Serif', serif;
+}
+.planPricing > h1 {
+    font-weight: 400;
+    color: var(--heading-text-color);
+}
+.plan > button {
+    display: block;
+    width: 100%;
+    margin: 30px auto 0;
+    background: #F6F3FF;
+}
+
+
+.lastPlan {
+    background: var(--main-background-color);
+    color: #fff;
+}
+.lastPlan > .planTitle {
+    color: #fff;
+    position: relative;
+}
+.lastPlan > .planTitle::after {
+    background: #ffffff33;
+}
+
+.lastPlan .planPricing > * {
+    color: #fff;
+    /* display: none; */
+}
+.lastPlan .planPricing > h1 {
+    font-weight: 400;
+}
+.lastPlan .planPricing > .calculatedSavings {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 7px 15px;
+    background: #ffffff33;
+    border-radius: 30px;
+    font-weight: 400;
+}
+.boldHighlight {
+    font-weight: 700;
+}
+.premiumFeature > span {
+    color: #fff;
+}
+.lastPlan > button {
+    display: block;
+    width: 100%;
+    margin: 30px auto 0;
+    color: #fff;
+    border-color: #fff;
+    background: #ffffff33;
 }

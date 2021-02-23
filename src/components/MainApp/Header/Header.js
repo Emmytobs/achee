@@ -64,9 +64,9 @@ function Header(props) {
                         <p className={styles.userFullName}>Adesanoye Dorcas</p>
                         <img src={arrowDown} alt="Arrow Down"/>
                         <ul style={{ opacity: profileMenu ? '1' : '0' }} className={styles.dropdown}>
-                            <li name="dropdown-item">My Profile</li>
-                            <li name="dropdown-item">Change Password</li>
-                            <li name="dropdown-item">Reports</li>
+                            <li name="dropdown-item"><Link to="/app/profile">My Profile</Link></li>
+                            <li name="dropdown-item"><Link to="/app/profile">Change Password</Link></li>
+                            <li name="dropdown-item"><Link to="/app/reports">Reports</Link></li>
                             <li name="dropdown-item" className={styles.logoutBtn}>Sign out</li>
                         </ul>
                     </Link>

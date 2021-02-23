@@ -5,9 +5,10 @@ export function Button(props) {
     return (
         <button 
             type={props.type || 'button'} 
-            style={props.style}
+            style={{ ...props.style, ...props.disabledStyle}}
             className={styles.button}
-            onClick={props.onClick}>
+            onClick={props.onClick}
+            disabled={props.disabledStyle && true}>
             {props.children}
         </button>
     )

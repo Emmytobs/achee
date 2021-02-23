@@ -13,6 +13,9 @@ import ImportFromSpreadsheet from './CreatePortfolio/ImportFromSpreadsheet/Impor
 // import UpgradeAccount from './UpgradeAccount/UpgradeAccount'
 import Referrals from './Referrals/Referrals'
 import Resources from './Resources/Resources'
+import Profile from './Profile/Profile'
+import Reports from './Reports/Reports'
+
 import Page404 from '../Page404/Page404'
 
 function App() {
@@ -32,6 +35,8 @@ function App() {
             
             {/* <Route path={`${url}/upgrade`} exact component={UpgradeAccount} /> */}
             <Route path={`${url}/referrals`} exact component={Referrals} />
+            <Route path={`${url}/profile`} exact component={Profile} />
+            <Route path={`${url}/reports`} exact component={Reports} />
             
             <Route path={`${url}/resources`} exact component={Resources} />
             

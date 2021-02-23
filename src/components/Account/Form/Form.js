@@ -37,7 +37,7 @@ export function Input(props) {
                 style={inputErrorStyle()}
                 className={`display-flex ${styles.inputGroup}`}
             >
-                <img src={props.type === 'password' ? lock : message} alt={props.type === 'password' ? "lock" : "mailbox"} width='16px' height='16px' />
+                {!props.noImage && <img src={props.type === 'password' ? lock : message} alt={props.type === 'password' ? "lock" : "mailbox"} width='16px' height='16px' />}
                 <input {...props} type={isPasswordShowing ? 'text' : props.type}/>
                 
                 {props.addShowPassword && <button type="button" className={styles.showPasswordBtn} onClick={toggleShowPasswordText}>{isPasswordShowing ? 'Hide' : 'Show'}</button>}
