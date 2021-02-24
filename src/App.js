@@ -11,6 +11,9 @@ import Landing  from './components/Landing/Landing.js';
 import AboutUs  from './components/AboutUs/AboutUs.js';
 import Contact  from './components/Contact/Contact.js';
 
+import ComingSoon from './components/ComingSoon/ComingSoon';
+import NoInternet from './components/NoInternet/NoInternet';
+
 import './App.css';
 
 function App() {
@@ -26,6 +29,9 @@ function App() {
       <Route path='/about' exact component={AboutUs} />
       <Route path='/terms' exact component={TermsOfUseAndPrivacyPolicy} />
       <Route path='/contact' exact component={Contact} />
+      
+      <Route path='/coming-soon' exact component={ComingSoon} />
+      <Route path='/no-internet' exact component={NoInternet} />
 
       <Route path='*' component={Page404} />
 
