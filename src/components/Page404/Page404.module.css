@@ -61,6 +61,7 @@
     .flexContainer > img {
         width: 450px;
         height: auto;
+        margin-bottom: 50px;
     }
     .flexContainer > .helpText > h1 {
         font-size: 1.4em;
