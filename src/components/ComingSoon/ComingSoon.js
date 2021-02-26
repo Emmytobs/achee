@@ -14,12 +14,12 @@ function ComingSoon() {
                     <span>achee</span>
                 </div>
                 <div className={"display-flex justify-between align-center " + styles.flexContainer}>
-                    <div>
+                    <img src={comingSoonIllustration} alt="Coming soon page" width="750px" height="500px" />
+                    <div className={styles.helptext}>
                         <h1>Coming Soon</h1>
                         <p>We are currently working on this page. Trust us. We’ll launch soon, very soon.</p>
                         <PrimaryButton>Go Back</PrimaryButton>
                     </div>
-                    <img src={comingSoonIllustration} alt="Coming soon page" width="750px" height="500px" />
                 </div>
             </div>
         </div>
