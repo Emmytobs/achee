@@ -14,18 +14,16 @@ function Page404() {
                     <img src={acheeLogo} alt="Achee logo" width="19px" height="19px" />
                     <span>achee</span>
                 </div>
+                <img src={Error404Illustration} alt="Error 404 Illustration" width="342px" height="230px" />
                 <div className={"display-flex justify-between align-center " + styles.flexContainer}>
                     <div>
                         <h1>Error 404</h1>
                         <p>Oops! Page not found. Please go back to dashboard while we fix this problem.</p>
-                        {/* <Link to="/app"> */}
+                        <Link to="/app">
                             <PrimaryButton>Go to homepage</PrimaryButton>
-                        {/* </Link> */}
+                        </Link>
                     </div>
-                    {/* <div className={}> */}
-                        {/* <img src={Error404Illustration} alt="Error 404 Illustration" width="751px" height="505px" /> */}
-                        <img src={Error404Illustration} alt="Error 404 Illustration" width="751px" height="450px" />
-                    {/* </div> */}
+                    <img src={Error404Illustration} alt="Error 404 Illustration" width="751px" height="450px" />
                 </div>
             </div>
         </div>
