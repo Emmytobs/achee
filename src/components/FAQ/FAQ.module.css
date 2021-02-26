@@ -1,0 +1,36 @@
+.faqContainer {
+    background: var(--gray-background-color);
+}
+
+.accordionWrapper {
+    margin: 50px auto 100px;
+    width: 90%;
+}
+.item {
+    margin-bottom: 20px;
+}
+.title {
+    padding: 20px;
+    font-size: 24px;
+    background: #fff;
+    color: #909090;
+}
+
+.content {
+    padding: 20px;
+    margin: 0;
+    font-size: 22px;
+    border-top: 1px solid #EBEBEB;
+    color: #4E4F51;
+    background: #fff;
+}
+
+@media screen and (max-width: 900px) {
+    .title {
+        font-size: 18px;
+    }
+    
+    .content {
+        font-size: 16px;
+    }
+}

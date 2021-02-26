@@ -51,7 +51,7 @@ function MobileHeader(props) {
                         <li><Link to="/app/create-portfolio">Portfolio</Link></li>
                         <li><Link>Resources</Link></li>
                         <li><Link to="/app/referrals">Refer a friend</Link></li>
-                        <li><Link><img src=""  alt="Your profile picture" />My Profile</Link></li>
+                        <li><Link><img src=""  alt="Your profile pic" />My Profile</Link></li>
                         <li className={styles.upgrade}><Link>Upgrade</Link></li>
                         <li className={styles.signOut}><Link>Sign out</Link></li>
                     </ul>
