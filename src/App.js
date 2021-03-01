@@ -8,6 +8,7 @@ import Page404  from './components/Page404/Page404.js';
 
 import Landing  from './components/Landing/Landing.js';
 import AboutUs  from './components/AboutUs/AboutUs.js';
+import PrivacyPolicy  from './components/PrivacyPolicy/PrivacyPolicy.js';
 
 import './App.css';
 
@@ -22,6 +23,7 @@ function App() {
 
       <Route path='/landing' exact component={Landing} />
       <Route path='/about' exact component={AboutUs} />
+      <Route path='/privacy' exact component={PrivacyPolicy} />
 
       <Route path='*' component={Page404} />
 
