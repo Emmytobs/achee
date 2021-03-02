@@ -128,7 +128,7 @@ function ProductHighlight(props) {
                 </Carousel>
             </div>
 
-            <button className="btn-primary weekly-tips-btn" onClick={props.showEmailModal}>Recieve more weekly tips <Icon color="#fff" icon="arrow-right" addMargin /></button>
+            <button className="btn-primary weekly-tips-btn" onClick={props.showEmailModal}>Receive more weekly tips <Icon color="#fff" icon="arrow-right" addMargin /></button>
         </section>
         </>
     )
