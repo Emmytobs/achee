@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import { Table, TableHead, TableBody, TableRow, TH, TD } from '../../Shared/Utilities/AssetsTable'
 
 import styles from './Portfolio.module.css';
 
@@ -41,53 +42,206 @@ function Portfolio() {
                 <div className={styles.assetList}>
                     <h1>Your Holdings Group By Asset</h1>
                     
-                    <div className={styles.stockOrFund}>
-                        <div className={styles.title}>
+                    <div className={`${styles.asset} ${styles.stockOrFund}`}>
+                        <div className={'display-flex justify-between align-items ' + styles.title}>
                             <h1>Stock/Fund</h1>
                             <button>+</button>
                         </div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Symbol</th>
-                                    <th>Current Price</th>
-                                    <th>Quantity</th>
-                                    <th>Current Value</th>
-                                    <th>Total Cost</th>
-                                    <th>Average Price</th>
-                                    <th>Fees</th>
-                                    <th>Profit/Loss</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Apple</td>
-                                    <td>AAPL</td>
-                                    <td>$130.07</td>
-                                    <td>60</td>
-                                    <td>$1033.76</td>
-                                    <td>$9000.87</td>
-                                    <td>$7560.89</td>
-                                    <td>$1000</td>
-                                    <td>$1000</td>
-                                    <td>*Delete*</td>
-                                </tr>
-                                <tr>
-                                    <td>Tesla</td>
-                                    <td>TSLA</td>
-                                    <td>$67.71</td>
-                                    <td>73</td>
-                                    <td>$894.76</td>
-                                    <td>$126896239.87</td>
-                                    <td>$524.89</td>
-                                    <td>$500</td>
-                                    <td>$2000</td>
-                                    <td>*Delete*</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div className={styles.tableContainer}>
+                            <Table>
+                                <TableHead>
+                                    <TableRow>
+                                        <TH>Name</TH>
+                                        <TH>Symbol</TH>
+                                        <TH>Current Price</TH>
+                                        <TH>Quantity</TH>
+                                        <TH>Current Value</TH>
+                                        <TH>Total Cost</TH>
+                                        <TH>Average Price</TH>
+                                        <TH>Fees</TH>
+                                        <TH>Profit/Loss</TH>
+                                        <TH></TH>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    <TableRow>
+                                        <TD>Apple</TD>
+                                        <TD>AAPL</TD>
+                                        <TD>$130.07</TD>
+                                        <TD>60</TD>
+                                        <TD>$1033.76</TD>
+                                        <TD>$9000.87</TD>
+                                        <TD>$7560.89</TD>
+                                        <TD>$1000</TD>
+                                        <TD>$1000</TD>
+                                        <TD>*Delete*</TD>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TD>Tesla</TD>
+                                        <TD>TSLA</TD>
+                                        <TD>$67.71</TD>
+                                        <TD>73</TD>
+                                        <TD>$894.76</TD>
+                                        <TD>$126896239.87</TD>
+                                        <TD>$524.89</TD>
+                                        <TD>$500</TD>
+                                        <TD>$2000</TD>
+                                        <TD>*Delete*</TD>
+                                    </TableRow>
+                                </TableBody>
+                            </Table>
+                        </div>
+                    </div>
+
+                    <div className={`${styles.asset} ${styles.crytocurrency}`}>
+                        <div className={'display-flex justify-between align-items ' + styles.title}>
+                            <h1>Cryptocurrency</h1>
+                            <button>+</button>
+                        </div>
+                        <div className={styles.tableContainer}>
+                            <Table>
+                                <TableHead>
+                                    <TableRow>
+                                        <TH>Name</TH>
+                                        <TH>Symbol</TH>
+                                        <TH>Current Price</TH>
+                                        <TH>Quantity</TH>
+                                        <TH>Current Value</TH>
+                                        <TH>Total Cost</TH>
+                                        <TH>Average Price</TH>
+                                        <TH>Fees</TH>
+                                        <TH>Profit/Loss</TH>
+                                        <TH></TH>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    <TableRow>
+                                        <TD>Apple</TD>
+                                        <TD>AAPL</TD>
+                                        <TD>$130.07</TD>
+                                        <TD>60</TD>
+                                        <TD>$1033.76</TD>
+                                        <TD>$9000.87</TD>
+                                        <TD>$7560.89</TD>
+                                        <TD>$1000</TD>
+                                        <TD>$1000</TD>
+                                        <TD>*Delete*</TD>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TD>Tesla</TD>
+                                        <TD>TSLA</TD>
+                                        <TD>$67.71</TD>
+                                        <TD>73</TD>
+                                        <TD>$894.76</TD>
+                                        <TD>$126896239.87</TD>
+                                        <TD>$524.89</TD>
+                                        <TD>$500</TD>
+                                        <TD>$2000</TD>
+                                        <TD>*Delete*</TD>
+                                    </TableRow>
+                                </TableBody>
+                            </Table>
+                        </div>
+                    </div>
+                    <div className={`${styles.asset} ${styles.fixedAsset}`}>
+                        <div className={'display-flex justify-between align-items ' + styles.title}>
+                            <h1>Fixed Asset</h1>
+                            <button>+</button>
+                        </div>
+                        <div className={styles.tableContainer}>
+                            <Table>
+                                <TableHead>
+                                    <TableRow>
+                                        <TH>Name</TH>
+                                        <TH>Symbol</TH>
+                                        <TH>Current Price</TH>
+                                        <TH>Quantity</TH>
+                                        <TH>Current Value</TH>
+                                        <TH>Total Cost</TH>
+                                        <TH>Average Price</TH>
+                                        <TH>Fees</TH>
+                                        <TH>Profit/Loss</TH>
+                                        <TH></TH>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    <TableRow>
+                                        <TD>Apple</TD>
+                                        <TD>AAPL</TD>
+                                        <TD>$130.07</TD>
+                                        <TD>60</TD>
+                                        <TD>$1033.76</TD>
+                                        <TD>$9000.87</TD>
+                                        <TD>$7560.89</TD>
+                                        <TD>$1000</TD>
+                                        <TD>$1000</TD>
+                                        <TD>*Delete*</TD>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TD>Tesla</TD>
+                                        <TD>TSLA</TD>
+                                        <TD>$67.71</TD>
+                                        <TD>73</TD>
+                                        <TD>$894.76</TD>
+                                        <TD>$126896239.87</TD>
+                                        <TD>$524.89</TD>
+                                        <TD>$500</TD>
+                                        <TD>$2000</TD>
+                                        <TD>*Delete*</TD>
+                                    </TableRow>
+                                </TableBody>
+                            </Table>
+                        </div>
+                    </div>
+                    <div className={`${styles.asset} ${styles.cash}`}>
+                        <div className={'display-flex justify-between align-items ' + styles.title}>
+                            <h1>Cash</h1>
+                            <button>+</button>
+                        </div>
+                        <div className={styles.tableContainer}>
+                            <Table>
+                                <TableHead>
+                                    <TableRow>
+                                        <TH>Name</TH>
+                                        <TH>Symbol</TH>
+                                        <TH>Current Price</TH>
+                                        <TH>Quantity</TH>
+                                        <TH>Current Value</TH>
+                                        <TH>Total Cost</TH>
+                                        <TH>Average Price</TH>
+                                        <TH>Fees</TH>
+                                        <TH>Profit/Loss</TH>
+                                        <TH></TH>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    <TableRow>
+                                        <TD>Apple</TD>
+                                        <TD>AAPL</TD>
+                                        <TD>$130.07</TD>
+                                        <TD>60</TD>
+                                        <TD>$1033.76</TD>
+                                        <TD>$9000.87</TD>
+                                        <TD>$7560.89</TD>
+                                        <TD>$1000</TD>
+                                        <TD>$1000</TD>
+                                        <TD>*Delete*</TD>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TD>Tesla</TD>
+                                        <TD>TSLA</TD>
+                                        <TD>$67.71</TD>
+                                        <TD>73</TD>
+                                        <TD>$894.76</TD>
+                                        <TD>$126896239.87</TD>
+                                        <TD>$524.89</TD>
+                                        <TD>$500</TD>
+                                        <TD>$2000</TD>
+                                        <TD>*Delete*</TD>
+                                    </TableRow>
+                                </TableBody>
+                            </Table>
+                        </div>
                     </div>
                     
                 </div>

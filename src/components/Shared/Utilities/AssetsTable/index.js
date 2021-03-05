@@ -1,0 +1,1 @@
+export { Table, TableHead, TableBody, TableRow, TH, TD } from './AssetsTable'

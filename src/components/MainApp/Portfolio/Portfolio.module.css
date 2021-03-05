@@ -8,7 +8,7 @@
 }
 
 .searchBox {
-    padding: 20px 10px;
+    padding: 0px 10px;
     background: #fff;
 }
 .searchBox > img {
@@ -23,6 +23,7 @@
     flex: 0 0 95%;
     margin-left: 20px;
     color: #000;
+    height: 70px;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
@@ -63,4 +64,24 @@
     font-weight: 700;
     /* color: #00AC26; */
     margin-left: 10px;
+}
+
+.assetList > h1 {
+    color: var(--heading-text-color);
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.asset {
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 30px;
+}
+.asset > .title > h1 {
+    color: var(--main-background-color);
+    font-size: 1.5em;    
+}
+
+.tableContainer {
+    margin-top: 20px;
+    overflow: auto;
 }

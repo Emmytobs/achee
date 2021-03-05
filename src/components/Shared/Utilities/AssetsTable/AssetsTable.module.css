@@ -1,0 +1,27 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.th, .td {
+    width: 12%;
+    padding: 15px 3px;
+    text-align: center;
+    color: var(--heading-text-color);
+    font-size: 0.9em;
+}
+
+.th {
+    font-weight: 400;
+    background: #F6F3FF;
+}
+.td {
+    font-weight: 500;
+}
+
+@media screen and (max-width: 900px) {
+    .table {
+        width: 'auto';
+    }
+}
