@@ -10,6 +10,7 @@ import arrowUp from './icons/arrow-up.png';
 import arrowDown from './icons/arrow-down.png';
 
 function Portfolio() {
+    // const { activeTab, setActiveTab } = useState(0);
     return (
         <>
             <Header />  

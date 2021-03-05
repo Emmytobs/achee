@@ -33,34 +33,34 @@
 
 .portfolioPerformanceTags {
     margin-top: 40px;
-    width: 80%;
+    width: 65%;
 }
 .tag {
-    flex: 1;
-    margin-right: 40px;
     background: #fff;
     padding: 10px 20px;
     border-radius: 5px;
 }
 .tag > div:first-child p {
     color: var(--text-color);
+    margin: 0 0 10px 0;
+    font-size: 0.9em;
 }
 .tag > div:first-child h1 {
     color: var(--heading-text-color);
     font-weight: 700;
-    font-size: 1.7em;
+    font-size: 1.4em;
 }
 
 .tag > div:last-child {
-    /* background: #ffbcd34d; */
-    padding: 20px 20px;
+    margin-left: 10px;
+    padding: 15px 20px;
     border-radius: 5px;
 }
 .tag > div:last-child > * {
     display: inline-block;
 }
 .tag > div:last-child h1 {
-    font-size: 1.7em;
+    font-size: 1.4em;
     font-weight: 700;
     /* color: #00AC26; */
     margin-left: 10px;
@@ -70,6 +70,7 @@
     color: var(--heading-text-color);
     font-size: 1.1em;
     font-weight: 500;
+    margin: 20px 0 20px 10px;
 }
 .asset {
     background: #fff;
