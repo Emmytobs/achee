@@ -1,0 +1,9 @@
+body {
+    background: var(--gray-background-color);
+}
+
+.chartContainer {
+    width: 70%;
+    margin: 150px auto;
+    background: #fff;
+}

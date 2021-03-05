@@ -16,6 +16,8 @@ import ComingSoon from './components/ComingSoon/ComingSoon';
 import NoInternet from './components/NoInternet/NoInternet';
 
 import './App.css';
+import ChartJS from './components/ChartDemos/Chart.js';
+import ApexChartsDemo from './components/ChartDemos/ApexCharts.js';
 
 function App() {
   
@@ -34,6 +36,9 @@ function App() {
       
       <Route path='/coming-soon' exact component={ComingSoon} />
       <Route path='/no-internet' exact component={NoInternet} />
+
+      <Route path='/chartjs' exact component={ChartJS} />
+      <Route path='/apex-charts' exact component={ApexChartsDemo} />
 
       <Route path='*' component={Page404} />
 
