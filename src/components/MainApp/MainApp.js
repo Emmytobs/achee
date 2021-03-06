@@ -31,7 +31,7 @@ function App() {
             <Route path={`${url}/portfolio`} exact component={Portfolio} />
                 
             <Route path={`${url}/create-portfolio`} exact component={CreatePortfolio} />
-            <Route path={`${url}/create-portfolio/add-stocks-or-funds`} exact component={AddStockOrFund} />
+            <Route path={`${url}/create-portfolio/add-stock-or-fund`} exact component={AddStockOrFund} />
             <Route path={`${url}/create-portfolio/add-cryptocurrency`} exact component={AddCryptocurrency} />
             <Route path={`${url}/create-portfolio/add-fixed-asset`} exact component={AddFixedAsset} />
             <Route path={`${url}/create-portfolio/add-cash`} exact component={AddCash} />

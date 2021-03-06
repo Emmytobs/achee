@@ -5,9 +5,9 @@ import styles from './AddPortfolioForm.module.css';
 
 function AddPortfolioForm(props) {
     return (
-        <div className={styles.addPortfolioForm}>
+        <form className={styles.addPortfolioForm} noValidate>
             {props.children}
-        </div>
+        </form>
     )
 }
 export default AddPortfolioForm;

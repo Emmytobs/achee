@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React, { useState } from 'react'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import { Table, TableHead, TableBody, TableRow, TH, TD } from '../../Shared/Utilities/AssetsTable'
@@ -10,7 +11,18 @@ import arrowUp from './icons/arrow-up.png';
 import arrowDown from './icons/arrow-down.png';
 
 function Portfolio() {
-    // const { activeTab, setActiveTab } = useState(0);
+    const [ activeTab, setActiveTab ] = useState(1);
+    
+    React.useEffect(() => {
+        
+    }, [activeTab])
+
+    const changeTabNumber = (e) => {
+        const tabNumber = e.target.getAttribute('data-tab-number');
+        setActiveTab(Number(tabNumber));
+        // console.log(tabNumber)
+    }
+
     return (
         <>
             <Header />  
@@ -24,19 +36,39 @@ function Portfolio() {
                     <PerformanceTag title='Today' amount="10.50" percentage="0.07" />
                     <PerformanceTag title='Today' amount="10.50" percentage="0.07" />
                     <PerformanceTag title='Today' amount="10.50" percentage="0.07" loss />
-                    
                 </div>
 
                 <div className={styles.performanceAnalytics}>
                     <div className={styles.tabs}>
-                        <span className={styles.tab}>Performance</span>
-                        <span className={styles.tab}>Benchmarks</span>
-                        <span className={styles.tab}>Allocation</span>
+                        <span className={styles.tab} data-tab-number={1} onClick={changeTabNumber}>
+                            Performance
+                            {activeTab === 1 && <span className={styles.activeTab}></span>}
+                        </span>
+                        <span className={styles.tab} data-tab-number={2} onClick={changeTabNumber}>
+                            Benchmarks
+                            {activeTab === 2 && <span className={styles.activeTab}></span>}
+                        </span>
+                        <span className={styles.tab} data-tab-number={3} onClick={changeTabNumber}>
+                            Allocation
+                            {activeTab === 3 && <span className={styles.activeTab}></span>}
+                        </span>
                     </div>
                     <div className={styles.selectedTabContainer}>
-                        <div className={styles.performanceTab}></div>
-                        <div className={styles.benchmarksTab}></div>
-                        <div className={styles.allocationTab}></div>
+                        {activeTab === 1 && 
+                            <div className={styles.performanceTab}>
+                                <p>Performance tab goes here</p>
+                            </div>
+                        }
+                        {activeTab === 2 &&
+                            <div className={styles.benchmarksTab}>
+                                <p>Benchmarks tab goes here</p>
+                            </div>
+                        }
+                        {activeTab === 3 && 
+                            <div className={styles.allocationTab}>
+                                <p>Allocation tab goes here</p>
+                            </div>
+                        }
                     </div>
                 </div>
                 

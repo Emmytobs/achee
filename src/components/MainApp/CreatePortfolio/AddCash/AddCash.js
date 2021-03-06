@@ -1,4 +1,6 @@
 import React from 'react';
+import { Formik } from 'formik'
+import * as Yup from 'yup'
 // import { Link } from 'react-router-dom';
 import Header from '../../Header/Header'
 import Footer from '../../Footer/Footer'
@@ -9,50 +11,68 @@ import { Input, Select, Option, Textarea } from '../../../Shared/Utilities';
 import styles from './AddCash.module.css';
 
 function AddCash() {
+    const addCashSchema = Yup.object().shape({
+
+    })
+
     return (
         <>
         <Header />
         <div className={styles.addCash}>
             <ImportPortfolioButtons title="Add Cash" />
             <AddPortfolioForm>
-                <div>
-                    <p className={styles.fieldName}>Type</p>
-                    <Select>
-                        <Option value="deposit cash" selected>Deposit Cash</Option>
-                        <Option value="Option 2">Option 2</Option>
-                    </Select>
-                </div>
-                <div>
-                    <p className={styles.fieldName}>Date</p>
-                    <div className={styles.date}>
-                        {/* <p>Date Picker</p> */}
-                        <Input type='date' onChange={(e) => console.log(e.target.valueAsNumber)} />
-                    </div>
-                </div>
-                <div>
-                    <p className={styles.fieldName}>Return Interval</p>
-                    <div className={'display-flex justify-start '+ styles.amount}>
-                        <Select 
-                            style={{ 
-                                border:"2px solid #805CF5",
-                                backgroundColor: "#805CF531",
-                                color: "#805CF5",
-                                fontSize: '1.2em',
-                                fontWeight: '500',
-                                padding: '0 20px 0 5px'
-                            }}
-                            onChange={(e) => console.log(e.target.value)}>
+                <Formik
+                    initialValues={{ 
 
-                            <Option value='usd' selected>$</Option>
-                            <Option value='eur'>#</Option>
-                        </Select>
-                        <Input style={{ marginLeft: '5px' }} />
-                    </div>
-                </div>
-                <div>
-                    <p className={styles.fieldName}>Notes</p>
-                    <Textarea placeholder="(Optional)" />
-                </div>
+                     }}
+                    validationSchema={addCashSchema}
+                    onSubmit={(values) => {
+
+                    }}
+                >
+                    {({ errors, touched, values, handleChange, handleSubmit }) => (
+                        <>
+                        <div>
+                            <p className={styles.fieldName}>Type</p>
+                            <Select>
+                                <Option value="deposit cash" selected>Deposit Cash</Option>
+                                <Option value="Option 2">Option 2</Option>
+                            </Select>
+                        </div>
+                        <div>
+                            <p className={styles.fieldName}>Date</p>
+                            <div className={styles.date}>
+                                {/* <p>Date Picker</p> */}
+                                <Input type='date' onChange={(e) => console.log(e.target.valueAsNumber)} />
+                            </div>
+                        </div>
+                        <div>
+                            <p className={styles.fieldName}>Return Interval</p>
+                            <div className={'display-flex justify-start '+ styles.amount}>
+                                <Select 
+                                    style={{ 
+                                        border:"2px solid #805CF5",
+                                        backgroundColor: "#805CF531",
+                                        color: "#805CF5",
+                                        fontSize: '1.2em',
+                                        fontWeight: '500',
+                                        padding: '0 20px 0 5px'
+                                    }}
+                                    onChange={(e) => console.log(e.target.value)}>
+
+                                    <Option value='usd' selected>$</Option>
+                                    <Option value='eur'>#</Option>
+                                </Select>
+                                <Input style={{ marginLeft: '5px' }} />
+                            </div>
+                        </div>
+                        <div>
+                            <p className={styles.fieldName}>Notes</p>
+                            <Textarea placeholder="(Optional)" />
+                        </div>
+                        </>
+                    )}
+                </Formik>
                 <SubmitBtn>Add Cash</SubmitBtn>
             </AddPortfolioForm>
         </div>

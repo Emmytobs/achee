@@ -66,6 +66,39 @@
     margin-left: 10px;
 }
 
+.performanceAnalytics {
+    margin-top: 40px;
+}
+.tabs {
+    background: #f2f2f2;
+    padding: 20px 0 3px 20px;
+}
+.tabs > .tab {
+    color: var(--heading-text-color);
+    position: relative;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.tab > .activeTab {
+    position: absolute;
+    top: 96%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background: var(--main-background-color);
+}
+
+.selectedTabContainer > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background: #fff;
+}
+
 .assetList > h1 {
     color: var(--heading-text-color);
     font-size: 1.1em;
