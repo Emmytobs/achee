@@ -4,7 +4,8 @@ import {
     ADD_CASH,
     ADD_CRYPTOCURRENCY,
     ADD_FIXED_ASSET,
-    ADD_STOCK
+    ADD_STOCK,
+    ADD_ASSET
 } from './actions'
 
 const initialState = {
@@ -43,17 +44,17 @@ function reducers(state=initialState, action) {
         case SAVE_AUTH_TOKENS:
             return { ...state, accessToken: action.payload[0], refreshToken: action.payload[1] }
 
-        case ADD_CASH:
-            return { ...state, assets: { ...state.assets, cash: [...state.assets.cash, action.payload] }}
+        case ADD_ASSET:
+            return { ...state, assets: { ...state.assets, [action.assetType]: [...state.assets[action.assetType], action.payload] }}
 
-        case ADD_CRYPTOCURRENCY:
-            return { ...state, assets: { ...state.assets, cryptocurrency: [...state.assets.cryptocurrency, action.payload] }}
+        // case ADD_CRYPTOCURRENCY:
+        //     return { ...state, assets: { ...state.assets, cryptocurrency: [...state.assets.cryptocurrency, action.payload] }}
 
-        case ADD_FIXED_ASSET:
-            return { ...state, assets: { ...state.assets, fixedAsset: [...state.assets.fixedAsset, action.payload] }}
+        // case ADD_FIXED_ASSET:
+        //     return { ...state, assets: { ...state.assets, fixedAsset: [...state.assets.fixedAsset, action.payload] }}
 
-        case ADD_STOCK:
-            return { ...state, assets: { ...state.assets, stock: [...state.assets.stock, action.payload] }}
+        // case ADD_STOCK:
+        //     return { ...state, assets: { ...state.assets, stock: [...state.assets.stock, action.payload] }}
 
         default:
             return state;

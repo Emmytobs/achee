@@ -12,8 +12,11 @@ import styles from './AddCash.module.css';
 
 function AddCash() {
     const addCashSchema = Yup.object().shape({
-
-    })
+        name: Yup.string().required('Required'),
+        date: Yup.date().required('Required'),
+        type: Yup.string().required('Required'),
+        amount: Yup.number().required('Required')
+    });
 
     return (
         <>
@@ -22,9 +25,7 @@ function AddCash() {
             <ImportPortfolioButtons title="Add Cash" />
             <AddPortfolioForm>
                 <Formik
-                    initialValues={{ 
-
-                     }}
+                    initialValues={{ name: '', date: '', type: '', amount: '' }}
                     validationSchema={addCashSchema}
                     onSubmit={(values) => {
 
@@ -33,11 +34,13 @@ function AddCash() {
                     {({ errors, touched, values, handleChange, handleSubmit }) => (
                         <>
                         <div>
-                            <p className={styles.fieldName}>Type</p>
-                            <Select>
-                                <Option value="deposit cash" selected>Deposit Cash</Option>
-                                <Option value="Option 2">Option 2</Option>
-                            </Select>
+                            <p className={styles.fieldName}>Name</p>
+                            <div className={styles.name}>
+                                <Input 
+                                    type='text' 
+                                    placeholder="Placeholder...."
+                                    style={{ width: "100%", display: "block" }} />
+                            </div>
                         </div>
                         <div>
                             <p className={styles.fieldName}>Date</p>
@@ -47,28 +50,35 @@ function AddCash() {
                             </div>
                         </div>
                         <div>
-                            <p className={styles.fieldName}>Return Interval</p>
+                            <p className={styles.fieldName}>Type</p>
+                            <Select>
+                                <Option value="deposit cash" selected>Deposit Cash</Option>
+                                <Option value="Option 2">Option 2</Option>
+                            </Select>
+                        </div>
+                        <div>
+                            <p className={styles.fieldName}>Cash Amount</p>
                             <div className={'display-flex justify-start '+ styles.amount}>
                                 <Select 
+                                    wrapperStyle={{
+                                        'background-position-x': '65%',
+                                        backgroundColor: "#F6F3FF",
+                                    }}
                                     style={{ 
                                         border:"2px solid #805CF5",
-                                        backgroundColor: "#805CF531",
                                         color: "#805CF5",
-                                        fontSize: '1.2em',
+                                        fontSize: '1.4em',
                                         fontWeight: '500',
-                                        padding: '0 20px 0 5px'
+                                        padding: "0 0 0 25px",
+                                        width: "94px",
                                     }}
                                     onChange={(e) => console.log(e.target.value)}>
 
                                     <Option value='usd' selected>$</Option>
                                     <Option value='eur'>#</Option>
                                 </Select>
-                                <Input style={{ marginLeft: '5px' }} />
+                                <Input type="number" style={{ marginLeft: '5px', width: "100%", display: "block" }} />
                             </div>
-                        </div>
-                        <div>
-                            <p className={styles.fieldName}>Notes</p>
-                            <Textarea placeholder="(Optional)" />
                         </div>
                         </>
                     )}

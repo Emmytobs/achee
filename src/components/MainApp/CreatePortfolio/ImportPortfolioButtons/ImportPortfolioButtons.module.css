@@ -9,7 +9,7 @@
     font-family: 'Bree Serif', serif;
     font-size: 1.5em;
     font-weight: 400;
-    color: var(--heading-text-color);
+    color: var(--text-color);
     flex: 0 0 30%;
 }
 .firstRow > .addPortfolioButtons {

@@ -32,21 +32,29 @@ function AddFixedAsset() {
                     {({ errors, touched, values, handleChange, handleSubmit }) => (
                         <>
                         <div>
+                            <p className={styles.fieldName}>Asset Name</p>
+                            <Input type="text" placeholder="Type asset name" />
+                        </div>
+                        <div>
                             <p className={styles.fieldName}>Amount</p>
                             <div className={'display-flex justify-start '+ styles.amount}>
                                 <Select
+                                    wrapperStyle={{
+                                        'background-position-x': '65%',
+                                        backgroundColor: "#F6F3FF",
+                                    }}
                                     style={{ 
                                         border:"2px solid #805CF5",
-                                        backgroundColor: "#805CF531",
                                         color: "#805CF5",
-                                        fontSize: '1.2em',
+                                        fontSize: '1.4em',
                                         fontWeight: '500',
-                                        padding: '0 20px 0 5px'
+                                        padding: "0 0 0 25px",
+                                        width: "94px",
                                     }}>
                                     <Option value='usd' selected>$</Option>
                                     <Option value='eur'>#</Option>
                                 </Select>
-                                <Input styles={{ marginLeft: '5px' }} />
+                                <Input style={{ marginLeft: '5px' }} />
                             </div>
                         </div>
                         <div className={styles.percentageReturn}>
@@ -63,34 +71,12 @@ function AddFixedAsset() {
                         <div className={styles.startEndDate}>
                             <p className={styles.fieldName}>Start Date</p>
                             <div>
-                                <p>Date Picker</p>
+                                <Input type="date" style={{ width: "30%" }} />
                                 <div className={styles.endDate}>
                                     <p className={styles.fieldName}>End Date</p>
-                                    <p>Date Picker</p>
+                                    <Input type="date" style={{ width: "30%" }} />
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div>
-                            <p className={styles.fieldName}>Commission</p>
-                            <div className={'display-flex justify-start '+ styles.commission}>
-                                <Select 
-                                    style={{ 
-                                        border:"2px solid #805CF5",
-                                        backgroundColor: "#805CF531",
-                                        color: "#805CF5",
-                                        fontSize: '1.2em',
-                                        fontWeight: '500',
-                                        padding: '0 20px 0 5px'
-                                    }}>
-                                    <Option value='usd' selected>$</Option>
-                                </Select>
-                                <Input style={{ marginLeft: '5px' }} />
-                            </div>
-                        </div>
-                        <div>
-                            <p className={styles.fieldName}>Notes</p>
-                            <Textarea placeholder="(Optional)" />
                         </div>
                         </>
                     )}

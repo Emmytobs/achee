@@ -1,10 +1,11 @@
 import {
     SAVE_LOGGED_IN_USER_DATA,
     SAVE_AUTH_TOKENS,
-    ADD_CASH,
-    ADD_CRYPTOCURRENCY,
-    ADD_FIXED_ASSET,
-    ADD_STOCK
+    // ADD_CASH,
+    // ADD_CRYPTOCURRENCY,
+    // ADD_FIXED_ASSET,
+    // ADD_STOCK,
+    ADD_ASSET
 } from './actions'
 
 export const saveLoggedInUserData = (payload, dispatch) => {
@@ -16,18 +17,22 @@ export const saveAuthTokens = (payload, dispatch) => {
 }
 
 // Assets data dispatchers
-export const addCash = (payload, dispatch) => {
-    dispatch({ type: ADD_CASH, payload })
+export const addCash = (payload, assetType, dispatch) => {
+    dispatch({ type: ADD_ASSET, assetType, payload })
 }
 
-export const addCryptocurrency = (payload, dispatch) => {
-    dispatch({ type: ADD_CRYPTOCURRENCY , payload })
-}
+// export const addCash = (payload, dispatch) => {
+//     dispatch({ type: ADD_CASH, payload })
+// }
 
-export const addFixedAsset = (payload, dispatch) => {
-    dispatch({ type: ADD_FIXED_ASSET , payload })
-}
+// export const addCryptocurrency = (payload, dispatch) => {
+//     dispatch({ type: ADD_CRYPTOCURRENCY , payload })
+// }
 
-export const addStock = (payload, dispatch) => {
-    dispatch({ type: ADD_STOCK , payload })
-}
+// export const addFixedAsset = (payload, dispatch) => {
+//     dispatch({ type: ADD_FIXED_ASSET , payload })
+// }
+
+// export const addStock = (payload, dispatch) => {
+//     dispatch({ type: ADD_STOCK , payload })
+// }

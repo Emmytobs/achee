@@ -26,7 +26,7 @@ export function Input(props) {
 
 export function Select(props) {
     return (
-        <div for="select" className={'display-flex justify-between '+ styles.selectContainer}>
+        <div for="select" className={'display-flex justify-between '+ styles.selectContainer} style={props.wrapperStyle}>
             <select id="select" style={props.style} className={styles.select} onChange={props.onChange} value={props.value}>
                 {props.children}
             </select>

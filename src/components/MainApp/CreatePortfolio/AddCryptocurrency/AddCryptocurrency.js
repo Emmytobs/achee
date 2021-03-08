@@ -19,11 +19,6 @@ function AddCryptocurrency() {
         <Header />
         <div className={styles.addCryptocurrency}>
             <ImportPortfolioButtons title="Add Cryptocurrency" />
-            <div className={styles.search}>
-                <img src="" alt="Search Icon"/>
-                <Input type="text" placeholder="Search" />
-            </div>
-            
             <AddPortfolioForm>
                 <Formik
                     initialValues={{  }}
@@ -34,11 +29,19 @@ function AddCryptocurrency() {
                 >
                     {({ errors, touched, values, handleSubmit, handleChange }) => (
                         <>
-                        <div className={styles.transaction}>
-                            <p className={styles.fieldName}>Transaction</p>
+                        <div className={styles.fieldName}>
+                            <p>Choose Asset</p>
+                            <Input type="text" value="*Insert icon*" />
+                        </div>
+                        <div className={styles.fieldName}>
+                            <p>Current Market Value</p>
+                            <Input type="text" />
+                        </div>
+                        <div className={styles.fieldName}>
+                            <p>Transaction</p>
                             <Select>
-                                <Option value="Buy" selected>Buy</Option>
-                                <Option value="Sell">Sell</Option>
+                                <Option value="deposit cash" selected>Buy</Option>
+                                <Option value="Option 2">Sell</Option>
                             </Select>
                         </div>
                         <div>
@@ -52,14 +55,19 @@ function AddCryptocurrency() {
                         <div>
                             <p className={styles.fieldName}>Price</p>
                             <div className={'display-flex justify-start '+ styles.price}>
-                                <Select style={{ 
-                                            border:"2px solid #805CF5",
-                                            backgroundColor: "#805CF531",
-                                            color: "#805CF5",
-                                            fontSize: '1.2em',
-                                            fontWeight: '500',
-                                            padding: '0 20px 0 5px'
-                                        }}>
+                                <Select 
+                                    wrapperStyle={{
+                                        'background-position-x': '65%',
+                                        backgroundColor: "#F6F3FF",
+                                    }}
+                                    style={{ 
+                                        border:"2px solid #805CF5",
+                                        color: "#805CF5",
+                                        fontSize: '1.4em',
+                                        fontWeight: '500',
+                                        padding: "0 0 0 25px",
+                                        width: "94px",
+                                    }}>
                                     <Option value='usd' selected>$</Option>
                                 </Select>
                                 <Input style={{ marginLeft: '5px' }} />
@@ -69,22 +77,22 @@ function AddCryptocurrency() {
                             <p className={styles.fieldName}>Commission</p>
                             <div className={'display-flex justify-start '+ styles.commission}>
                                 <Select
+                                    wrapperStyle={{
+                                        'background-position-x': '65%',
+                                        backgroundColor: "#F6F3FF",
+                                    }}
                                     style={{ 
                                         border:"2px solid #805CF5",
-                                        backgroundColor: "#805CF531",
                                         color: "#805CF5",
-                                        fontSize: '1.2em',
+                                        fontSize: '1.4em',
                                         fontWeight: '500',
-                                        padding: '0 20px 0 5px'
+                                        padding: "0 0 0 25px",
+                                        width: "94px",
                                     }}>
                                     <Option value='usd' selected>$</Option>
                                 </Select>
                                 <Input style={{ marginLeft: '5px' }} />
                             </div>
-                        </div>
-                        <div>
-                            <p className={styles.fieldName}>Notes</p>
-                            <Textarea placeholder="(Optional)" />
                         </div>
                         </>
                     )}
