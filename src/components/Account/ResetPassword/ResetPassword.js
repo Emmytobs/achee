@@ -35,7 +35,7 @@ function ResetPassword(props) {
     })
 
     const changeToSignInView = () => {
-        props.history.push('/account?page=sign-in');
+        props.history.push('/account/login');
     }
 
     const resetPasswordSchema = Yup.object().shape({

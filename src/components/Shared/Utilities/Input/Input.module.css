@@ -1,6 +1,9 @@
 /* 
     STYLING FOR THE INPUT
 */
+.inputContainer {
+    width: 100%;
+}
 .input {
     background: transparent;
     border: 1px solid #ccc;
@@ -24,6 +27,16 @@
 /* 
     END OF STYLING FOR THE INPUT
 */
+
+/* 
+    STYLING FOR THE ERROR TEXT
+*/
+.error {
+    display: block;
+    margin-top: 5px;
+    color: red;
+    font-weight: 500;
+}
 
 /* 
     STYLING FOR THE SELECT

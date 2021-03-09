@@ -17,7 +17,7 @@ export const saveAuthTokens = (payload, dispatch) => {
 }
 
 // Assets data dispatchers
-export const addCash = (payload, assetType, dispatch) => {
+export const addAsset = (payload, assetType, dispatch) => {
     dispatch({ type: ADD_ASSET, assetType, payload })
 }
 

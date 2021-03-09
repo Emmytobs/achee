@@ -25,7 +25,7 @@ function ForgotPassword(props) {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const changeToSignInView = (e) => {
-        props.history.push('/account?page=sign-in');
+        props.history.push('/account/login');
     }
 
     const submitForm = async () => {

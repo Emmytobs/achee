@@ -1,52 +1,29 @@
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React from 'react';
+import { Route, Redirect, useRouteMatch, Switch } from 'react-router-dom';
 
 import SignUp from './SignUp/SignUp'
 import SignIn from './SignIn/SignIn'
 import ForgotPassword from './ForgotPassword/ForgotPassword'
 import ResetPassword from './ResetPassword/ResetPassword'
+import Page404 from '../Page404/Page404';
 
 function Account(props) {
-    const searchQuery = useLocation().search
 
-    useEffect(() => {
-        if (!searchQuery) {
-            props.history.push('/account?page=sign-up')
-        } 
-        else if (
-            !searchQuery.includes('sign-in') &&
-            !searchQuery.includes('sign-up') &&
-            !searchQuery.includes('forgot-password') &&
-            !searchQuery.includes('reset-password')
-        ) {
-            props.history.push('/account?page=sign-in')
-        }
-    }, []);
-
-    if (searchQuery.includes('sign-in')) {
-        return (
-            <SignIn {...props} />
-        )
-    } 
-    else if (searchQuery.includes('sign-up')) {
-        return (
-            <SignUp {...props} />
-        )
-    }
-    else if (searchQuery.includes('forgot-password')) {
-        return (
-            <ForgotPassword {...props} />
-        )
-    }
-    else if (searchQuery.includes('reset-password')) {
-        return (
-            <ResetPassword {...props} />
-        )
-    }
+    const { url } = useRouteMatch();
 
     return (
         <>
-            
+            <Switch>
+                <Route path={url} exact>
+                    <Redirect to={`${url}/login`} />
+                </Route>
+                <Route path={`${url}/login`} exact component={SignIn} />    
+                <Route path={`${url}/register`} exact component={SignUp} />    
+                <Route path={`${url}/reset-password`} exact component={ResetPassword} />    
+                <Route path={`${url}/forgot-password`} exact component={ForgotPassword} />    
+
+                <Route path='*' component={Page404} />
+            </Switch>
         </>
     )
 }

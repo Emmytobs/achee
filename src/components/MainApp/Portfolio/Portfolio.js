@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import { Table, TableHead, TableBody, TableRow, TH, TD } from '../../Shared/Utilities/AssetsTable'
@@ -10,7 +11,7 @@ import search from '../../Shared/icons/search.png';
 import arrowUp from './icons/arrow-up.png';
 import arrowDown from './icons/arrow-down.png';
 
-function Portfolio() {
+function Portfolio(props) {
     const [ activeTab, setActiveTab ] = useState(1);
     
     React.useEffect(() => {
@@ -72,7 +73,7 @@ function Portfolio() {
                     </div>
                 </div>
                 
-                <div className={styles.assetList}>
+                <div className={styles.assetList} id="asset-list">
                     <h1>Your Holdings Group By Asset</h1>
                     
                     <div className={`${styles.asset} ${styles.stockOrFund}`}>
@@ -236,42 +237,58 @@ function Portfolio() {
                                 <TableHead>
                                     <TableRow>
                                         <TH>Name</TH>
-                                        <TH>Symbol</TH>
-                                        <TH>Current Price</TH>
-                                        <TH>Quantity</TH>
-                                        <TH>Current Value</TH>
-                                        <TH>Total Cost</TH>
-                                        <TH>Average Price</TH>
-                                        <TH>Fees</TH>
-                                        <TH>Profit/Loss</TH>
+                                        <TH>Cash Balance</TH>
+                                        <TH></TH>
+                                        <TH></TH>
+                                        <TH></TH>
+                                        <TH></TH>
+                                        <TH></TH>
+                                        <TH></TH>
+                                        <TH></TH>
                                         <TH></TH>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    <TableRow>
+                                    {props.assets.cash.map(cashAsset => {
+                                        return (
+                                            <TableRow>
+                                                <TD>{cashAsset.name}</TD>
+                                                <TD>{cashAsset.amount}</TD>
+                                                <TD></TD>
+                                                <TD></TD>
+                                                <TD></TD>
+                                                <TD></TD>
+                                                <TD></TD>
+                                                <TD></TD>
+                                                <TD></TD>
+                                                <TD>*Delete*</TD>
+                                            </TableRow>
+                                        )
+                                    })}
+                                    {/* <TableRow>
                                         <TD>Apple</TD>
                                         <TD>AAPL</TD>
-                                        <TD>$130.07</TD>
-                                        <TD>60</TD>
-                                        <TD>$1033.76</TD>
-                                        <TD>$9000.87</TD>
-                                        <TD>$7560.89</TD>
-                                        <TD>$1000</TD>
-                                        <TD>$1000</TD>
+                                        <TD></TD>
+                                        <TD></TD>
+                                        <TD></TD>
+                                        <TD></TD>
+                                        <TD></TD>
+                                        <TD></TD>
+                                        <TD></TD>
                                         <TD>*Delete*</TD>
                                     </TableRow>
                                     <TableRow>
                                         <TD>Tesla</TD>
                                         <TD>TSLA</TD>
-                                        <TD>$67.71</TD>
-                                        <TD>73</TD>
-                                        <TD>$894.76</TD>
-                                        <TD>$126896239.87</TD>
-                                        <TD>$524.89</TD>
-                                        <TD>$500</TD>
-                                        <TD>$2000</TD>
+                                        <TD></TD>
+                                        <TD></TD>
+                                        <TD></TD>
+                                        <TD></TD>
+                                        <TD></TD>
+                                        <TD></TD>
+                                        <TD></TD>
                                         <TD>*Delete*</TD>
-                                    </TableRow>
+                                    </TableRow> */}
                                 </TableBody>
                             </Table>
                         </div>
@@ -290,7 +307,14 @@ function Portfolio() {
     )
 }
 
-export default Portfolio
+const mapStateToProps = (state) => {
+    return {
+        assets: state.assets
+    }
+}
+
+export default connect(mapStateToProps, null)(Portfolio)
+// export default Portfolio
 
 function PerformanceTag(props) {
     return (

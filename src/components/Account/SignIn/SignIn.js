@@ -22,11 +22,11 @@ function SignIn(props) {
     const [isSubmitting, setIsSubmitting] = useState(false)
 
     const changeToSignUpView = (e) => {
-        props.history.push('/account?page=sign-up')
+        props.history.push('/account/register')
     }
 
     const changeToForgotPasswordView = (e) => {
-        props.history.push('/account?page=forgot-password');
+        props.history.push('/account/forgot-password');
     }
 
     const sendUserData = async (formData) => {

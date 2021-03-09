@@ -21,7 +21,7 @@ function SignUp(props) {
     const [isSubmitting, setIsSubmitting] = useState(false)
 
     const changeToSignIn = (e) => {
-        props.history.push('/account?page=sign-in')
+        props.history.push('/account/login')
     }
 
     const loginUser = async (formData) => {
