@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import { connect } from 'react-redux';
 import { Link, useRouteMatch } from 'react-router-dom'
 
 import styles from './Header.module.css'
 
 import acheeLogo from '../../Shared/icons/acheeLogo_white.png';
 import arrowDown from '../../Shared/icons/arrow-down.png';
-import notificationIcon from '../../Shared/icons/Notification.png';
 import userDP from '../../Shared/icons/user-dp.png';
 
 import MobileHeader from '../../Shared/MobileHeader/MobileHeader';
@@ -57,13 +57,18 @@ function Header(props) {
                         {routeIsInUrl('/referrals') && <span className={styles.indicator}></span>}
                     </Link>
 
-                    <Link><button className={styles.upgradeButton}>Upgrade</button></Link>
+                    {props.subscriptionPlan === 'FREE' && <Link><button className={styles.upgradeButton}>Upgrade</button></Link>}
 
                     <Link onClick={showProfileDropdown} className={`display-flex ${styles.dropdownBtn}`}>
-                        <img src={userDP} alt="User's Profile Pic" />
-                        <p className={styles.userFullName}>Adesanoye Dorcas</p>
+                        <img src={props.profileImage} alt="User's Profile Pic" />
+                        
+                        {(props.firstname || props.lastname) ? 
+                            <p className={styles.userFullName}>{props.firstname} {props.lastname}</p> : 
+                            <p className={styles.userFullName}>Update your profile</p>
+                        }
+
                         <img src={arrowDown} alt="Arrow Down"/>
-                        <ul style={{ opacity: profileMenu ? '1' : '0' }} className={styles.dropdown}>
+                        <ul style={{ opacity: profileMenu ? '1' : '0', pointerEvents: profileMenu ? 'all' : 'none' }} className={styles.dropdown}>
                             <li name="dropdown-item"><Link to="/app/profile">My Profile</Link></li>
                             <li name="dropdown-item"><Link to="/app/profile">Change Password</Link></li>
                             <li name="dropdown-item"><Link to="/app/reports">Reports</Link></li>
@@ -80,4 +85,13 @@ function Header(props) {
     )
 }
 
-export default Header
+function mapStateToProps (state) {
+    return {
+        firstname: state.user.firstname, 
+        lastname: state.user.lastname, 
+        profileImage: state.user.profileImage,
+        subscriptionPlan: state.user.subscriptionPlan
+    }
+}
+
+export default connect(mapStateToProps, null)(Header)

@@ -4,7 +4,8 @@ import { Form, Input, Button } from '../Form/Form';
 import { connect } from 'react-redux'
 import axios from 'axios';
 import {
-    saveAuthTokens
+    saveAuthTokens,
+    setGlobalError
 } from '../../../redux/dispatchers'
 
 import ErrorBox from '../ErrorBox'
@@ -95,6 +96,7 @@ function SignIn(props) {
 
                 <div>
                     {errorMessage && <ErrorBox errorMessage={errorMessage} />}
+                    {props.globalError && <ErrorBox errorMessage={props.globalError} close={() => setGlobalError(null, props.dispatch)} />}
                 </div>
 
                 <Formik
@@ -147,4 +149,10 @@ function SignIn(props) {
     )
 }
 
-export default connect(null, null)(SignIn)
+function mapStateToProps(state) {
+    return {
+        globalError: state.globalError
+    }
+}
+
+export default connect(mapStateToProps, null)(SignIn)

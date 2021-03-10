@@ -1,3 +1,5 @@
+export const SET_GLOBAL_ERROR = 'SET_GOBAL_ERROR'
+
 export const SAVE_LOGGED_IN_USER_DATA = 'SAVE_LOGGED_IN_USER_DATA';
 export const SAVE_AUTH_TOKENS = 'SAVE_AUTH_TOKENS'
 // For Assets form

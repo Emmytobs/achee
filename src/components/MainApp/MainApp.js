@@ -20,7 +20,7 @@ import Reports from './Reports/Reports'
 
 import Page404 from '../Page404/Page404'
 
-function App() {
+function MainApp() {
     const { url } = useRouteMatch();
 
     return (
@@ -50,4 +50,4 @@ function App() {
     )
 }
 
-export default App
+export default MainApp;

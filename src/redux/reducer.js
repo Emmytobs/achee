@@ -1,23 +1,17 @@
 import {    
     SAVE_LOGGED_IN_USER_DATA,
     SAVE_AUTH_TOKENS,
-    ADD_ASSET
+    ADD_ASSET,
+    SET_GLOBAL_ERROR
 } from './actions'
 
-const initialState = {
-    user: {},
-    accessToken: '',
-    refreshToken: '',
-    assets: {
-        cash: [],
-        cryptocurrency: [],
-        fixedAsset: [],
-        stock: []
-    },
-}
+import { initialState } from './store';
 
 function reducers(state=initialState, action) {
     switch(action.type) {
+        case SET_GLOBAL_ERROR:
+            return { ...state, globalError: action.payload }
+
         case SAVE_LOGGED_IN_USER_DATA:
             return { ...state, user: { ...action.payload } };
 

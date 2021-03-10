@@ -1,11 +1,12 @@
-import React, { useState, Component } from 'react'
+import React, { useState,  useEffect, Component } from 'react'
 import { Link, useRouteMatch, useLocation } from 'react-router-dom';
+import { Carousel } from 'react-responsive-carousel';
+import axios from 'axios';
 
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import styles from './Homepage.module.css';
 
-import { Carousel } from 'react-responsive-carousel';
 
 import Overlay from '../../Shared/Overlay'
 import { PrimaryButton, Button } from '../../Shared/Utilities'
@@ -20,11 +21,13 @@ import upgrade from './images/upgrade.png';
 import closeModal from '../../Shared/icons/close_modal.png';
 
 function Homepage(props) {
+
+    
     const [isModalShowing, setIsModalShowing] = useState(false);
-    const [isWalkthroughModalShowing, setIsWalkthroughModalShowing] = useState(true);
+    const [isWalkthroughModalShowing, setIsWalkthroughModalShowing] = useState(false);
 
     const { url } = useRouteMatch()
-
+    
     const toggleModal = () => {
         setIsModalShowing(!isModalShowing);
     }
@@ -32,9 +35,22 @@ function Homepage(props) {
     const useQuery = () => {
         return new URLSearchParams(useLocation().search)
     }
-
+    
     const query = useQuery();
     
+    useEffect(() => {
+        // When component mounts, fetch logged in user'd data
+        // const acesssToken = localStorage.getItem('achee_accessToken')
+    }, []);
+
+    useEffect(() => {        
+        // When component mounts, show walkthrough modal only to newly registered users
+        if (query.has('new-user')) {
+            setIsWalkthroughModalShowing(true);
+            // Remove query afterwards
+        }
+    }, []);
+
     return (
         <>
         <Header {...props} />
@@ -156,7 +172,8 @@ function Homepage(props) {
             
             {isModalShowing && <AddPortfolioModal setIsModalShowing={setIsModalShowing} />}
             {/* If there's a 'new-user' query, show the walkth */}
-            {query.has('new-user') && <WalkThroughModal setIsWalkthroughModalShowing={setIsWalkthroughModalShowing} />}
+            {/* {query.has('new-user') && <WalkThroughModal setIsWalkthroughModalShowing={setIsWalkthroughModalShowing} />} */}
+            {isWalkthroughModalShowing && <WalkThroughModal setIsWalkthroughModalShowing={setIsWalkthroughModalShowing} />}
         <Footer/>
         </>
     )
@@ -179,100 +196,77 @@ function Card(props) {
 }
 
 function WalkThroughModal(props) {
-    class ExternalControlledCarousel extends Component {
-        constructor(props) {
-            super(props);
+    const [currentSlide, setCurrentSlide] = React.useState(0);
+    const [autoPlay, setAutoPlay] = React.useState(false);
 
-            this.state = {
-                currentSlide: 0,
-                autoPlay: false,
-            };
-        }
-
-        next = () => {
-            this.setState((state) => ({
-                currentSlide: state.currentSlide + 1,
-            }));
-        };
-
-        prev = () => {
-            this.setState((state) => ({
-                currentSlide: state.currentSlide - 1,
-            }));
-        };
-
-        changeAutoPlay = () => {
-            this.setState((state) => ({
-                autoPlay: !state.autoPlay,
-            }));
-        };
-
-        updateCurrentSlide = (index) => {
-            const { currentSlide } = this.state;
-
-            if (currentSlide !== index) {
-                this.setState({
-                    currentSlide: index,
-                });
-            }
-        };
-
-        render() {
-            return (
-                <Overlay closeModalHandler={props.setIsWalkthroughModalShowing} targetToCloseModal="closeModal">
-                    <div className={styles.carouselContainer}>
-                        <img id="closeModal" className={styles.closeModalIcon} src={closeModal} alt="Close Modal Icon" width="35px" height="35px" />
-                        
-                        <Carousel 
-                            showThumbs={false} 
-                            showArrows={false} 
-                            showStatus={false} 
-                            showIndicators={false}
-                            autoPlay={this.state.autoPlay}
-                            selectedItem={this.state.currentSlide}
-                            onChange={this.updateCurrentSlide}
-                            {...this.props}>
-                            <div className={`display-flex ${styles.walkthrough} ${styles.page}`}>
-                                <div>
-                                    <h2>Track Your Portfolio</h2>
-                                    <p>
-                                    Monitor your investments even though they are on different investment platforms. You can track your stocks, cryptocurrencies and other assets on one dashboard.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className={`display-flex ${styles.walkthrough} ${styles.page}`}>
-                                <div>
-                                    <h2>Know Your Performance</h2>
-                                    <p>See your currency gains/loss, dividends and measure your performance against an index.</p>
-                                </div>
-                            </div>
-                            <div className={`display-flex ${styles.walkthrough} ${styles.page}`}>
-                                <div>
-                                    <h2>Free Investment Courses</h2>
-                                    <p>Upgrade your knowledge on saving, budgeting and investing using our free courses and community.</p>
-                                </div>
-                            </div>
-                        </Carousel>
-                        <div className={'display-flex '+ styles.progressBarContainer}>
-                            <div className={styles.progressBars}>
-                                <span style={{ backgroundColor: this.state.currentSlide === 0 && '#805CF5' }}></span>
-                                <span style={{ backgroundColor: this.state.currentSlide === 1 && '#805CF5' }}></span>
-                                <span style={{ backgroundColor: this.state.currentSlide === 2 && '#805CF5' }}></span>
-                            </div>
-                            <div className={styles.buttonContainer}>
-                                {this.state.currentSlide !== 0 && <Button style={{ backgroundColor: '#F6F3FF' }} onClick={this.prev}>Back</Button>}
-                                {
-                                this.state.currentSlide === 2 ? 
-                                <PrimaryButton id="closeModal" >Get Started</PrimaryButton> :
-                                <PrimaryButton onClick={this.next}>Next</PrimaryButton>
-                                }
-                            </div>
-                        </div>
-                    </div>
-                </Overlay>
-            )
-        }
+    const next = () => {
+        setCurrentSlide(currentSlide + 1);
     }
 
-    return <ExternalControlledCarousel />;
+    const prev = () => {
+        setCurrentSlide(currentSlide - 1)
+    }
+
+    const changeAutoPlay = () => {
+        setAutoPlay(!autoPlay)
+    }
+
+    const updateCurrentSlide = (slideIndex) => {
+        if (currentSlide !== slideIndex) {
+            setCurrentSlide(slideIndex);
+        }
+    }
+    return (
+        <Overlay closeModalHandler={props.setIsWalkthroughModalShowing} targetToCloseModal="closeModal">
+            <div className={styles.carouselContainer}>
+                <img id="closeModal" className={styles.closeModalIcon} src={closeModal} alt="Close Modal Icon" width="35px" height="35px" />
+                
+                <Carousel 
+                    showThumbs={false} 
+                    showArrows={false} 
+                    showStatus={false} 
+                    showIndicators={false}
+                    autoPlay={autoPlay}
+                    selectedItem={currentSlide}
+                    onChange={updateCurrentSlide}
+                    {...props}>
+                    <div className={`display-flex ${styles.walkthrough} ${styles.page}`}>
+                        <div>
+                            <h2>Track Your Portfolio</h2>
+                            <p>
+                            Monitor your investments even though they are on different investment platforms. You can track your stocks, cryptocurrencies and other assets on one dashboard.
+                            </p>
+                        </div>
+                    </div>
+                    <div className={`display-flex ${styles.walkthrough} ${styles.page}`}>
+                        <div>
+                            <h2>Know Your Performance</h2>
+                            <p>See your currency gains/loss, dividends and measure your performance against an index.</p>
+                        </div>
+                    </div>
+                    <div className={`display-flex ${styles.walkthrough} ${styles.page}`}>
+                        <div>
+                            <h2>Free Investment Courses</h2>
+                            <p>Upgrade your knowledge on saving, budgeting and investing using our free courses and community.</p>
+                        </div>
+                    </div>
+                </Carousel>
+                <div className={'display-flex '+ styles.progressBarContainer}>
+                    <div className={styles.progressBars}>
+                        <span style={{ backgroundColor: currentSlide === 0 && '#805CF5' }}></span>
+                        <span style={{ backgroundColor: currentSlide === 1 && '#805CF5' }}></span>
+                        <span style={{ backgroundColor: currentSlide === 2 && '#805CF5' }}></span>
+                    </div>
+                    <div className={styles.buttonContainer}>
+                        {currentSlide !== 0 && <Button style={{ backgroundColor: '#F6F3FF' }} onClick={prev}>Back</Button>}
+                        {
+                        currentSlide === 2 ? 
+                        <PrimaryButton id="closeModal" >Get Started</PrimaryButton> :
+                        <PrimaryButton onClick={next}>Next</PrimaryButton>
+                        }
+                    </div>
+                </div>
+            </div>
+        </Overlay>
+    )
 }

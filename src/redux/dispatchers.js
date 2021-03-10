@@ -1,12 +1,13 @@
 import {
     SAVE_LOGGED_IN_USER_DATA,
     SAVE_AUTH_TOKENS,
-    // ADD_CASH,
-    // ADD_CRYPTOCURRENCY,
-    // ADD_FIXED_ASSET,
-    // ADD_STOCK,
+    SET_GLOBAL_ERROR,
     ADD_ASSET
 } from './actions'
+
+export const setGlobalError = (payload, dispatch) => {
+    dispatch({ type: SET_GLOBAL_ERROR, payload })
+}
 
 export const saveLoggedInUserData = (payload, dispatch) => {
     dispatch({ type: SAVE_LOGGED_IN_USER_DATA, payload });
@@ -20,19 +21,3 @@ export const saveAuthTokens = (payload, dispatch) => {
 export const addAsset = (payload, assetType, dispatch) => {
     dispatch({ type: ADD_ASSET, assetType, payload })
 }
-
-// export const addCash = (payload, dispatch) => {
-//     dispatch({ type: ADD_CASH, payload })
-// }
-
-// export const addCryptocurrency = (payload, dispatch) => {
-//     dispatch({ type: ADD_CRYPTOCURRENCY , payload })
-// }
-
-// export const addFixedAsset = (payload, dispatch) => {
-//     dispatch({ type: ADD_FIXED_ASSET , payload })
-// }
-
-// export const addStock = (payload, dispatch) => {
-//     dispatch({ type: ADD_STOCK , payload })
-// }

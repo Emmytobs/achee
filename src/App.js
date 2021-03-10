@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
+import ProtectedRoute from './components/Shared/ProtectedRoute'
 
 import HomePage from './components/HomePage/HomePage.js';
 import Account from './components/Account/Account.js';
@@ -26,7 +27,8 @@ function App() {
     <Switch>
       <Route path="/" exact component={HomePage} />
       <Route path='/account' component={Account} />
-      <Route path='/app' component={MainApp} />
+      <ProtectedRoute path='/app' component={MainApp} />
+      {/* <Route path='/app' component={MainApp} /> */}
 
       <Route path='/landing' exact component={Landing} />
       <Route path='/about' exact component={AboutUs} />
