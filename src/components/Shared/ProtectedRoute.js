@@ -20,9 +20,6 @@ function ProtectedRoute(props) {
     const validateTokens = async (accessToken, refreshToken) => {
         try {
             const response = await fetchUserData(accessToken);
-            if (!response) {
-                return console.log('No response. Check your internet connection')
-            }
             if (response.status === 200) {
                 const { user } = response.data.data;
                 // Save logged in user data
@@ -30,6 +27,9 @@ function ProtectedRoute(props) {
                 setTokenStatus('valid')
             }
         } catch (error) {
+            if (!error.response) {
+                return console.log('No response. Check your internet connection')
+            }
             if (error.response.status !== 200) {
                 console.log(error.response)
                 setGlobalError('Please sign in again to continue', props.dispatch)

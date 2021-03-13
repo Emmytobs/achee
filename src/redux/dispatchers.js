@@ -2,7 +2,7 @@ import {
     SAVE_LOGGED_IN_USER_DATA,
     SAVE_AUTH_TOKENS,
     SET_GLOBAL_ERROR,
-    ADD_ASSET
+    ADD_ASSETS
 } from './actions'
 
 export const setGlobalError = (payload, dispatch) => {
@@ -18,6 +18,6 @@ export const saveAuthTokens = (payload, dispatch) => {
 }
 
 // Assets data dispatchers
-export const addAsset = (payload, assetType, dispatch) => {
-    dispatch({ type: ADD_ASSET, assetType, payload })
+export const addAssets = (payload, dispatch) => {
+    dispatch({ type: ADD_ASSETS, payload })
 }

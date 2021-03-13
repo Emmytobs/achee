@@ -1,7 +1,7 @@
 import {    
     SAVE_LOGGED_IN_USER_DATA,
     SAVE_AUTH_TOKENS,
-    ADD_ASSET,
+    ADD_ASSETS,
     SET_GLOBAL_ERROR
 } from './actions'
 
@@ -18,11 +18,23 @@ function reducers(state=initialState, action) {
         case SAVE_AUTH_TOKENS:
             return { ...state, accessToken: action.payload[0], refreshToken: action.payload[1] }
 
-        case ADD_ASSET:
-            return { ...state, assets: { ...state.assets, [action.assetType]: [...state.assets[action.assetType], action.payload] }}
+        case ADD_ASSETS:
+            return addAssets(state, action)
 
         default:
             return state;
     }
 }
 export default reducers;
+
+function addAssets(state, action) {
+    const stateCopy = { ...state };
+    const { payload: assetPayload } = action;
+
+    assetPayload.forEach(asset => {
+        const {assetType, assets: assetsInPayload} = asset
+        stateCopy.assets[assetType] = [ ...assetsInPayload ]
+    })
+    
+    return stateCopy;
+}

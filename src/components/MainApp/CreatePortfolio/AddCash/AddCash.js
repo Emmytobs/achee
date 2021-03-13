@@ -54,15 +54,15 @@ function AddCash(props) {
         try {
             const response = await axios.post(`${process.env.REACT_APP_API_URL}/portfolios/:portfolioId/transactions`, { ...values }, {
                 params: {
-                    'portfolioId': '3ef5ed27-9c8a-4806-a932-11a439cc6c8e'
-                }
+                    'portfolioId': '3ef5ed27-9c8a-4806-a932-11a439cc6c8e',
+                },
+                headers: { 'Authorization': 'Bearer ' + props.accessToken }
             })
-            
             if (response.status === 200) {
-                // Get the data and put it in the redux store
+                props.history.push('/app/portfolio')
             }
         } catch (error) {
-            console.log(error);
+            console.log(error.response);
         }
     }
 
@@ -173,4 +173,6 @@ function AddCash(props) {
 }
 
 
-export default connect(null, null)(AddCash)
+const mapStateToProps = (state) => ({ accessToken: state.accessToken })
+
+export default connect(mapStateToProps, null)(AddCash)

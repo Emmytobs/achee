@@ -11,7 +11,7 @@ export function Table({ children }) {
 
 export function TableHead({ children }) {
     return (
-        <thead clasName={styles.thead}>
+        <thead className={styles.thead}>
             {children}
         </thead>
     )

@@ -131,9 +131,9 @@ function SignIn(props) {
                                     addShowPassword
                                 />
                                 <div className={styles.forgotPasswordContainer}>
-                                    <button className={styles.forgotPassword} onClick={changeToForgotPasswordView}>Forgot Password?</button>
+                                    <button type="button" className={styles.forgotPassword} onClick={changeToForgotPasswordView}>Forgot Password?</button>
                                 </div>
-                                <Button buttonText="Signin account" rightIcon style={{marginTop: '25px'}} />
+                                <Button type="submit" buttonText="Signin account" rightIcon style={{marginTop: '25px'}} />
                             </Form>
                         )
                     }

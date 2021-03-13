@@ -28,6 +28,11 @@ function Header(props) {
             return;
         setProfileMenu(!profileMenu);
     }
+
+    const logoutUser = () => {
+        localStorage.removeItem('achee-app-state')
+        window.location = '/account/login';
+    }
    
     return (
         <div className={styles.headerContainer}>
@@ -72,7 +77,7 @@ function Header(props) {
                             <li name="dropdown-item"><Link to="/app/profile">My Profile</Link></li>
                             <li name="dropdown-item"><Link to="/app/profile">Change Password</Link></li>
                             <li name="dropdown-item"><Link to="/app/reports">Reports</Link></li>
-                            <li name="dropdown-item" className={styles.logoutBtn}>Sign out</li>
+                            <li name="dropdown-item" className={styles.logoutBtn} onClick={logoutUser}>Sign out</li>
                         </ul>
                     </Link>
                 </nav>
@@ -92,6 +97,12 @@ function mapStateToProps (state) {
         profileImage: state.user.profileImage,
         subscriptionPlan: state.user.subscriptionPlan
     }
+    // return {
+    //     firstname: 'Name', 
+    //     lastname: 'Surname', 
+    //     profileImage: 'image',
+    //     subscriptionPlan: 'FREE'
+    // }
 }
 
 export default connect(mapStateToProps, null)(Header)

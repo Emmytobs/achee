@@ -6,10 +6,10 @@ export const initialState = {
     accessToken: '',
     refreshToken: '',
     assets: {
-        cash: [],
-        cryptocurrency: [],
-        fixedAsset: [],
-        stock: []
+        'CASH': [],
+        'CRYPTO': [],
+        'FIXED': [],
+        'STOCKS': []
     },
     globalError: null
 }
