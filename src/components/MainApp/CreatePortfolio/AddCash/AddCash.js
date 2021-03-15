@@ -7,9 +7,8 @@ import axios from 'axios';
 import Header from '../../Header/Header'
 import Footer from '../../Footer/Footer'
 import ImportPortfolioButtons from '../ImportPortfolioButtons/ImportPortfolioButtons';
-import { PrimaryButton } from '../../../Shared/Utilities'
 import AddPortfolioForm from '../AddPortfolioForm';
-import { Input, Select, Option } from '../../../Shared/Utilities';
+import { Input, Select, Option, PrimaryButton } from '../../../Shared/Utilities';
 
 import { addAsset } from '../../../../redux/dispatchers'
 
@@ -128,6 +127,7 @@ function AddCash(props) {
                                         wrapperStyle={{
                                             'background-position-x': '65%',
                                             backgroundColor: "#F6F3FF",
+                                            width: "94px",
                                         }}
                                         style={{ 
                                             border:"2px solid #805CF5",
@@ -137,9 +137,10 @@ function AddCash(props) {
                                             padding: "0 0 0 25px",
                                             width: "94px",
                                         }}
-                                        onChange={handleChange}
-                                        value={values.currency}
-                                        error={(touched.currency && errors.currency) && errors.currency} >
+                                        // onChange={handleChange}
+                                        // value={values.currency}
+                                        // error={(touched.currency && errors.currency) && errors.currency} 
+                                        >
 
                                         <Option value='USD'>$</Option>
                                         <Option value='NGN'>#</Option>

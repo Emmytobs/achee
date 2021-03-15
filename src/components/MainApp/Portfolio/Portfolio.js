@@ -14,6 +14,7 @@ import search from '../../Shared/icons/search.png';
 import arrowUp from './icons/arrow-up.png';
 import arrowDown from './icons/arrow-down.png';
 import ApexChartsDemo from '../../ChartDemos/ApexCharts'
+import { Option, Select } from '../../Shared/Utilities';
 
 function Portfolio(props) {
     const [ activeTab, setActiveTab ] = useState(1);
@@ -112,15 +113,27 @@ function Portfolio(props) {
 
                 <div className={styles.performanceAnalytics}>
                     <div className={styles.tabs}>
-                        <span className={styles.tab} data-tab-number={1} onClick={changeTabNumber}>
+                        <span 
+                            className={styles.tab} 
+                            style={{ color: activeTab === 1 && '#805cf5' }} 
+                            data-tab-number={1} 
+                            onClick={changeTabNumber}>
                             Performance
                             {activeTab === 1 && <span className={styles.activeTab}></span>}
                         </span>
-                        <span className={styles.tab} data-tab-number={2} onClick={changeTabNumber}>
+                        <span 
+                            className={styles.tab} 
+                            style={{ color: activeTab === 2 && '#805cf5' }} 
+                            data-tab-number={2} 
+                            onClick={changeTabNumber}>
                             Benchmarks
                             {activeTab === 2 && <span className={styles.activeTab}></span>}
                         </span>
-                        <span className={styles.tab} data-tab-number={3} onClick={changeTabNumber}>
+                        <span 
+                            className={styles.tab} 
+                            style={{ color: activeTab === 3 && '#805cf5' }} 
+                            data-tab-number={3} 
+                            onClick={changeTabNumber}>
                             Allocation
                             {activeTab === 3 && <span className={styles.activeTab}></span>}
                         </span>
@@ -128,12 +141,143 @@ function Portfolio(props) {
                     <div className={styles.selectedTabContainer}>
                         {activeTab === 1 && 
                             <div className={styles.performanceTab}>
+                                <div className={'display-flex justify-between align-center ' + styles.filters}>
+                                    <Select
+                                        name="currency"
+                                        wrapperStyle={{
+                                            'background-position-x': '70%',
+                                            backgroundColor: "#F6F3FF",
+                                            width: "94px",
+                                        }}
+                                        style={{ 
+                                            border:"2px solid #805CF5",
+                                            color: "#805CF5",
+                                            fontSize: '1.4em',
+                                            fontWeight: '500',
+                                            padding: "0 0 0 17px"
+                                        }}
+                                        // onChange={handleChange}
+                                        // value={values.currency}
+                                        // error={(touched.currency && errors.currency) && errors.currency} 
+                                        >
+
+                                        <Option value='USD'>$</Option>
+                                        <Option value='NGN'>#</Option>
+                                    </Select>
+
+                                    <div className={styles.performanceDurationButtons}>
+                                        <button>1W</button>
+                                        <button>3M</button>
+                                        <button>6M</button>
+                                        <button>YTD</button>
+                                        <button>1Y</button>
+                                        <button>2YS</button>
+                                        <button>5YS</button>
+                                    </div>
+                                </div>
                                 <ApexChartsDemo data={performanceChart} />
                             </div>
                         }
                         {activeTab === 2 &&
                             <div className={styles.benchmarksTab}>
-                                <p>Benchmarks tab goes here</p>
+                                <BenchmarksTable>
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>5 days</th>
+                                            <th>1 month</th>
+                                            <th>3 months</th>
+                                            <th>6 months</th>
+                                            <th>1 year</th>
+                                            <th>5 years</th>
+                                            <th>All</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <TableData>Total Gain</TableData>
+                                            <TableData>N/A</TableData>
+                                            <TableData>N/A</TableData>
+                                            <TableData>N/A</TableData>
+                                            <TableData>N/A</TableData>
+                                            <TableData>N/A</TableData>
+                                            <TableData>N/A</TableData>
+                                            <TableData>+$0.00</TableData>
+                                        </tr>
+                                        <tr>
+                                            <TableData>Return</TableData>
+                                            <TableData>N/A</TableData>
+                                            <TableData>N/A</TableData>
+                                            <TableData>N/A</TableData>
+                                            <TableData>N/A</TableData>
+                                            <TableData>N/A</TableData>
+                                            <TableData>N/A</TableData>
+                                            <TableData>+$0.00</TableData>
+                                        </tr>
+                                    </tbody>
+                                    </BenchmarksTable>
+                                    <BenchmarksTable>
+                                        <tr>
+                                            <TableData color='blue'>S&P 500</TableData>
+                                            <TableData color='loss'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                        </tr>
+                                        <tr>
+                                            <TableData color='blue'>NASDAQ</TableData>
+                                            <TableData color='loss'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                        </tr>
+                                        <tr>
+                                            <TableData color='blue'>DOW 30</TableData>
+                                            <TableData color='loss'>0.09%</TableData>
+                                            <TableData color="gain">0.09%</TableData>
+                                            <TableData color="gain">0.09%</TableData>
+                                            <TableData color="gain">0.09%</TableData>
+                                            <TableData color="gain">0.09%</TableData>
+                                            <TableData color="gain">0.09%</TableData>
+                                            <TableData color="gain">0.09%</TableData>
+                                        </tr>
+                                        <tr>
+                                            <TableData color='blue'>US Stock Market</TableData>
+                                            <TableData color='loss'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                        </tr>
+                                        <tr>
+                                            <TableData color='blue'>Emerging Markets</TableData>
+                                            <TableData color='loss'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                            <TableData color='gain'>0.09%</TableData>
+                                        </tr>
+                                        <tr>
+                                            <TableData color='blue'>Total Stock Markets</TableData>
+                                            <TableData color='loss'>0.09%</TableData>
+                                            <TableData color='gain' >0.09%</TableData>
+                                            <TableData color='gain' >0.09%</TableData>
+                                            <TableData color='gain' >0.09%</TableData>
+                                            <TableData color='gain' >0.09%</TableData>
+                                            <TableData color='gain' >0.09%</TableData>
+                                            <TableData color='gain' >0.09%</TableData>
+                                        </tr>
+                                    </BenchmarksTable>
                             </div>
                         }
                         {activeTab === 3 && 
@@ -352,5 +496,31 @@ function PerformanceTag(props) {
                 <h1 style={{ color: props.loss ? "#F13D20" : "#00AC26" }}>{props.percentPL}%</h1>
             </div>
         </div>
+    )
+}
+
+function BenchmarksTable(props) {
+    return (
+        <table className={styles.benchmarksTable}>
+            {props.children}
+        </table>
+    )
+}
+
+function TableData(props) {
+    const colorsStyle = () => {
+        if (props.color === 'blue'){
+            return { color: "#0030CB" }
+        } else if (props.color === 'loss') {
+            return { color: "#F13D20" }
+        } else if (props.color === 'gain') {
+            return { color: "#00C14D" }
+        }
+    }
+
+    return(
+        <td className={styles.tableData} style={colorsStyle()}>
+            {props.children}
+        </td>
     )
 }

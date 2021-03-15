@@ -1,9 +1,6 @@
 import React, { useState} from 'react'
 import Chart from 'react-apexcharts';
 
-import styles from './styles.module.css';
-
-
 function ApexChartsDemo(props) {
 
     return (
@@ -29,15 +26,8 @@ function ApexChartsDemo(props) {
                         enabled: false
                     },
                     stroke: {
-                        curve: 'smooth'
-                    },
-                    
-                    title: {
-                        text: 'Portfolio Performace',
-                        align: 'left',
-                        style: {
-                            fontSize: '14px'
-                        }
+                        curve: 'smooth',
+                        width: 2
                     },
                     xaxis: {
                         type: 'string',
@@ -64,7 +54,7 @@ function ApexChartsDemo(props) {
                         }
                     },
                     yaxis: {
-                        tickAmount: 5,
+                        tickAmount: 6,
                         floating: false,
                         labels: {
                             style: {
@@ -82,29 +72,30 @@ function ApexChartsDemo(props) {
                     },
                     fill: {
                         colors: ['#805CF5'],
-                        opacity: 0.6,
-                        type: 'solid',
+                        opacity: 1,
+                        type: 'gradient',
                         // Does nothing:
-                        // gradient: {
-                            //     shade: 'dark',
-                            //     type: "vertical",
-                            //     shadeIntensity: 0.5,
-                        //     gradientToColors: undefined,
-                        //     inverseColors: true,
-                        //     opacityFrom: 1,
-                        //     opacityTo: 0.1,
-                        //     stops: [0, 50, 100],
-                        //     colorStops: []
-                        // },
+                        gradient: {
+                            shade: 'light',
+                            type: "vertical",
+                            inverseColors: false,
+                            shadeIntensity: 1,
+                            opacityFrom: 0.7,
+                            opacityTo: 0.9,
+                            stops: [0, 90, 100]
+                        },
                     },
                     tooltip: {
                         x: {
                             format: "yyyy",
                         },
-                        fixed: {
-                            enabled: false,
-                            position: 'topRight'
-                        }
+                        // custom: function({ series, seriesIndex, dataPointIndex, w }) {
+                        //     return `
+                        //         <div class="tooltip-container">
+
+                        //         </div>
+                        //     `
+                        // }
                     },
                     grid: {
                         yaxis: {
@@ -115,7 +106,26 @@ function ApexChartsDemo(props) {
                     padding: {
                             left: 20
                         }
-                    }
+                    },
+                    responsive: [{
+                        breakpoint: 800,
+                        options: {
+                            xaxis: {
+                                labels: {
+                                    style: {
+                                        fontSize: '9px'
+                                    }
+                                },
+                            },
+                            yaxis: {
+                                labels: {
+                                    style: {
+                                        fontSize: '9px'
+                                    }
+                                },
+                            }
+                        }
+                    }]
                 }}
             />
         // </div>

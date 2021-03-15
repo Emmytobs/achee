@@ -6,6 +6,12 @@
     width: 90%;
     margin: 0 auto;
 }
+@media screen and (max-width: 900px) {
+    .portfolioContainer > * {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
 
 .searchBox {
     padding: 0px 10px;
@@ -32,9 +38,10 @@
 }
 
 .portfolioPerformanceTags {
-    margin-top: 40px;
+    margin: 40px auto 0 auto;
     width: 65%;
 }
+
 .tag {
     background: #fff;
     padding: 10px 20px;
@@ -57,6 +64,7 @@
     border-radius: 5px;
 }
 .tag > div:last-child > * {
+    vertical-align: middle;
     display: inline-block;
 }
 .tag > div:last-child h1 {
@@ -66,12 +74,70 @@
     margin-left: 10px;
 }
 
+/* For the performance tags */
+@media screen and (max-width: 1311px) {
+    .portfolioPerformanceTags {
+        width: 75%;
+    }
+}
+@media screen and (max-width: 1131px) {
+    .portfolioPerformanceTags {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .portfolioPerformanceTags {
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .tag {
+        margin-right: 30px;
+        margin-bottom: 30px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .portfolioPerformanceTags {
+        width: 95% !important;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .tag {
+        padding: 10px;
+        margin: 0 15px 15px 0;
+    }
+    .tag > div:first-child p { 
+        color: var(--text-color);
+        margin-bottom: 5px;
+        font-size: 0.7em;
+    }
+    .tag > div:first-child h1 {
+        color: var(--heading-text-color);
+        font-weight: 700;
+        font-size: 1.1em;
+    }
+    
+    .tag > div:last-child {
+        margin-left: 10px;
+        padding: 7px 3px;
+    }
+    .tag > div:last-child > * {
+        display: inline-block;
+    }
+    .tag > div:last-child h1 {
+        font-size: 1.1em;
+    }
+}
+
 .performanceAnalytics {
     margin-top: 40px;
 }
 .tabs {
     background: #F6F3FF;
-    padding: 30px 0 3px 0;
+    margin-left: 20px;
+    padding: 30px 0 10px 0;
 }
 .tabs > .tab {
     color: var(--heading-text-color);
@@ -82,7 +148,7 @@
 }
 .tab > .activeTab {
     position: absolute;
-    top: 96%;
+    top: 130%;
     left: 0;
     width: 100%;
     height: 3px;
@@ -90,13 +156,105 @@
     border-top-left-radius: 5px;
     background: var(--main-background-color);
 }
+
+/* For the tabs */
+@media screen and (max-width: 700px) {
+    .tabs {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: auto 15px;
+        margin: 0;
+    }
+    .tabs > .tab {
+        margin: 0;
+    }
+}
 .selectedTabContainer {
-    height: 500px;
+    height: auto;
+}
+.selectedTabContainer p {
+    margin: 0;
 }
 .selectedTabContainer > * {
     width: 100%;
     height: 100%;
     background: #fff;
+}
+.performanceTab {
+    min-height: 500px;
+}
+/* For the filters in the performance tab */
+.filters {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.performanceDurationButtons > * {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.benchmarksTab {
+    padding: 30px;
+}
+/* For the table in the benchmarks tab */
+.benchmarksTable {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-bottom: 20px;
+}
+.benchmarksTable th {
+    background: transparent;
+    color: var(--text-color);
+    font-weight: 400;
+}
+.benchmarksTable td {
+    background: #f8f8f8;
+    font-weight: 600;
+}
+
+.benchmarksTable th,
+.benchmarksTable td {
+    width: 12%;
+    padding: 15px 5px;
+    font-size: 0.9em;
+    text-align: center;
+}
+.benchmarksTable th:first-child,
+.benchmarksTable td:first-child {
+    text-align: left;
+    width: 40%;
+    padding-left: 15px;
+}
+
+@media screen and (max-width: 900px) {
+    .benchmarksTab {
+        padding: 15px;
+        height: auto;
+        overflow: auto;
+    }
+    .benchmarksTable {
+        width: auto;
+    }
+    .benchmarksTable th,
+    .benchmarksTable td {
+        width: 12%;
+        padding: 5px 5px;
+        font-size: 0.8em;
+        text-align: center;
+    }
+    .benchmarksTable th:first-child,
+    .benchmarksTable td:first-child {
+        text-align: left;
+        width: 30%;
+        padding-left: 15px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .benchmarksTable {
+        width: 600px;
+    }
 }
 
 .assetList > h1 {
@@ -119,3 +277,5 @@
     margin-top: 20px;
     overflow: auto;
 }
+
+

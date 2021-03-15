@@ -23,8 +23,8 @@ export function Input(props) {
 
 export function Select(props) {
     return (
-        <div>
-            <div for="select" className={'display-flex justify-between '+ styles.selectContainer} style={props.wrapperStyle}>
+        <>
+            <div for="select" className={styles.selectContainer} style={props.wrapperStyle}>
                 <select 
                     id="select" 
                     style={props.style} 
@@ -37,7 +37,7 @@ export function Select(props) {
                 {/* <img src={arrowDown} alt="Arrow Down" width="24px" height="24px" /> */}
             </div>
             <small className={styles.error} style={{ visibility: props.error ? "visible" : "hidden" }}>{props.error}</small>
-        </div>
+        </>
     )
 }
 

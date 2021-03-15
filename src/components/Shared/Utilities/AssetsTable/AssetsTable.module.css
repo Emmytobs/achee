@@ -22,6 +22,11 @@
 
 @media screen and (max-width: 900px) {
     .table {
-        width: 'auto';
+        width: auto;
+    }
+    .th, .td {
+        width: 12%;
+        padding: 10px 10px;
+        font-size: 0.75em;
     }
 }
